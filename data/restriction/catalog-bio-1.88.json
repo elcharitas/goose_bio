@@ -1,0 +1,9797 @@
+{
+  "source": "Biopython 1.88 Bio.Restriction.Restriction_Dictionary",
+  "enzymes": [
+    {
+      "name": "AanI",
+      "recognition": "TTATAA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AarI",
+      "recognition": "CACCTGC",
+      "fst5": 11,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AasI",
+      "recognition": "GACNNNNNNGTC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AatII",
+      "recognition": "GACGTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Aba13301I",
+      "recognition": "GCAAAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Aba6411II",
+      "recognition": "CRRTAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AbaB8342IV",
+      "recognition": "CATTAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AbaCIII",
+      "recognition": "CTATCAV",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AbaPBA3II",
+      "recognition": "CAYGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AbaSI",
+      "recognition": "C",
+      "fst5": 12,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AbaUMB2I",
+      "recognition": "YCCGSS",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Abr4036II",
+      "recognition": "GRTYGACC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AbsI",
+      "recognition": "CCTCGAGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Acc16I",
+      "recognition": "TGCGCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Acc36I",
+      "recognition": "ACCTGC",
+      "fst5": 10,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Acc65I",
+      "recognition": "GGTACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Acc65V",
+      "recognition": "GACGCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AccB1I",
+      "recognition": "GGYRCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AccB7I",
+      "recognition": "CCANNNNNTGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AccBSI",
+      "recognition": "CCGCTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AccI",
+      "recognition": "GTMKAC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AccII",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AccIII",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AccIX",
+      "recognition": "GACRAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AccX",
+      "recognition": "GGARCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AceIII",
+      "recognition": "CAGCTC",
+      "fst5": 13,
+      "fst3": 11,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AchA6III",
+      "recognition": "AGCCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AciI",
+      "recognition": "CCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AclI",
+      "recognition": "AACGTT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AclWI",
+      "recognition": "GGATC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Aco12261II",
+      "recognition": "CCRGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AcoI",
+      "recognition": "YGGCCR",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AcoY31II",
+      "recognition": "TAGCRAB",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AcsI",
+      "recognition": "RAATTY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AcuI",
+      "recognition": "CTGAAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AcvI",
+      "recognition": "CACGTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AcyI",
+      "recognition": "GRCGYC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AdeI",
+      "recognition": "CACNNNGTG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Adh6U21I",
+      "recognition": "GAANCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AfaI",
+      "recognition": "GTAC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AfeI",
+      "recognition": "AGCGCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AfiI",
+      "recognition": "CCNNNNNNNGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AflII",
+      "recognition": "CTTAAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AflIII",
+      "recognition": "ACRYGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AgeI",
+      "recognition": "ACCGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AgsI",
+      "recognition": "TTSAA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AhaIII",
+      "recognition": "TTTAAA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AhdI",
+      "recognition": "GACNNNNNGTC",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AhlI",
+      "recognition": "ACTAGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AhyRBAHI",
+      "recognition": "GCYYGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AhyYL17I",
+      "recognition": "YAAMGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AjiI",
+      "recognition": "CACGTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AjnI",
+      "recognition": "CCWGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AjuI",
+      "recognition": "GAANNNNNNNTTGG",
+      "fst5": -7,
+      "fst3": -26,
+      "scd5": 25,
+      "scd3": 6,
+      "support": "two-cut"
+    },
+    {
+      "name": "AleI",
+      "recognition": "CACNNNNGTG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AlfI",
+      "recognition": "GCANNNNNNTGC",
+      "fst5": -10,
+      "fst3": -24,
+      "scd5": 24,
+      "scd3": 10,
+      "support": "two-cut"
+    },
+    {
+      "name": "AloI",
+      "recognition": "GAACNNNNNNTCC",
+      "fst5": -7,
+      "fst3": -25,
+      "scd5": 25,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "AluBI",
+      "recognition": "AGCT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AluI",
+      "recognition": "AGCT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Alw21I",
+      "recognition": "GWGCWC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Alw26I",
+      "recognition": "GTCTC",
+      "fst5": 6,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Alw44I",
+      "recognition": "GTGCAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AlwFI",
+      "recognition": "GAAAYNNNNNRTG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AlwI",
+      "recognition": "GGATC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AlwNI",
+      "recognition": "CAGNNNCTG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ama87I",
+      "recognition": "CYCGRG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AmaCSI",
+      "recognition": "GCTCCA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Aod1I",
+      "recognition": "GATCNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Aor13HI",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Aor51HI",
+      "recognition": "AGCGCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AoxI",
+      "recognition": "GGCC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ApaBI",
+      "recognition": "GCANNNNNTGC",
+      "fst5": 8,
+      "fst3": -8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ApaI",
+      "recognition": "GGGCCC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ApaLI",
+      "recognition": "GTGCAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ApeKI",
+      "recognition": "GCWGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ApoI",
+      "recognition": "RAATTY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ApyPI",
+      "recognition": "ATCGAC",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AquII",
+      "recognition": "GCCGNAC",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AquIII",
+      "recognition": "GAGGAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AquIV",
+      "recognition": "GRGGAAG",
+      "fst5": 26,
+      "fst3": 17,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ArsI",
+      "recognition": "GACNNNNNNTTYG",
+      "fst5": -8,
+      "fst3": -26,
+      "scd5": 24,
+      "scd3": 6,
+      "support": "two-cut"
+    },
+    {
+      "name": "AscI",
+      "recognition": "GGCGCGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AseI",
+      "recognition": "ATTAAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Asi256I",
+      "recognition": "GATC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AsiGI",
+      "recognition": "ACCGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AsiSI",
+      "recognition": "GCGATCGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Asl11923II",
+      "recognition": "GGGABCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Asp103I",
+      "recognition": "CGRAGGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Asp114pII",
+      "recognition": "AGCABCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Asp337I",
+      "recognition": "CARABGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Asp700I",
+      "recognition": "GAANNNNTTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Asp718I",
+      "recognition": "GGTACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AspA2I",
+      "recognition": "CCTAGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AspAMDIV",
+      "recognition": "ACCCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AspBHI",
+      "recognition": "YSCNS",
+      "fst5": 13,
+      "fst3": 12,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AspDUT2V",
+      "recognition": "GNGCAAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AspJHL3II",
+      "recognition": "CGCCCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AspLEI",
+      "recognition": "GCGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AspNIH4III",
+      "recognition": "AAGAACB",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AspS9I",
+      "recognition": "GGNCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AspSLV7III",
+      "recognition": "GTCTCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Asu14238IV",
+      "recognition": "CGTRAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AsuC2I",
+      "recognition": "CCSGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AsuHPI",
+      "recognition": "GGTGA",
+      "fst5": 13,
+      "fst3": 7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AsuI",
+      "recognition": "GGNCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AsuII",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AsuNHI",
+      "recognition": "GCTAGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AteTI",
+      "recognition": "GGGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AvaI",
+      "recognition": "CYCGRG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AvaII",
+      "recognition": "GGWCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "AvaIII",
+      "recognition": "ATGCAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Avi249I",
+      "recognition": "CTGCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AvrII",
+      "recognition": "CCTAGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Awo1030IV",
+      "recognition": "GCCRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "AxyI",
+      "recognition": "CCTNAGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BaeGI",
+      "recognition": "GKGCMC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BaeI",
+      "recognition": "ACNNNNGTAYC",
+      "fst5": -10,
+      "fst3": -26,
+      "scd5": 23,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "Bag18758I",
+      "recognition": "CCCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BalI",
+      "recognition": "TGGCCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BamHI",
+      "recognition": "GGATCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BanI",
+      "recognition": "GGYRCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BanII",
+      "recognition": "GRGCYC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BanLI",
+      "recognition": "RTCAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BarI",
+      "recognition": "GAAGNNNNNNTAC",
+      "fst5": -7,
+      "fst3": -25,
+      "scd5": 25,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "Bau1417V",
+      "recognition": "GTTCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BauI",
+      "recognition": "CACGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bbr52II",
+      "recognition": "GGCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bbr57III",
+      "recognition": "GTRAAYG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bbr7017II",
+      "recognition": "CGGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bbr7017III",
+      "recognition": "GGRCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BbrPI",
+      "recognition": "CACGTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BbsI",
+      "recognition": "GAAGAC",
+      "fst5": 8,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BbuB31I",
+      "recognition": "GNAAYG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BbuB31II",
+      "recognition": "CGRKA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bbv12I",
+      "recognition": "GWGCWC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BbvCI",
+      "recognition": "CCTCAGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BbvI",
+      "recognition": "GCAGC",
+      "fst5": 13,
+      "fst3": 12,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BbvII",
+      "recognition": "GAAGAC",
+      "fst5": 8,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BccI",
+      "recognition": "CCATC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bce10661III",
+      "recognition": "TATCNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bce3081I",
+      "recognition": "TAGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bce83I",
+      "recognition": "CTTGAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BceAI",
+      "recognition": "ACGGC",
+      "fst5": 17,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BceSIV",
+      "recognition": "GCAGC",
+      "fst5": -7,
+      "fst3": -10,
+      "scd5": 14,
+      "scd3": 11,
+      "support": "two-cut"
+    },
+    {
+      "name": "BcefI",
+      "recognition": "ACGGC",
+      "fst5": 17,
+      "fst3": 13,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BcgI",
+      "recognition": "CGANNNNNNTGC",
+      "fst5": -10,
+      "fst3": -24,
+      "scd5": 24,
+      "scd3": 10,
+      "support": "two-cut"
+    },
+    {
+      "name": "BciT130I",
+      "recognition": "CCWGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BciVI",
+      "recognition": "GTATCC",
+      "fst5": 12,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BclI",
+      "recognition": "TGATCA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BcnI",
+      "recognition": "CCSGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bco11035III",
+      "recognition": "GAAGCY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BcoDI",
+      "recognition": "GTCTC",
+      "fst5": 6,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BcuI",
+      "recognition": "ACTAGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BdaI",
+      "recognition": "TGANNNNNNTCA",
+      "fst5": -10,
+      "fst3": -24,
+      "scd5": 24,
+      "scd3": 10,
+      "support": "two-cut"
+    },
+    {
+      "name": "BetI",
+      "recognition": "WCCGGW",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfaI",
+      "recognition": "CTAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfaSII",
+      "recognition": "GANGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BfiI",
+      "recognition": "ACTGGG",
+      "fst5": 11,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfmI",
+      "recognition": "CTRYAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfoI",
+      "recognition": "RGCGCY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfrI",
+      "recognition": "CTTAAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfuAI",
+      "recognition": "ACCTGC",
+      "fst5": 10,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BfuI",
+      "recognition": "GTATCC",
+      "fst5": 12,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bga514I",
+      "recognition": "GTRAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BglI",
+      "recognition": "GCCNNNNNGGC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BglII",
+      "recognition": "AGATCT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bhe175II",
+      "recognition": "GCCCNA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BinI",
+      "recognition": "GGATC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BisI",
+      "recognition": "GCNGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BkrAM31DI",
+      "recognition": "RTTAAATM",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Ble402II",
+      "recognition": "GRAGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BlnI",
+      "recognition": "CCTAGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BloAII",
+      "recognition": "GAGGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BlpI",
+      "recognition": "GCTNAGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BlsI",
+      "recognition": "GCNGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmcAI",
+      "recognition": "AGTACT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bme1390I",
+      "recognition": "CCNGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bme18I",
+      "recognition": "GGWCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmeDI",
+      "recognition": "C",
+      "fst5": 3,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmeRI",
+      "recognition": "GACNNNNNGTC",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmeT110I",
+      "recognition": "CYCGRG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmgBI",
+      "recognition": "CACGTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmgI",
+      "recognition": "GKGCCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BmgT120I",
+      "recognition": "GGNCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmiI",
+      "recognition": "GGNNCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmrFI",
+      "recognition": "CCNGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmrI",
+      "recognition": "ACTGGG",
+      "fst5": 11,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmsI",
+      "recognition": "GCATC",
+      "fst5": 10,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmtI",
+      "recognition": "GCTAGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BmuI",
+      "recognition": "ACTGGG",
+      "fst5": 11,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BoxI",
+      "recognition": "GACNNNNGTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BpiI",
+      "recognition": "GAAGAC",
+      "fst5": 8,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BplI",
+      "recognition": "GAGNNNNNCTC",
+      "fst5": -8,
+      "fst3": -24,
+      "scd5": 24,
+      "scd3": 8,
+      "support": "two-cut"
+    },
+    {
+      "name": "BpmI",
+      "recognition": "CTGGAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bps6700III",
+      "recognition": "TACCNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bpu10I",
+      "recognition": "CCTNAGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bpu1102I",
+      "recognition": "GCTNAGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bpu14I",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BpuEI",
+      "recognition": "CTTGAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BpuMI",
+      "recognition": "CCSGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsa29I",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaAI",
+      "recognition": "YACGTR",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaBI",
+      "recognition": "GATNNNNATC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaHI",
+      "recognition": "GRCGYC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaI",
+      "recognition": "GGTCTC",
+      "fst5": 7,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaJI",
+      "recognition": "CCNNGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaWI",
+      "recognition": "WCCGGW",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsaXI",
+      "recognition": "ACNNNNNCTCC",
+      "fst5": -9,
+      "fst3": -23,
+      "scd5": 21,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "BsbI",
+      "recognition": "CAACAC",
+      "fst5": 27,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsc4I",
+      "recognition": "CCNNNNNNNGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BscAI",
+      "recognition": "GCATC",
+      "fst5": 9,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BscGI",
+      "recognition": "CCCGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BscXI",
+      "recognition": "GCAGGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bse118I",
+      "recognition": "RCCGGY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bse1I",
+      "recognition": "ACTGG",
+      "fst5": 6,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bse21I",
+      "recognition": "CCTNAGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bse3DI",
+      "recognition": "GCAATG",
+      "fst5": 8,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bse8I",
+      "recognition": "GATNNNNATC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseAI",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseBI",
+      "recognition": "CCWGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseCI",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseDI",
+      "recognition": "CCNNGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseGI",
+      "recognition": "GGATG",
+      "fst5": 7,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseJI",
+      "recognition": "GATNNNNATC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseLI",
+      "recognition": "CCNNNNNNNGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseMI",
+      "recognition": "GCAATG",
+      "fst5": 8,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseMII",
+      "recognition": "CTCAG",
+      "fst5": 15,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseNI",
+      "recognition": "ACTGG",
+      "fst5": 6,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsePI",
+      "recognition": "GCGCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseRI",
+      "recognition": "GAGGAG",
+      "fst5": 16,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseSI",
+      "recognition": "GKGCMC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseX3I",
+      "recognition": "CGGCCG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseXI",
+      "recognition": "GCAGC",
+      "fst5": 13,
+      "fst3": 12,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BseYI",
+      "recognition": "CCCAGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsgI",
+      "recognition": "GTGCAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsh1236I",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsh1285I",
+      "recognition": "CGRYCG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BshFI",
+      "recognition": "GGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BshNI",
+      "recognition": "GGYRCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BshTI",
+      "recognition": "ACCGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BshVI",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiEI",
+      "recognition": "CGRYCG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiHKAI",
+      "recognition": "GWGCWC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiHKCI",
+      "recognition": "CYCGRG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiI",
+      "recognition": "CACGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiSI",
+      "recognition": "CCGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiWI",
+      "recognition": "CGTACG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsiYI",
+      "recognition": "CCNNNNNNNGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BslFI",
+      "recognition": "GGGAC",
+      "fst5": 15,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BslI",
+      "recognition": "CCNNNNNNNGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsmAI",
+      "recognition": "GTCTC",
+      "fst5": 6,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsmBI",
+      "recognition": "CGTCTC",
+      "fst5": 7,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsmFI",
+      "recognition": "GGGAC",
+      "fst5": 15,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsmI",
+      "recognition": "GAATGC",
+      "fst5": 7,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsnI",
+      "recognition": "GGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bso31I",
+      "recognition": "GGTCTC",
+      "fst5": 7,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsoBI",
+      "recognition": "CYCGRG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp119I",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp120I",
+      "recognition": "GGGCCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp1286I",
+      "recognition": "GDGCHC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp13I",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp1407I",
+      "recognition": "TGTACA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp143I",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp1720I",
+      "recognition": "GCTNAGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp19I",
+      "recognition": "CCATGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsp24I",
+      "recognition": "GACNNNNNNTGG",
+      "fst5": -8,
+      "fst3": -25,
+      "scd5": 24,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "Bsp3004IV",
+      "recognition": "CCGCAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bsp460III",
+      "recognition": "CGCGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Bsp68I",
+      "recognition": "TCGCGA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspACI",
+      "recognition": "CCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspANI",
+      "recognition": "GGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspCNI",
+      "recognition": "CTCAG",
+      "fst5": 14,
+      "fst3": 7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspD6I",
+      "recognition": "GAGTC",
+      "fst5": 9,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspDI",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspEI",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspFNI",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspGI",
+      "recognition": "CTGGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BspHI",
+      "recognition": "TCATGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspLI",
+      "recognition": "GGNNCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspLU11I",
+      "recognition": "ACATGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspMAI",
+      "recognition": "CTGCAG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspMI",
+      "recognition": "ACCTGC",
+      "fst5": 10,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspMII",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspNCI",
+      "recognition": "CCAGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BspOI",
+      "recognition": "GCTAGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspPI",
+      "recognition": "GGATC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspQI",
+      "recognition": "GCTCTTC",
+      "fst5": 8,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspT104I",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspT107I",
+      "recognition": "GGYRCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspTI",
+      "recognition": "CTTAAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BspTNI",
+      "recognition": "GGTCTC",
+      "fst5": 7,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsrBI",
+      "recognition": "CCGCTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsrDI",
+      "recognition": "GCAATG",
+      "fst5": 8,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsrFI",
+      "recognition": "RCCGGY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsrGI",
+      "recognition": "TGTACA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsrI",
+      "recognition": "ACTGG",
+      "fst5": 6,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssAI",
+      "recognition": "RCCGGY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssECI",
+      "recognition": "CCNNGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssHII",
+      "recognition": "GCGCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssMI",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssNAI",
+      "recognition": "GTATAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssNI",
+      "recognition": "GRCGYC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssSI",
+      "recognition": "CACGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BssT1I",
+      "recognition": "CCWWGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bst1107I",
+      "recognition": "GTATAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bst2BI",
+      "recognition": "CACGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bst2UI",
+      "recognition": "CCWGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bst4CI",
+      "recognition": "ACNGT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bst6I",
+      "recognition": "CTCTTC",
+      "fst5": 7,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstACI",
+      "recognition": "GRCGYC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstAFI",
+      "recognition": "CTTAAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstAPI",
+      "recognition": "GCANNNNNTGC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstAUI",
+      "recognition": "TGTACA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstBAI",
+      "recognition": "YACGTR",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstBI",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstC8I",
+      "recognition": "GCNNGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstDEI",
+      "recognition": "CTNAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstDSI",
+      "recognition": "CCRYGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstEII",
+      "recognition": "GGTNACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstENI",
+      "recognition": "CCTNNNNNAGG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstF5I",
+      "recognition": "GGATG",
+      "fst5": 7,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstFNI",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstH2I",
+      "recognition": "RGCGCY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstHHI",
+      "recognition": "GCGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstKTI",
+      "recognition": "GATC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstMAI",
+      "recognition": "GTCTC",
+      "fst5": 6,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstMBI",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstMCI",
+      "recognition": "CGRYCG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstMWI",
+      "recognition": "GCNNNNNNNGC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstNI",
+      "recognition": "CCWGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstNSI",
+      "recognition": "RCATGY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstPAI",
+      "recognition": "GACNNNNGTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstPI",
+      "recognition": "GGTNACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstSCI",
+      "recognition": "CCNGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstSFI",
+      "recognition": "CTRYAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstSLI",
+      "recognition": "GKGCMC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstSNI",
+      "recognition": "TACGTA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstUI",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstV1I",
+      "recognition": "GCAGC",
+      "fst5": 13,
+      "fst3": 12,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstV2I",
+      "recognition": "GAAGAC",
+      "fst5": 8,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstX2I",
+      "recognition": "RGATCY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstXI",
+      "recognition": "CCANNNNNNTGG",
+      "fst5": 8,
+      "fst3": -8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstYI",
+      "recognition": "RGATCY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstZ17I",
+      "recognition": "GTATAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BstZI",
+      "recognition": "CGGCCG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsu15I",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bsu36I",
+      "recognition": "CCTNAGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsuI",
+      "recognition": "GTATCC",
+      "fst5": 12,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsuRI",
+      "recognition": "GGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BsuTUI",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtgI",
+      "recognition": "CCRYGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtgZI",
+      "recognition": "GCGATG",
+      "fst5": 16,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BthCI",
+      "recognition": "GCNGC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtrI",
+      "recognition": "CACGTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtsCI",
+      "recognition": "GGATG",
+      "fst5": 7,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtsI",
+      "recognition": "GCAGTG",
+      "fst5": 8,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtsIMutI",
+      "recognition": "CAGTG",
+      "fst5": 7,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "BtuMI",
+      "recognition": "TCGCGA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Bve1B23I",
+      "recognition": "GACNNNNNTGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "BveI",
+      "recognition": "ACCTGC",
+      "fst5": 10,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cac8I",
+      "recognition": "GCNNGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CaiI",
+      "recognition": "CAGNNNCTG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cal14237I",
+      "recognition": "GGTTAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CalB3II",
+      "recognition": "GRTTRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cau10061II",
+      "recognition": "GTTAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CauII",
+      "recognition": "CCSGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cba13II",
+      "recognition": "AGGAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cba16038I",
+      "recognition": "CCTNAYNC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cbo67071IV",
+      "recognition": "GCRGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CcaP7V",
+      "recognition": "CRAAAAR",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cch467III",
+      "recognition": "GNGAAAY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CchII",
+      "recognition": "GGARGA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CchIII",
+      "recognition": "CCCAAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CciI",
+      "recognition": "TCATGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CciNI",
+      "recognition": "GCGGCCGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cco11366VI",
+      "recognition": "GAAGAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cco11437V",
+      "recognition": "CAYNNNNNRTAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cco14983V",
+      "recognition": "GGGTDA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cco14983VI",
+      "recognition": "GCYGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CcrNAIII",
+      "recognition": "CGACCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cdi11397I",
+      "recognition": "GCGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cdi13746V",
+      "recognition": "RGAAAGR",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cdi13750III",
+      "recognition": "CCGATCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CdiI",
+      "recognition": "CATCG",
+      "fst5": 4,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CdpI",
+      "recognition": "GCGGAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cdu23823II",
+      "recognition": "GTGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cfa8380I",
+      "recognition": "GRGGAY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CfoI",
+      "recognition": "GCGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cfr10I",
+      "recognition": "RCCGGY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cfr13I",
+      "recognition": "GGNCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cfr42I",
+      "recognition": "CCGCGG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cfr9I",
+      "recognition": "CCCGGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CfrI",
+      "recognition": "YGGCCR",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CfrMH13II",
+      "recognition": "AGCANCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CfrMH16VI",
+      "recognition": "CTAAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cfupf3II",
+      "recognition": "GARCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cgl13032I",
+      "recognition": "GGCGCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cgl13032II",
+      "recognition": "ACGABGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ChaI",
+      "recognition": "GATC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cin11811I",
+      "recognition": "TGKMCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cje265V",
+      "recognition": "GKAAGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cje54107III",
+      "recognition": "GKAAYC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjeFIII",
+      "recognition": "GCAAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjeFV",
+      "recognition": "GGRCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjeI",
+      "recognition": "CCANNNNNNGT",
+      "fst5": -8,
+      "fst3": -25,
+      "scd5": 26,
+      "scd3": 9,
+      "support": "two-cut"
+    },
+    {
+      "name": "CjeNII",
+      "recognition": "GAGNNNNNGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjeNIII",
+      "recognition": "GKAAYG",
+      "fst5": 25,
+      "fst3": 17,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CjeNV",
+      "recognition": "CCYGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjeP659IV",
+      "recognition": "CACNNNNNNNGAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjePI",
+      "recognition": "CCANNNNNNNTC",
+      "fst5": -7,
+      "fst3": -25,
+      "scd5": 26,
+      "scd3": 8,
+      "support": "two-cut"
+    },
+    {
+      "name": "CjuI",
+      "recognition": "CAYNNNNNRTG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CjuII",
+      "recognition": "CAYNNNNNCTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cko11077IV",
+      "recognition": "TGACAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cla11845III",
+      "recognition": "GCGAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ClaI",
+      "recognition": "ATCGAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cly7489II",
+      "recognition": "AAAAGRG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cpe10578V",
+      "recognition": "GANGAGY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cpe13170II",
+      "recognition": "GTTGNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Cpe2837III",
+      "recognition": "GRNACAYT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CpoI",
+      "recognition": "CGGWCCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Cre7908I",
+      "recognition": "GCGGGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Csa9238II",
+      "recognition": "CAAANTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CseI",
+      "recognition": "GACGC",
+      "fst5": 10,
+      "fst3": 10,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CsiI",
+      "recognition": "ACCWGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Csp2014I",
+      "recognition": "GGAGGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Csp6I",
+      "recognition": "GTAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CspAI",
+      "recognition": "ACCGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CspBP25III",
+      "recognition": "CCANNNNNRTGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CspCI",
+      "recognition": "CAANNNNNGTGG",
+      "fst5": -11,
+      "fst3": -25,
+      "scd5": 24,
+      "scd3": 10,
+      "support": "two-cut"
+    },
+    {
+      "name": "CspI",
+      "recognition": "CGGWCCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CspL61I",
+      "recognition": "TYGAYCT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CspX1II",
+      "recognition": "ACCCCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "CstMI",
+      "recognition": "AAGGAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CviAII",
+      "recognition": "CATG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CviJI",
+      "recognition": "RGCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CviKI_1",
+      "recognition": "RGCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CviQI",
+      "recognition": "GTAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "CviRI",
+      "recognition": "TGCA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Dde51507I",
+      "recognition": "CCWGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "DdeI",
+      "recognition": "CTNAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DinI",
+      "recognition": "GGCGCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Dpi3069I",
+      "recognition": "GACAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Dpi3084I",
+      "recognition": "CGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Dpi3090II",
+      "recognition": "AAGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "DpnI",
+      "recognition": "GATC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DpnII",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DraI",
+      "recognition": "TTTAAA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DraII",
+      "recognition": "RGGNCCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DraIII",
+      "recognition": "CACNNNGTG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DraRI",
+      "recognition": "CAAGNAC",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DrdI",
+      "recognition": "GACNNNNNNGTC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DrdII",
+      "recognition": "GAACCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "DrdIV",
+      "recognition": "TACGAC",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DrdV",
+      "recognition": "CATGNAC",
+      "fst5": 17,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DrdVI",
+      "recognition": "GCAGCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "DrdVIII",
+      "recognition": "ARGAGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "DriI",
+      "recognition": "GACNNNNNGTC",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DsaI",
+      "recognition": "CCRYGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DseDI",
+      "recognition": "GACNNNNNNGTC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "DspS02II",
+      "recognition": "TGCCGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "DvuIII",
+      "recognition": "CACNCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EaeI",
+      "recognition": "YGGCCR",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EagI",
+      "recognition": "CGGCCG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eam1104I",
+      "recognition": "CTCTTC",
+      "fst5": 7,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eam1105I",
+      "recognition": "GACNNNNNGTC",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EarI",
+      "recognition": "CTCTTC",
+      "fst5": 7,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EciI",
+      "recognition": "GGCGGA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ecl136II",
+      "recognition": "GAGCTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ecl234I",
+      "recognition": "CGGNAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Ecl35734I",
+      "recognition": "GAAAYTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EclXI",
+      "recognition": "CGGCCG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco105I",
+      "recognition": "TACGTA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco130I",
+      "recognition": "CCWWGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco147I",
+      "recognition": "AGGCCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco1836I",
+      "recognition": "CACANTT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco24I",
+      "recognition": "GRGCYC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco31I",
+      "recognition": "GGTCTC",
+      "fst5": 7,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco32I",
+      "recognition": "GATATC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco4174I",
+      "recognition": "GCACAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco43896II",
+      "recognition": "CRARCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco4465II",
+      "recognition": "GAAABCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco47I",
+      "recognition": "GGWCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco47III",
+      "recognition": "AGCGCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco52I",
+      "recognition": "CGGCCG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco53kI",
+      "recognition": "GAGCTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco57I",
+      "recognition": "CTGAAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco57MI",
+      "recognition": "CTGRAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco72I",
+      "recognition": "CACGTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco8164I",
+      "recognition": "GCCKAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco81I",
+      "recognition": "CCTNAGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco88I",
+      "recognition": "CYCGRG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco9009II",
+      "recognition": "GAAANTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco9020I",
+      "recognition": "CGAABTT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco9035I",
+      "recognition": "GGGANTT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eco91I",
+      "recognition": "GGTNACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Eco9699II",
+      "recognition": "TAGARC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EcoBLMcrX",
+      "recognition": "RCSRC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoE1140I",
+      "recognition": "ACCYAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EcoHI",
+      "recognition": "CCSGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoHSI",
+      "recognition": "GGTAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EcoICRI",
+      "recognition": "GAGCTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoMVII",
+      "recognition": "CANCATC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EcoNI",
+      "recognition": "CCTNNNNNAGG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoNIH6II",
+      "recognition": "ATGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "EcoO109I",
+      "recognition": "RGGNCCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoO157SI",
+      "recognition": "C",
+      "fst5": 15,
+      "fst3": 12,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoO65I",
+      "recognition": "GGTNACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoRI",
+      "recognition": "GAATTC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoRII",
+      "recognition": "CCWGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoRV",
+      "recognition": "GATATC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoT14I",
+      "recognition": "CCWWGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoT22I",
+      "recognition": "ATGCAT",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EcoT38I",
+      "recognition": "GRGCYC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EgeI",
+      "recognition": "GGCGCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EheI",
+      "recognition": "GGCGCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ehi46392I",
+      "recognition": "CCCNNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Eli8509II",
+      "recognition": "CCGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ErhG4T10I",
+      "recognition": "CGANNNNNNTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ErhI",
+      "recognition": "CCWWGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EsaBC3I",
+      "recognition": "TCGA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EsaSSI",
+      "recognition": "GACCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Esp3007I",
+      "recognition": "CAGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Esp3I",
+      "recognition": "CGTCTC",
+      "fst5": 7,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "EspI",
+      "recognition": "GCTNAGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FaeI",
+      "recognition": "CATG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FaiI",
+      "recognition": "YATR",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FalI",
+      "recognition": "AAGNNNNNCTT",
+      "fst5": -8,
+      "fst3": -24,
+      "scd5": 24,
+      "scd3": 8,
+      "support": "two-cut"
+    },
+    {
+      "name": "FaqI",
+      "recognition": "GGGAC",
+      "fst5": 15,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FatI",
+      "recognition": "CATG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FauI",
+      "recognition": "CCCGC",
+      "fst5": 9,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FauNDI",
+      "recognition": "CATATG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Fba202Z8II",
+      "recognition": "AGAAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "FbaI",
+      "recognition": "TGATCA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FblI",
+      "recognition": "GTMKAC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Fco1691IV",
+      "recognition": "GCVGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "FinI",
+      "recognition": "GGGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "FmuI",
+      "recognition": "GGNCC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Fna13121I",
+      "recognition": "TTGAYC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Fnu11326II",
+      "recognition": "GAGNNNNRTAY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Fnu11326IV",
+      "recognition": "CTTAATT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Fnu4HI",
+      "recognition": "GCNGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FnuDII",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FokI",
+      "recognition": "GGATG",
+      "fst5": 14,
+      "fst3": 13,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FriOI",
+      "recognition": "GRGCYC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FseI",
+      "recognition": "GGCCGGCC",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Fsp4HI",
+      "recognition": "GCNGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FspAI",
+      "recognition": "RTGCGCAY",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FspBI",
+      "recognition": "CTAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FspEI",
+      "recognition": "CC",
+      "fst5": 14,
+      "fst3": 16,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FspI",
+      "recognition": "TGCGCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "FspPK15I",
+      "recognition": "GARGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "FtnUV",
+      "recognition": "GAAACA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "GauT27I",
+      "recognition": "CGCGCAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Gba708II",
+      "recognition": "ATGCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "GdiII",
+      "recognition": "CGGCCR",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "GlaI",
+      "recognition": "GCGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "GluI",
+      "recognition": "GCNGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Gru56503II",
+      "recognition": "CARABGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "GsaI",
+      "recognition": "CCCAGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "GsuI",
+      "recognition": "CTGGAG",
+      "fst5": 22,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "GsuPI",
+      "recognition": "GTACAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HaeI",
+      "recognition": "WGGCCW",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HaeII",
+      "recognition": "RGCGCY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HaeIII",
+      "recognition": "GGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HapII",
+      "recognition": "CCGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HauII",
+      "recognition": "TGGCCA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HbaII",
+      "recognition": "GCCCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hca13221V",
+      "recognition": "CACNNNNNRTAY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HdeNY26I",
+      "recognition": "CGANNNNNNTCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HdeZA17I",
+      "recognition": "GCANNNNNNTCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HgaI",
+      "recognition": "GACGC",
+      "fst5": 10,
+      "fst3": 10,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HgiAI",
+      "recognition": "GWGCWC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HgiCI",
+      "recognition": "GGYRCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HgiEII",
+      "recognition": "ACCNNNNNNGGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HgiJII",
+      "recognition": "GRGCYC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HhaI",
+      "recognition": "GCGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hin1I",
+      "recognition": "GRCGYC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hin1II",
+      "recognition": "CATG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hin4I",
+      "recognition": "GAYNNNNNVTC",
+      "fst5": -8,
+      "fst3": -24,
+      "scd5": 24,
+      "scd3": 8,
+      "support": "two-cut"
+    },
+    {
+      "name": "Hin4II",
+      "recognition": "CCTTC",
+      "fst5": 11,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hin6I",
+      "recognition": "GCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HinP1I",
+      "recognition": "GCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HincII",
+      "recognition": "GTYRAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HindII",
+      "recognition": "GTYRAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HindIII",
+      "recognition": "AAGCTT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HinfI",
+      "recognition": "GANTC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpaI",
+      "recognition": "GTTAAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpaII",
+      "recognition": "CCGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HphI",
+      "recognition": "GGTGA",
+      "fst5": 13,
+      "fst3": 7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy166II",
+      "recognition": "GTNNAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy178III",
+      "recognition": "TCNNGA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy188I",
+      "recognition": "TCNGA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy188III",
+      "recognition": "TCNNGA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy300XI",
+      "recognition": "CCTYNA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hpy8I",
+      "recognition": "GTNNAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy99I",
+      "recognition": "CGWCG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hpy99XIII",
+      "recognition": "GCCTA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hpy99XIV",
+      "recognition": "GGWTAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hpy99XIV_mut1",
+      "recognition": "GGWCNA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hpy99XXII",
+      "recognition": "CYANNNNNNTGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyAS001VI",
+      "recognition": "CYANNNNNNTTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyAV",
+      "recognition": "CCTTC",
+      "fst5": 11,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyAXIV",
+      "recognition": "GCGTA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyAXVIII",
+      "recognition": "GGANNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyAXVI_mut1",
+      "recognition": "CRTTAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyAXVI_mut2",
+      "recognition": "CRTCNA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyCH4III",
+      "recognition": "ACNGT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyCH4IV",
+      "recognition": "ACGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyCH4V",
+      "recognition": "TGCA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyF10VI",
+      "recognition": "GCNNNNNNNGC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyF3I",
+      "recognition": "CTNAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyG272XV",
+      "recognition": "GAAAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyLIM6XII",
+      "recognition": "CYANNNNNNTCC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyLIM9XVI",
+      "recognition": "GAAAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyPU007XIX",
+      "recognition": "CYANNNNNNTGY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpySE526I",
+      "recognition": "ACGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HpyUM032XIII",
+      "recognition": "CYANNNNNNNTRG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyUM032XIII_mut1",
+      "recognition": "CYANNNNNNNTTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyUM032XIV",
+      "recognition": "GAAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "HpyUM037X",
+      "recognition": "TNGGNAG|GTGGNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hso63250IV",
+      "recognition": "AACNNNNNGTT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hso63373III",
+      "recognition": "CGANNNNNRTAY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Hsp92I",
+      "recognition": "GRCGYC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Hsp92II",
+      "recognition": "CATG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HspAI",
+      "recognition": "GCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "HspMHR1II",
+      "recognition": "GAGCAGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Jma19592I",
+      "recognition": "GTATNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Jma19592II",
+      "recognition": "GRGCRAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Jsp2502II",
+      "recognition": "GRNGAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Kas9737III",
+      "recognition": "CCCRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "KasI",
+      "recognition": "GGCGCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "KflI",
+      "recognition": "GGGWCCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Kor51II",
+      "recognition": "RTCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Kpn156V",
+      "recognition": "CRTGATT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Kpn2I",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Kpn327I",
+      "recognition": "GACATC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Kpn9178I",
+      "recognition": "GNGCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Kpn9644II",
+      "recognition": "GRACRAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "KpnI",
+      "recognition": "GGTACC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "KpnNH25III",
+      "recognition": "CTRGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "KpnNIH30III",
+      "recognition": "GTTCNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "KpnNIH50I",
+      "recognition": "GCYAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Kro7512II",
+      "recognition": "ARCAGKC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "KroI",
+      "recognition": "GCCGGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "KroNI",
+      "recognition": "GCCGGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ksp22I",
+      "recognition": "TGATCA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ksp632I",
+      "recognition": "CTCTTC",
+      "fst5": 7,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "KspAI",
+      "recognition": "GTTAAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "KspI",
+      "recognition": "CCGCGG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Kzo9I",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Lba2029III",
+      "recognition": "CYAAANG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lbr124II",
+      "recognition": "CATCNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lcr047I",
+      "recognition": "CTCCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lcr047II",
+      "recognition": "AGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "LcrJM4II",
+      "recognition": "GMAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lde4408II",
+      "recognition": "ACAAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "LguI",
+      "recognition": "GCTCTTC",
+      "fst5": 8,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "LlaG50I",
+      "recognition": "CCGTKA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lme32I",
+      "recognition": "CTYCAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "LmnI",
+      "recognition": "GCTCC",
+      "fst5": 6,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Lmo370I",
+      "recognition": "AGCGCCG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lmo911II",
+      "recognition": "TAGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lpl1004II",
+      "recognition": "AGGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lpn11417II",
+      "recognition": "ACGAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lpn12272I",
+      "recognition": "GCNCAAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "LpnI",
+      "recognition": "RGCGCY",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "LpnPI",
+      "recognition": "CCDG",
+      "fst5": 14,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Lra68I",
+      "recognition": "GTTCNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "LsaDS4I",
+      "recognition": "TGGAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lsp1109I",
+      "recognition": "GCAGC",
+      "fst5": 13,
+      "fst3": 12,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Lsp48III",
+      "recognition": "AGCACC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Lsp6406VI",
+      "recognition": "CRAGCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "LweI",
+      "recognition": "GCATC",
+      "fst5": 10,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MabI",
+      "recognition": "ACCWGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MaeI",
+      "recognition": "CTAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MaeII",
+      "recognition": "ACGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MaeIII",
+      "recognition": "GTNAC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MalI",
+      "recognition": "GATC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MaqI",
+      "recognition": "CRTTGAC",
+      "fst5": 28,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MauBI",
+      "recognition": "CGCGCGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mba11I",
+      "recognition": "AGGCGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MbiI",
+      "recognition": "CCGCTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MboI",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MboII",
+      "recognition": "GAAGA",
+      "fst5": 13,
+      "fst3": 7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "McaTI",
+      "recognition": "GCGCGC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mch10819I",
+      "recognition": "CYCAGCG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Mch946II",
+      "recognition": "WCGATCT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "McrI",
+      "recognition": "CGRYCG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MfeI",
+      "recognition": "CAATTG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MflI",
+      "recognition": "RGATCY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MhlI",
+      "recognition": "GDGCHC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MjaIV",
+      "recognition": "GTNNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MkaDII",
+      "recognition": "GAGAYGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Mla10359I",
+      "recognition": "CGANNNNNNTCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MlsI",
+      "recognition": "TGGCCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mlu211III",
+      "recognition": "AGCCCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MluCI",
+      "recognition": "AATT",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MluI",
+      "recognition": "ACGCGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MluNI",
+      "recognition": "TGGCCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mly113I",
+      "recognition": "GGCGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MlyI",
+      "recognition": "GAGTC",
+      "fst5": 10,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MmeI",
+      "recognition": "TCCRAC",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MnlI",
+      "recognition": "CCTC",
+      "fst5": 11,
+      "fst3": 6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mox20I",
+      "recognition": "TGGCCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mph1103I",
+      "recognition": "ATGCAT",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MreI",
+      "recognition": "CGCCGGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MroI",
+      "recognition": "TCCGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MroNI",
+      "recognition": "GCCGGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MroXI",
+      "recognition": "GAANNNNTTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MscI",
+      "recognition": "TGGCCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MseI",
+      "recognition": "TTAA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MslI",
+      "recognition": "CAYNNNNRTG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Msp20I",
+      "recognition": "TGGCCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspA1I",
+      "recognition": "CMGCKG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspCI",
+      "recognition": "CTTAAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspF392I",
+      "recognition": "CCCAATV",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MspGI",
+      "recognition": "GCCGGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspI",
+      "recognition": "CCGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspI7II",
+      "recognition": "ACGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MspI7IV",
+      "recognition": "GCMGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MspJI",
+      "recognition": "CNNR",
+      "fst5": 13,
+      "fst3": 13,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspR9I",
+      "recognition": "CCNGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MspSC27II",
+      "recognition": "CCGCGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MssI",
+      "recognition": "GTTTAAAC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MstI",
+      "recognition": "TGCGCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MteI",
+      "recognition": "GCGCNGCGC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MtuHN878II",
+      "recognition": "CACGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "MunI",
+      "recognition": "CAATTG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Mva1269I",
+      "recognition": "GAATGC",
+      "fst5": 7,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MvaI",
+      "recognition": "CCWGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MvnI",
+      "recognition": "CGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "MwoI",
+      "recognition": "GCNNNNNNNGC",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NaeI",
+      "recognition": "GCCGGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Nal45188II",
+      "recognition": "ACCAGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Nan12227I",
+      "recognition": "CCANNNNNNTCY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "NarI",
+      "recognition": "GGCGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Nbr128II",
+      "recognition": "ACCGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "NciI",
+      "recognition": "CCSGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NcoI",
+      "recognition": "CCATGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NdeI",
+      "recognition": "CATATG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NdeII",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NgoAVII",
+      "recognition": "GCCGC",
+      "fst5": 12,
+      "fst3": 7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NgoAVIII",
+      "recognition": "GACNNNNNTGA",
+      "fst5": -12,
+      "fst3": -25,
+      "scd5": 24,
+      "scd3": 11,
+      "support": "two-cut"
+    },
+    {
+      "name": "NgoMIV",
+      "recognition": "GCCGGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NhaXI",
+      "recognition": "CAAGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "NheI",
+      "recognition": "GCTAGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NhoI",
+      "recognition": "GCWGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "NlaCI",
+      "recognition": "CATCAC",
+      "fst5": 25,
+      "fst3": 17,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NlaIII",
+      "recognition": "CATG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NlaIV",
+      "recognition": "GGNNCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Nli3877I",
+      "recognition": "CYCGRG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NmeA6CIII",
+      "recognition": "GCCGAC",
+      "fst5": 27,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NmeAIII",
+      "recognition": "GCCGAG",
+      "fst5": 27,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NmeDI",
+      "recognition": "RCCGGY",
+      "fst5": -12,
+      "fst3": -13,
+      "scd5": 13,
+      "scd3": 12,
+      "support": "two-cut"
+    },
+    {
+      "name": "NmuCI",
+      "recognition": "GTSAC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NotI",
+      "recognition": "GCGGCCGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NpeUS61II",
+      "recognition": "GATCGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "NruI",
+      "recognition": "TCGCGA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NsbI",
+      "recognition": "TGCGCA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NsiI",
+      "recognition": "ATGCAT",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NspBII",
+      "recognition": "CMGCKG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NspES21II",
+      "recognition": "CRTTCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "NspI",
+      "recognition": "RCATGY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "NspV",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ObaBS10I",
+      "recognition": "ACGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "OgrI",
+      "recognition": "CAACNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "OliI",
+      "recognition": "CACNNNNGTG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "OspHL35III",
+      "recognition": "YAGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PabI",
+      "recognition": "GTAC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pac19842II",
+      "recognition": "CCTTGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PacI",
+      "recognition": "TTAATTAA",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PacIII",
+      "recognition": "GTAATC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pae10662III",
+      "recognition": "TGACGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pae8506I",
+      "recognition": "CATCGAR",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PaeI",
+      "recognition": "GCATGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PaePA99III",
+      "recognition": "AAGAYC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PaeR7I",
+      "recognition": "CTCGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PagI",
+      "recognition": "TCATGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pal408I",
+      "recognition": "CCRTGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PalAI",
+      "recognition": "GGCGCGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PaqCI",
+      "recognition": "CACCTGC",
+      "fst5": 11,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PasI",
+      "recognition": "CCCWGGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PauI",
+      "recognition": "GCGCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pba2294I",
+      "recognition": "GTAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pbu13063II",
+      "recognition": "GTATYC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PcaII",
+      "recognition": "GACGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PceI",
+      "recognition": "AGGCCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PciI",
+      "recognition": "ACATGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PciSI",
+      "recognition": "GCTCTTC",
+      "fst5": 8,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pcr308II",
+      "recognition": "CCAAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PcsI",
+      "recognition": "WCGNNNNNNNCGW",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PctI",
+      "recognition": "GAATGC",
+      "fst5": 7,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pdi8503III",
+      "recognition": "CCGGNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PdiI",
+      "recognition": "GCCGGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PdmI",
+      "recognition": "GAANNNNTTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pdu1735I",
+      "recognition": "CACCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PenI",
+      "recognition": "GCAGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PfeI",
+      "recognition": "GAWTC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pfl10783II",
+      "recognition": "GCGTCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pfl1108I",
+      "recognition": "TCGTAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pfl23II",
+      "recognition": "CGTACG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pfl3756II",
+      "recognition": "CCCTNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pfl8569I",
+      "recognition": "GCNNGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PflFI",
+      "recognition": "GACNNNGTC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PflMI",
+      "recognition": "CCANNNNNTGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PflPt14I",
+      "recognition": "RGCCCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PfoI",
+      "recognition": "TCCNGGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PfrJS12IV",
+      "recognition": "TANAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PfrJS12V",
+      "recognition": "GGCGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PfrJS15III",
+      "recognition": "CTTCNAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PgaP73III",
+      "recognition": "TTCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pin17FIII",
+      "recognition": "GGYGAB",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PinAI",
+      "recognition": "ACCGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PinP23II",
+      "recognition": "CTRKCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PinP59III",
+      "recognition": "GAAGNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PkrI",
+      "recognition": "GCNGC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PlaDI",
+      "recognition": "CATCAG",
+      "fst5": 27,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ple19I",
+      "recognition": "CGATCG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PleI",
+      "recognition": "GAGTC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PliMI",
+      "recognition": "CGCCGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PluTI",
+      "recognition": "GGCGCC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PmaCI",
+      "recognition": "CACGTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pme10899I",
+      "recognition": "GACAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PmeI",
+      "recognition": "GTTTAAAC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PmlI",
+      "recognition": "CACGTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PpiI",
+      "recognition": "GAACNNNNNCTC",
+      "fst5": -7,
+      "fst3": -24,
+      "scd5": 25,
+      "scd3": 8,
+      "support": "two-cut"
+    },
+    {
+      "name": "PpiP13II",
+      "recognition": "CGCRGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PpsI",
+      "recognition": "GAGTC",
+      "fst5": 9,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ppu10I",
+      "recognition": "ATGCAT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ppu21I",
+      "recognition": "YACGTR",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PpuMI",
+      "recognition": "RGGWCCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pru8113I",
+      "recognition": "CAGANGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PscI",
+      "recognition": "ACATGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pse18267I",
+      "recognition": "RCCGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PshAI",
+      "recognition": "GACNNNNGTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PshBI",
+      "recognition": "ATTAAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PsiI",
+      "recognition": "TTATAA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Psp0357II",
+      "recognition": "GCGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Psp03I",
+      "recognition": "GGWCC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Psp124BI",
+      "recognition": "GAGCTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Psp1406I",
+      "recognition": "AACGTT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Psp5II",
+      "recognition": "RGGWCCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Psp6I",
+      "recognition": "CCWGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspAT13III",
+      "recognition": "CCGANAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PspCI",
+      "recognition": "CACGTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspD7DII",
+      "recognition": "CCGCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PspEI",
+      "recognition": "GGTNACC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspFI",
+      "recognition": "CCCAGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspGI",
+      "recognition": "CCWGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspLI",
+      "recognition": "CGTACG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspMR102II",
+      "recognition": "CAAGAAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PspN4I",
+      "recognition": "GGNNCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspOMI",
+      "recognition": "GGGCCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspOMII",
+      "recognition": "CGCCCAR",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspPI",
+      "recognition": "GGNCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspPPI",
+      "recognition": "RGGWCCY",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspPRI",
+      "recognition": "CCYCAG",
+      "fst5": 21,
+      "fst3": 13,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PspR84I",
+      "recognition": "TACYCAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PspXI",
+      "recognition": "VCTCGAGB",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PsrI",
+      "recognition": "GAACNNNNNNTAC",
+      "fst5": -7,
+      "fst3": -25,
+      "scd5": 25,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "PssI",
+      "recognition": "RGGNCCY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Pst14472I",
+      "recognition": "CNYACAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pst145I",
+      "recognition": "CTAMRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Pst273I",
+      "recognition": "GATCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PstI",
+      "recognition": "CTGCAG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PstNI",
+      "recognition": "CAGNNNCTG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PsuGI",
+      "recognition": "BBCGD",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "PsuI",
+      "recognition": "RGATCY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PsyI",
+      "recognition": "GACNNNGTC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PteI",
+      "recognition": "GCGCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PvuI",
+      "recognition": "CGATCG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "PvuII",
+      "recognition": "CAGCTG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ran11014IV",
+      "recognition": "GAAAGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Rba2021I",
+      "recognition": "CACGAGH",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RceI",
+      "recognition": "CATCGAC",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RdeGBI",
+      "recognition": "CCGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RdeGBII",
+      "recognition": "ACCCAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RdeGBIII",
+      "recognition": "TGRYCA",
+      "fst5": -9,
+      "fst3": -17,
+      "scd5": 17,
+      "scd3": 9,
+      "support": "two-cut"
+    },
+    {
+      "name": "Rer8036II",
+      "recognition": "CCGAKGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RflFIII",
+      "recognition": "CGCCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RgaI",
+      "recognition": "GCGATCGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Rgo13296IV",
+      "recognition": "GRAAGCG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Rho5650I",
+      "recognition": "AACGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RigI",
+      "recognition": "GGCCGGCC",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Rkr11038I",
+      "recognition": "GGANNNNNRTGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RlaI",
+      "recognition": "VCW",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RlaII",
+      "recognition": "ACACAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RleAI",
+      "recognition": "CCCACA",
+      "fst5": 18,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Rmu369III",
+      "recognition": "GGCYAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RpaB5I",
+      "recognition": "CGRGGAC",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RpaBI",
+      "recognition": "CCCGCAG",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RpaI",
+      "recognition": "GTYGGAG",
+      "fst5": 18,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RpaTI",
+      "recognition": "GRTGGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RruI",
+      "recognition": "TCGCGA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RsaI",
+      "recognition": "GTAC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RsaNI",
+      "recognition": "GTAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RseI",
+      "recognition": "CAYNNNNRTG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Rsp008IV",
+      "recognition": "ACGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Rsp008V",
+      "recognition": "GCCCAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Rsp531II",
+      "recognition": "CACACG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "RspPBTS2III",
+      "recognition": "CTTCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Rsr2I",
+      "recognition": "CGGWCCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "RsrII",
+      "recognition": "CGGWCCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Rtr1953I",
+      "recognition": "TGANNNNNNTGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SacI",
+      "recognition": "GAGCTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SacII",
+      "recognition": "CCGCGG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Saf8902III",
+      "recognition": "CAATNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sag901I",
+      "recognition": "GCAAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SalI",
+      "recognition": "GTCGAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SanDI",
+      "recognition": "GGGWCCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SapI",
+      "recognition": "GCTCTTC",
+      "fst5": 8,
+      "fst3": 4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SaqAI",
+      "recognition": "TTAA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SatI",
+      "recognition": "GCNGC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sau1803III",
+      "recognition": "CGANNNNNNTAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sau3AI",
+      "recognition": "GATC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sau5656II",
+      "recognition": "GTTGCA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sau64037IV",
+      "recognition": "GTANNNNNNTGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sau96I",
+      "recognition": "GGNCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SauI",
+      "recognition": "CCTNAGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SauMJ015III",
+      "recognition": "GARCNAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sba460II",
+      "recognition": "GGNGAYG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SbfI",
+      "recognition": "CCTGCAGG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sbo46I",
+      "recognition": "TGAAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ScaI",
+      "recognition": "AGTACT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SchI",
+      "recognition": "GAGTC",
+      "fst5": 10,
+      "fst3": 5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SciI",
+      "recognition": "CTCGAG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ScoDS2II",
+      "recognition": "GCTAAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ScrFI",
+      "recognition": "CCNGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SdaI",
+      "recognition": "CCTGCAGG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SdeAI",
+      "recognition": "CAGRAG",
+      "fst5": 27,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SdeOSI",
+      "recognition": "GACNNNNRTGA",
+      "fst5": -11,
+      "fst3": -24,
+      "scd5": 23,
+      "scd3": 10,
+      "support": "two-cut"
+    },
+    {
+      "name": "SduI",
+      "recognition": "GDGCHC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sdy5370I",
+      "recognition": "CACNNNNNTCY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sdy7136I",
+      "recognition": "GAGNNNNNTAA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sdy9603I",
+      "recognition": "GCANNNNNNNTGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SecI",
+      "recognition": "CCNNGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SelI",
+      "recognition": "CGCG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sen17963III",
+      "recognition": "CCAAAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sen5794III",
+      "recognition": "ACGAACB",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sen6480IV",
+      "recognition": "GTTCAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SenA1673III",
+      "recognition": "GNGGCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SenSARA26III",
+      "recognition": "ACRCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SenTFIV",
+      "recognition": "GATCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sep11964I",
+      "recognition": "CGYCAT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Seq11824I",
+      "recognition": "CTANNNNNCTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SetI",
+      "recognition": "ASST",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SexAI",
+      "recognition": "ACCWGGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SfaAI",
+      "recognition": "GCGATCGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SfaNI",
+      "recognition": "GCATC",
+      "fst5": 10,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SfcI",
+      "recognition": "CTRYAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SfeI",
+      "recognition": "CTRYAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SfiI",
+      "recognition": "GGCCNNNNNGGCC",
+      "fst5": 8,
+      "fst3": -8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sfl13829III",
+      "recognition": "GNYCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SfoI",
+      "recognition": "GGCGCC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sfr274I",
+      "recognition": "CTCGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sfr303I",
+      "recognition": "CCGCGG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SfuI",
+      "recognition": "TTCGAA",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SgeI",
+      "recognition": "CNNG",
+      "fst5": 13,
+      "fst3": 13,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SgfI",
+      "recognition": "GCGATCGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sgr7807I",
+      "recognition": "GCCGAGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SgrAI",
+      "recognition": "CRCCGGYG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SgrAII",
+      "recognition": "CGAGATC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SgrBI",
+      "recognition": "CCGCGG",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SgrDI",
+      "recognition": "CGTCGACG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SgrTI",
+      "recognition": "CCDS",
+      "fst5": 14,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SgsI",
+      "recognition": "GGCGCGCC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SimI",
+      "recognition": "GGGTC",
+      "fst5": 2,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SinI",
+      "recognition": "GGWCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SlaI",
+      "recognition": "CTCGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sma10259II",
+      "recognition": "CAAAGA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sma325I",
+      "recognition": "ARCCCT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SmaI",
+      "recognition": "CCCGGG",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SmaUMH5I",
+      "recognition": "CTTGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SmaUMH8I",
+      "recognition": "GCGAACB",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SmiI",
+      "recognition": "ATTTAAAT",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SmiMI",
+      "recognition": "CAYNNNNRTG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SmlI",
+      "recognition": "CTYRAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SmoI",
+      "recognition": "CTYRAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sna507VIII",
+      "recognition": "CRTTGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SnaBI",
+      "recognition": "TACGTA",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SnaI",
+      "recognition": "GTATAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sno506I",
+      "recognition": "GGCCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Spe19205IV",
+      "recognition": "GGACY",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SpeI",
+      "recognition": "ACTAGT",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SphI",
+      "recognition": "GCATGC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SplI",
+      "recognition": "CGTACG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SpnRII",
+      "recognition": "TCGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SpoDI",
+      "recognition": "GCGGRAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SrfI",
+      "recognition": "GCCCGGGC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sse232I",
+      "recognition": "CGCCGGCG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sse8387I",
+      "recognition": "CCTGCAGG",
+      "fst5": 6,
+      "fst3": -6,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sse8647I",
+      "recognition": "AGGWCCT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sse9I",
+      "recognition": "AATT",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SseBI",
+      "recognition": "AGGCCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SsiI",
+      "recognition": "CCGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Ssp6803IV",
+      "recognition": "GAAGGC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Ssp714II",
+      "recognition": "CGCAGCG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SspD5I",
+      "recognition": "GGTGA",
+      "fst5": 13,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SspDI",
+      "recognition": "GGCGCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SspI",
+      "recognition": "AATATT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SspJOR1II",
+      "recognition": "AGCGANC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SspMI",
+      "recognition": "CTAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SstE37I",
+      "recognition": "CGAAGAC",
+      "fst5": 27,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SstI",
+      "recognition": "GAGCTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sth132I",
+      "recognition": "CCCG",
+      "fst5": 8,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sth20745III",
+      "recognition": "GGACGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Sth302II",
+      "recognition": "CCGG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SthSt3II",
+      "recognition": "GAAGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "StsI",
+      "recognition": "GGATG",
+      "fst5": 15,
+      "fst3": 14,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "StuI",
+      "recognition": "AGGCCT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "StyD4I",
+      "recognition": "CCNGG",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "StyI",
+      "recognition": "CCWWGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "SurP32aII",
+      "recognition": "ACRGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "SwaI",
+      "recognition": "ATTTAAAT",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Sxy1780I",
+      "recognition": "GGGTNA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "TaaI",
+      "recognition": "ACNGT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TagI",
+      "recognition": "ACGT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TaiI",
+      "recognition": "ACGT",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TaqI",
+      "recognition": "TCGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TaqII",
+      "recognition": "GACCGA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TaqIII",
+      "recognition": "CACCCA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TasI",
+      "recognition": "AATT",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TatI",
+      "recognition": "WGTACW",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TauI",
+      "recognition": "GCSGC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TfiI",
+      "recognition": "GAWTC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TkoI",
+      "recognition": "GTGAAG",
+      "fst5": 26,
+      "fst3": 18,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TkoII",
+      "recognition": "TTCAAG",
+      "fst5": 16,
+      "fst3": 8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TpyTP2I",
+      "recognition": "ACCAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Tru1I",
+      "recognition": "TTAA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Tru9I",
+      "recognition": "TTAA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TscAI",
+      "recognition": "CASTG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TseFI",
+      "recognition": "GTSAC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TseI",
+      "recognition": "GCWGC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TsoI",
+      "recognition": "TARCCA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Tsp45I",
+      "recognition": "GTSAC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Tsp4CI",
+      "recognition": "ACNGT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TspARh3I",
+      "recognition": "GRACGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "TspDTI",
+      "recognition": "ATGAA",
+      "fst5": 16,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TspEI",
+      "recognition": "AATT",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TspGWI",
+      "recognition": "ACGGA",
+      "fst5": 16,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TspMI",
+      "recognition": "CCCGGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TspRI",
+      "recognition": "CASTG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "TssI",
+      "recognition": "GAGNNNCTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "TstI",
+      "recognition": "CACNNNNNNTCC",
+      "fst5": -8,
+      "fst3": -25,
+      "scd5": 24,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "TsuI",
+      "recognition": "GCGAC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Tth111I",
+      "recognition": "GACNNNGTC",
+      "fst5": 4,
+      "fst3": -4,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Tth111II",
+      "recognition": "CAARCA",
+      "fst5": 17,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "UbaF11I",
+      "recognition": "TCGTA",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "UbaF12I",
+      "recognition": "CTACNNNGTC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "UbaF13I",
+      "recognition": "GAGNNNNNNCTGG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "UbaF14I",
+      "recognition": "CCANNNNNTCG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "UbaF9I",
+      "recognition": "TACNNNNNRTGT",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "UbaPI",
+      "recognition": "CGAACG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "UcoMSI",
+      "recognition": "GAGCTC",
+      "fst5": -7,
+      "fst3": -11,
+      "scd5": 11,
+      "scd3": 7,
+      "support": "two-cut"
+    },
+    {
+      "name": "UnbI",
+      "recognition": "GGNCC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "UpaP162I",
+      "recognition": "CATG",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Van9116I",
+      "recognition": "CCKAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Van91I",
+      "recognition": "CCANNNNNTGG",
+      "fst5": 7,
+      "fst3": -7,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "VchE4II",
+      "recognition": "RTAAAYG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Vdi96II",
+      "recognition": "GNCYTAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Vha464I",
+      "recognition": "CTTAAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "VneI",
+      "recognition": "GTGCAC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "VpaK11AI",
+      "recognition": "GGWCC",
+      "fst5": 0,
+      "fst3": 0,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "VpaK11BI",
+      "recognition": "GGWCC",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "VpaSKIII",
+      "recognition": "CGTCAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "VspI",
+      "recognition": "ATTAAT",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Vtu19109I",
+      "recognition": "CACRAYC",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "WviI",
+      "recognition": "CACRAG",
+      "fst5": 27,
+      "fst3": 19,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XagI",
+      "recognition": "CCTNNNNNAGG",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XapI",
+      "recognition": "RAATTY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XbaI",
+      "recognition": "TCTAGA",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Xca85IV",
+      "recognition": "TACGAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "XceI",
+      "recognition": "RCATGY",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XcmI",
+      "recognition": "CCANNNNNNNNNTGG",
+      "fst5": 8,
+      "fst3": -8,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XhoI",
+      "recognition": "CTCGAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XhoII",
+      "recognition": "RGATCY",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XmaI",
+      "recognition": "CCCGGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XmaIII",
+      "recognition": "CGGCCG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XmaJI",
+      "recognition": "CCTAGG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XmiI",
+      "recognition": "GTMKAC",
+      "fst5": 2,
+      "fst3": -2,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XmnI",
+      "recognition": "GAANNNNTTC",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "XspI",
+      "recognition": "CTAG",
+      "fst5": 1,
+      "fst3": -1,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "YkrI",
+      "recognition": "C",
+      "fst5": 11,
+      "fst3": 9,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Yps3606I",
+      "recognition": "CGGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "Yru12986I",
+      "recognition": "AGGAAG",
+      "fst5": null,
+      "fst3": null,
+      "scd5": null,
+      "scd3": null,
+      "support": "unknown"
+    },
+    {
+      "name": "ZraI",
+      "recognition": "GACGTC",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "ZrmI",
+      "recognition": "AGTACT",
+      "fst5": 3,
+      "fst3": -3,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    },
+    {
+      "name": "Zsp2I",
+      "recognition": "ATGCAT",
+      "fst5": 5,
+      "fst3": -5,
+      "scd5": null,
+      "scd3": null,
+      "support": "single"
+    }
+  ]
+}
