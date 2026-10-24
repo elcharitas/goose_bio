@@ -1,0 +1,6 @@
+c_sources = ["native/hts_adapter.c", "native/fastx_adapter.c"];
+c_include = [".tools/htslib-1.21"];
+c_libs = ["hts", "z", "pthread", "m"];
+main_thread_only = true;
+
+exclude = [".tools", "net", "index"];
