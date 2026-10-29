@@ -1,0 +1,4 @@
+c_sources = ["index_adapter.c"];
+c_libs = ["sqlite3"];
+main_thread_only = true;
+exclude = ["tests"];
