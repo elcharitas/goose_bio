@@ -1,0 +1,553 @@
+{
+  "generator_sha256": "6c0ec3dcb81947fbec0a8443660d49bda3a2af7937bb8d9efdf9e07ceab36ee1",
+  "precision": 1100,
+  "input": "exact binary64 via Decimal.from_float",
+  "cases": [
+    {
+      "gx": "-1e-20",
+      "gy": "-46.74484904044086",
+      "valid": true,
+      "log_complement": "-46.744849040440855"
+    },
+    {
+      "gx": "-0.69",
+      "gy": "-0.696304297144057",
+      "valid": true,
+      "log_complement": "-36.64656967355463"
+    },
+    {
+      "gx": "-0.696304297144057",
+      "gy": "-0.69",
+      "valid": true,
+      "log_complement": "-36.64656967355463"
+    },
+    {
+      "gx": "-0.69",
+      "gy": "-0.6963042971440568",
+      "valid": true,
+      "log_complement": "-37.25431011023126"
+    },
+    {
+      "gx": "-0.6963042971440568",
+      "gy": "-0.69",
+      "valid": true,
+      "log_complement": "-37.25431011023126"
+    },
+    {
+      "gx": "-0.69",
+      "gy": "-0.6963042971440567",
+      "valid": true,
+      "log_complement": "-39.06389260353963"
+    },
+    {
+      "gx": "-0.6963042971440567",
+      "gy": "-0.69",
+      "valid": true,
+      "log_complement": "-39.06389260353963"
+    },
+    {
+      "gx": "-0.69",
+      "gy": "-0.6963042971440566",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.6963042971440566",
+      "gy": "-0.69",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.69",
+      "gy": "-0.6963042971440565",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.6963042971440565",
+      "gy": "-0.69",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.5",
+      "gy": "-0.9327521295671888",
+      "valid": true,
+      "log_complement": "-37.03490311552361"
+    },
+    {
+      "gx": "-0.9327521295671888",
+      "gy": "-0.5",
+      "valid": true,
+      "log_complement": "-37.03490311552361"
+    },
+    {
+      "gx": "-0.5",
+      "gy": "-0.9327521295671887",
+      "valid": true,
+      "log_complement": "-37.79018364557589"
+    },
+    {
+      "gx": "-0.9327521295671887",
+      "gy": "-0.5",
+      "valid": true,
+      "log_complement": "-37.79018364557589"
+    },
+    {
+      "gx": "-0.5",
+      "gy": "-0.9327521295671886",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.9327521295671886",
+      "gy": "-0.5",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.5",
+      "gy": "-0.9327521295671884",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.9327521295671884",
+      "gy": "-0.5",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.5",
+      "gy": "-0.9327521295671883",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-0.9327521295671883",
+      "gy": "-0.5",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-05",
+      "gy": "-11.512930464966065",
+      "valid": true,
+      "log_complement": "-44.96114392682663"
+    },
+    {
+      "gx": "-11.512930464966065",
+      "gy": "-1e-05",
+      "valid": true,
+      "log_complement": "-44.96114392682663"
+    },
+    {
+      "gx": "-1e-05",
+      "gy": "-11.512930464966063",
+      "valid": true,
+      "log_complement": "-45.86972534281387"
+    },
+    {
+      "gx": "-11.512930464966063",
+      "gy": "-1e-05",
+      "valid": true,
+      "log_complement": "-45.86972534281387"
+    },
+    {
+      "gx": "-1e-05",
+      "gy": "-11.512930464966061",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-11.512930464966061",
+      "gy": "-1e-05",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-05",
+      "gy": "-11.51293046496606",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-11.51293046496606",
+      "gy": "-1e-05",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-05",
+      "gy": "-11.512930464966058",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-11.512930464966058",
+      "gy": "-1e-05",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-20",
+      "gy": "-46.05170185988093",
+      "valid": true,
+      "log_complement": "-77.88611472414065"
+    },
+    {
+      "gx": "-46.05170185988093",
+      "gy": "-1e-20",
+      "valid": true,
+      "log_complement": "-77.88611472414065"
+    },
+    {
+      "gx": "-1e-20",
+      "gy": "-46.05170185988092",
+      "valid": true,
+      "log_complement": "-78.53131921991175"
+    },
+    {
+      "gx": "-46.05170185988092",
+      "gy": "-1e-20",
+      "valid": true,
+      "log_complement": "-78.53131921991175"
+    },
+    {
+      "gx": "-1e-20",
+      "gy": "-46.051701859880914",
+      "valid": true,
+      "log_complement": "-80.89979666114358"
+    },
+    {
+      "gx": "-46.051701859880914",
+      "gy": "-1e-20",
+      "valid": true,
+      "log_complement": "-80.89979666114358"
+    },
+    {
+      "gx": "-1e-20",
+      "gy": "-46.05170185988091",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-46.05170185988091",
+      "gy": "-1e-20",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-20",
+      "gy": "-46.0517018598809",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-46.0517018598809",
+      "gy": "-1e-20",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-100",
+      "gy": "-230.25850929940464",
+      "valid": true,
+      "log_complement": "-260.5790606944241"
+    },
+    {
+      "gx": "-230.25850929940464",
+      "gy": "-1e-100",
+      "valid": true,
+      "log_complement": "-260.5790606944241"
+    },
+    {
+      "gx": "-1e-100",
+      "gy": "-230.2585092994046",
+      "valid": true,
+      "log_complement": "-261.1212097938034"
+    },
+    {
+      "gx": "-230.2585092994046",
+      "gy": "-1e-100",
+      "valid": true,
+      "log_complement": "-261.1212097938034"
+    },
+    {
+      "gx": "-1e-100",
+      "gy": "-230.25850929940458",
+      "valid": true,
+      "log_complement": "-262.39309996641447"
+    },
+    {
+      "gx": "-230.25850929940458",
+      "gy": "-1e-100",
+      "valid": true,
+      "log_complement": "-262.39309996641447"
+    },
+    {
+      "gx": "-1e-100",
+      "gy": "-230.25850929940455",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-230.25850929940455",
+      "gy": "-1e-100",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-100",
+      "gy": "-230.25850929940452",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-230.25850929940452",
+      "gy": "-1e-100",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-300",
+      "gy": "-690.7755278982139",
+      "valid": true,
+      "log_complement": "-719.9976383987819"
+    },
+    {
+      "gx": "-690.7755278982139",
+      "gy": "-1e-300",
+      "valid": true,
+      "log_complement": "-719.9976383987819"
+    },
+    {
+      "gx": "-1e-300",
+      "gy": "-690.7755278982138",
+      "valid": true,
+      "log_complement": "-720.8143086229276"
+    },
+    {
+      "gx": "-690.7755278982138",
+      "gy": "-1e-300",
+      "valid": true,
+      "log_complement": "-720.8143086229276"
+    },
+    {
+      "gx": "-1e-300",
+      "gy": "-690.7755278982137",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-690.7755278982137",
+      "gy": "-1e-300",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-300",
+      "gy": "-690.7755278982136",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-690.7755278982136",
+      "gy": "-1e-300",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-300",
+      "gy": "-690.7755278982135",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-690.7755278982135",
+      "gy": "-1e-300",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-320",
+      "gy": "-736.8272408909742",
+      "valid": true,
+      "log_complement": "-765.8017427424875"
+    },
+    {
+      "gx": "-736.8272408909742",
+      "gy": "-1e-320",
+      "valid": true,
+      "log_complement": "-765.8017427424875"
+    },
+    {
+      "gx": "-1e-320",
+      "gy": "-736.827240890974",
+      "valid": true,
+      "log_complement": "-766.3738922567085"
+    },
+    {
+      "gx": "-736.827240890974",
+      "gy": "-1e-320",
+      "valid": true,
+      "log_complement": "-766.3738922567085"
+    },
+    {
+      "gx": "-1e-320",
+      "gy": "-736.8272408909739",
+      "valid": true,
+      "log_complement": "-767.8526179856162"
+    },
+    {
+      "gx": "-736.8272408909739",
+      "gy": "-1e-320",
+      "valid": true,
+      "log_complement": "-767.8526179856162"
+    },
+    {
+      "gx": "-1e-320",
+      "gy": "-736.8272408909738",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-736.8272408909738",
+      "gy": "-1e-320",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-1e-320",
+      "gy": "-736.8272408909737",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-736.8272408909737",
+      "gy": "-1e-320",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-5e-324",
+      "gy": "-744.4400719213814",
+      "valid": true,
+      "log_complement": "-773.7685470201743"
+    },
+    {
+      "gx": "-744.4400719213814",
+      "gy": "-5e-324",
+      "valid": true,
+      "log_complement": "-773.7685470201743"
+    },
+    {
+      "gx": "-5e-324",
+      "gy": "-744.4400719213813",
+      "valid": true,
+      "log_complement": "-774.7380627991926"
+    },
+    {
+      "gx": "-744.4400719213813",
+      "gy": "-5e-324",
+      "valid": true,
+      "log_complement": "-774.7380627991926"
+    },
+    {
+      "gx": "-5e-324",
+      "gy": "-744.4400719213812",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-744.4400719213812",
+      "gy": "-5e-324",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-5e-324",
+      "gy": "-744.4400719213811",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-744.4400719213811",
+      "gy": "-5e-324",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-5e-324",
+      "gy": "-744.440071921381",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-744.440071921381",
+      "gy": "-5e-324",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "0.0",
+      "gy": "-inf",
+      "valid": true,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-inf",
+      "gy": "0.0",
+      "valid": true,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-inf",
+      "gy": "-inf",
+      "valid": true,
+      "log_complement": "0.0"
+    },
+    {
+      "gx": "0.0",
+      "gy": "-1000.0",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "0.0",
+      "gy": "-5e-324",
+      "valid": false,
+      "log_complement": "-inf"
+    },
+    {
+      "gx": "-5e-324",
+      "gy": "-1000.0",
+      "valid": true,
+      "log_complement": "-744.4400719213812"
+    },
+    {
+      "gx": "-1e+300",
+      "gy": "-1e+300",
+      "valid": true,
+      "log_complement": "0.0"
+    },
+    {
+      "gx": "-1e-20",
+      "gy": "-inf",
+      "valid": true,
+      "log_complement": "-46.051701859880914"
+    },
+    {
+      "gx": "-1e-300",
+      "gy": "-inf",
+      "valid": true,
+      "log_complement": "-690.7755278982137"
+    },
+    {
+      "gx": "-0.7",
+      "gy": "-0.7",
+      "valid": true,
+      "log_complement": "-4.986519567309444"
+    }
+  ]
+}

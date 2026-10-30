@@ -1,0 +1,101 @@
+import hts from "..";
+import bio from "..";
+
+import bio.hts;
+fn main() {
+    let header = "@SQ\tSN:chr1\tLN:100\n";
+    let w = bio::hts_open(".tools/typed.bam", "wb", false, header, "");
+    assert(w > 0);
+    assert(bio::hts_write(w, "r\t0\tchr1\t1\t60\t2M1I1M1D1M2N1M\t*\t0\t0\tACGTAC\tIIIIII\tNM:i:1\tZZ:Z:old") == 0);
+    assert(bio::hts_close(w) == 0);
+    let r = bio::hts_open(".tools/typed.bam", "r", false, "", "");
+    assert(bio::hts_next(r) == 1);
+    assert(bio::bam_aux_int(r, "NM", 0) == 1);
+    assert(bio::bam_aux_set_int(r, "NM", 42) == 0);
+    assert(bio::bam_aux_set_float(r, "ZF", 1.25) == 0);
+    assert(bio::bam_aux_set_string(r, "ZZ", "new") == 0);
+    let a: i32[3] = [7, -8, 9];
+    assert(bio::bam_aux_set_int_array(r, "XA", a) == 0);
+    assert(bio::bam_aux_count(r, "XA") == 3);
+    assert(bio::bam_aux_int(r, "XA", 1) == -8);
+    var seq: u8[>..] = [];
+    assert(bio::bam_sequence(r, seq) == 0);
+    assert(seq[..] == "ACGTAC");
+    var qual: u8[>..] = [];
+    assert(bio::bam_quality(r, qual) == 0);
+    assert(qual.len == 6 && qual[0] == 40);
+    assert(bio::bam_cigar(r, 0) == 32);
+    assert(bio::bam_set_sequence(r, "TGCAAA") == 0);
+    assert(bio::bam_set_sequence(r, "bad") == -1);
+    let q: u8[6] = [1, 2, 3, 4, 5, 6];
+    assert(bio::bam_set_quality(r, q) == 0);
+    let d = bio::hts_open(".tools/mutated.bam", "wb", false, header, "");
+    assert(bio::hts_copy_record(r, d) == 0);
+    assert(bio::hts_close(d) == 0);
+    assert(bio::hts_close(r) == 0);
+    assert(bio::bam_aux_type(r, "NM") == -1);
+    let m = bio::hts_open(".tools/mutated.bam", "r", false, "", "");
+    assert(bio::hts_next(m) == 1);
+    var mutated_seq: u8[>..] = []; var mutated_q: u8[>..] = [];
+    assert(bio::bam_sequence(m, mutated_seq) == 0 && mutated_seq[..] == "TGCAAA");
+    assert(bio::bam_quality(m, mutated_q) == 0 && mutated_q[5] == 6);
+    assert(bio::bam_aux_int(m, "NM", 0) == 42);
+    assert(bio::bam_aux_float(m, "ZF", 0) == 1.25);
+    var str: u8[>..] = [];
+    assert(bio::bam_aux_string(m, "ZZ", str) == 0 && str[..] == "new");
+    assert(bio::bam_aux_delete(m, "ZZ") == 0);
+    assert(bio::bam_aux_type(m, "ZZ") == -1);
+    assert(bio::hts_close(m) == 0);
+    let p = bio::hts_open(".tools/typed.bam", "r", false, "", "");
+    var insertion = false; var deletion = false; var skip = false;
+    while bio::pileup_next(p) == 1 {
+        if bio::pileup_field(p, 0, 4) == 1 { insertion = true; }
+        if bio::pileup_field(p, 0, 5) == 1 { deletion = true; }
+        if bio::pileup_field(p, 0, 6) == 1 { skip = true; }
+    }
+    assert(insertion && deletion && skip);
+    assert(bio::hts_close(p) == 0);
+    let vh = "##fileformat=VCFv4.3\n##contig=<ID=chr1,length=100>\n##INFO=<ID=DP,Number=1,Type=Integer,Description=\"Depth\">\n##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">\n##FORMAT=<ID=AD,Number=R,Type=Integer,Description=\"Depths\">\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\ta\tb\n";
+    let vw = bio::hts_open(".tools/typed.bcf", "wb", true, vh, "");
+    assert(vw > 0);
+    assert(bio::hts_write(vw, "chr1\t1\t.\tA\tC\t.\tPASS\tDP=9\tGT:AD\t0|1:3,6\t.:.,.") == 0);
+    assert(bio::hts_close(vw) == 0);
+    let vr = bio::hts_open(".tools/typed.bcf", "r", true, "", "");
+    assert(bio::hts_next(vr) == 1);
+    assert(bio::bcf_int(vr, "DP", false, 0) == 9);
+    assert(bio::bcf_int_count(vr, "GT", true) == 4);
+    assert(bio::bcf_int(vr, "GT", true, 0) == 2);
+    assert(bio::bcf_int(vr, "GT", true, 1) == 5);
+    assert(bio::bcf_int(vr, "GT", true, 2) == 0);
+    assert(bio::bcf_int(vr, "GT", true, 3) == -2147483647);
+    assert(bio::bcf_int(vr, "AD", true, 2) == -2147483648);
+    let dp: i32[1] = [17];
+    assert(bio::bcf_set_int(vr, "DP", false, dp) == 0);
+    assert(bio::bcf_set_int(vr, "AD", true, dp) == -1);
+    let gt: i32[4] = [4, 5, 0, -2147483647];
+    assert(bio::bcf_set_int(vr, "GT", true, gt) == 0);
+    let vd = bio::hts_open(".tools/mutated.bcf", "wb", true, vh, "");
+    assert(bio::hts_copy_record(vr, vd) == 0);
+    assert(bio::hts_close(vd) == 0 && bio::hts_close(vr) == 0);
+    let vm = bio::hts_open(".tools/mutated.bcf", "r", true, "", "");
+    assert(bio::hts_next(vm) == 1);
+    assert(bio::bcf_int(vm, "DP", false, 0) == 17);
+    assert(bio::bcf_int(vm, "GT", true, 0) == 4);
+    assert(bio::hts_close(vm) == 0);
+    let b = bio::bgzf_open(".tools/typed.bgzf", true);
+    for i in 0..20000 { assert(bio::bgzf_write(b, "ACGT") == 0); }
+    assert(bio::bgzf_close(b) == 0);
+    let br = bio::bgzf_open(".tools/typed.bgzf", false);
+    var bytes: u8[>..] = [];
+    assert(bio::bgzf_read(br, 70001, bytes) == 70001);
+    let offset = bio::bgzf_tell(br);
+    assert(offset > 65536);
+    assert(bio::bgzf_close(br) == 0);
+    assert(bio::bgzf_tell(br) == -1);
+    let reopened = bio::bgzf_open(".tools/typed.bgzf", false);
+    assert(bio::bgzf_seek(reopened, offset) == 0);
+    var tail: u8[>..] = [];
+    assert(bio::bgzf_read(reopened, 4, tail) == 4);
+    assert(tail[..] == "CGTA");
+    assert(bio::bgzf_close(reopened) == 0);
+}

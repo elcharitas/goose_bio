@@ -1,0 +1,55 @@
+// Copyright (c) 2026 Jonathan Irhodia. MIT License.
+import bio from "..";
+import bio.stats.bayesian;
+import bio.stats.fdr;
+import math;
+fn main() {
+ let ids: i64[2] = [9,2]; let dup: i64[2] = [9,9];
+ let p: f64[2] = [log(0.25),log(0.75)]; let l: f64[2] = [-1e16,-1e16];
+ let r = bio::finite_bayes(ids,p,l);
+ assert(abs(r.posterior[0]-0.25)<1e-12 && r.map_id == 2);
+ assert(bio::finite_bayes(dup,p,l).error.len > 0);
+ let empty: f64[0] = []; let noids: i64[0] = [];
+ assert(bio::finite_bayes(noids,empty,empty).error.len > 0);
+ assert(bio::finite_bayes(ids,empty,l).error.len > 0);
+ let bad: f64[2] = [0.0,0.0]; assert(bio::finite_bayes(ids,bad,l).error.len > 0);
+ let nan: f64[2] = [log(-1.0),0.0]; let inf: f64[2] = [-log(0.0),0.0];
+ assert(bio::finite_bayes(ids,p,nan).error.len > 0);
+ assert(bio::finite_bayes(ids,p,inf).error.len > 0);
+ assert(bio::expected_fdr(nan,0.1).error.len > 0);
+ assert(bio::expected_fdr(inf,0.1).error.len > 0);
+ assert(bio::expected_fdr(empty,-0.1).error.len > 0);
+ assert(bio::expected_fdr(empty,log(-1.0)).error.len > 0);
+ assert(bio::expected_fdr(empty,0.1).error.len == 0);
+ let tied: f64[3] = [log(0.1),log(0.5),log(0.5)];
+ let f = bio::expected_fdr(tied,0.31);
+ assert(f.log_fdr[1] != f.log_fdr[2] && f.selected.len == 1);
+ let tiep: f64[2] = [log(0.5),log(0.5)];
+ assert(bio::finite_bayes(ids,tiep,l).map_id == 9);
+ let bigids: i64[2] = [9007199254740992,9007199254740993];
+ assert(bio::finite_bayes(bigids,tiep,l).error.len == 0);
+ var many: f64[>..] = []; var mi: i64[>..] = [];
+ for i in 1000001 { many.push(0.0); mi.push(i); }
+ assert(bio::expected_fdr(many,0.1).error.len > 0);
+ assert(bio::finite_bayes(mi,many,many).error.len > 0);
+ let inside: f64[2] = [log(0.5),log(0.5+4e-13)];
+ let outside: f64[2] = [log(0.5),log(0.5+4e-12)];
+ assert(bio::finite_bayes(ids,inside,l).error.len == 0);
+ let unit: f64[2] = [0.0,0.0];
+ let evidence = bio::finite_bayes(ids,inside,unit);
+ assert(evidence.error.len == 0 && evidence.log_evidence > 0.0);
+ let compatible = bio::bayes_factor(evidence.log_evidence,0.0);
+ assert(compatible.error.len == 0 && compatible.defined && compatible.factor > 1.0);
+ assert(bio::bayes_factor(2e-12,0.0).error.len == 0);
+ assert(bio::bayes_factor(3e-12,0.0).error.len == 0);
+ assert(bio::finite_bayes(ids,outside,l).error.len > 0);
+ assert(bio::bayes_factor(log(-1.0),0.0).error.len > 0);
+ assert(abs(bio::bayes_factor(1.0,0.0).factor-exp(1.0)) < 1e-12);
+ assert(bio::bayes_factor(-log(0.0),0.0).error.len > 0);
+ let zeros: f64[2] = [log(0.0),log(0.0)];
+ assert(bio::expected_fdr(zeros,0.0).selected.len == 2);
+ let small: f64[2] = [log(0.25),log(0.25)];
+ assert(bio::finite_bayes(ids,tiep,small).posterior[0] == 0.5);
+ assert(bio::expected_fdr(many[0..1000000],1.0).selected.len == 1000000);
+ print("Bayesian contracts passed");
+}

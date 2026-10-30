@@ -1,0 +1,9 @@
+[package]
+name = "goose-hmm-estimation-probe"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Jonathan Irhodia"]
+[dependencies]
+bio = '=4.2.2'
+ndarray = '=0.17.2'

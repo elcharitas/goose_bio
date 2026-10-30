@@ -1,0 +1,44 @@
+import bio from "..";
+import bio.sequence.sequence;
+fn main() {
+    assert(bio::complement("acgtryswkmbdhvn").value == "TGCAYRSWMKVHDBN");
+    assert(bio::reverse_complement("AUGCRY", true).value == "RYGCAU");
+    assert(bio::complement("U").error.len > 0);
+    assert(bio::transcribe("aTgN").value == "AUGN");
+    assert(bio::transcribe("AUGN", true).value == "ATGN");
+    assert(bio::translate("ATGTTTTAA").value == "MF*");
+    assert(bio::translate("AUGNNNUGG", true).value == "MXW");
+    assert(bio::translate("AATG", false, 1).value == "M");
+    assert(bio::translate("AT").error.len > 0);
+    assert(bio::translate("ATG", false, -1).error.len > 0);
+    assert(bio::gc_content("GCAN").fraction == 0.5);
+    assert(bio::gc_content("").error.len > 0);
+    let k = bio::kmers("acgta", 3);
+    assert(k.error.len == 0 && k.values.len == 3);
+    var joined: u8[>..] = [];
+    for word in k.values { joined.append(word); }
+    assert(joined == "ACGCGTGTA");
+    assert(bio::kmers("A", 2).values.len == 0);
+    assert(bio::kmers("A", 0).error.len > 0);
+    assert(bio::reverse_complement(bio::reverse_complement("ACGTRYSWKMBDHVN").value).value == "ACGTRYSWKMBDHVN");
+    assert(bio::complement("ACGURYSWKMBDHVN", true).value == "UGCAYRSWMKVHDBN");
+    assert(bio::normalize_sequence("AT U").error.len > 0);
+    assert(bio::translate("AT?", false).error.len > 0);
+    assert(bio::translate("").value.len == 0);
+    assert(bio::translate("TCTCCTACTGCTTATCATCAAAATAAAGATGAATGTTGGCGTGGTTAA").value == "SPTAYHQNKDECWRG*");
+    assert(bio::translate("GCNTARRAYSARWTA").value == "A*BZJ");
+    assert(bio::translate("GCN", false, 0).error.len == 0);
+    assert(bio::translate_with_options("AUGGCNUAR", bio::TranslationOptions { rna: true }).value == "MA*");
+    assert(bio::translate_with_options("ATGA", bio::TranslationOptions { allow_partial: true }).value == "M");
+    assert(bio::translate_with_options("AAA", bio::TranslationOptions { gap: 'A' }).value == "K");
+    assert(bio::translate_with_options("GGA", bio::TranslationOptions { gap: 'G' }).value == "G");
+    let stopped = bio::translate_with_options("TAA???", bio::TranslationOptions { to_stop: true });
+    assert(stopped.error.len == 0 && stopped.value.len == 0);
+    let partial = bio::translate_with_options("ATG?", bio::TranslationOptions { allow_partial: true });
+    assert(partial.error.len == 0 && partial.value == "M");
+    assert(bio::translate("AUG").value == "M");
+    assert(bio::translate("ATU").value == "I");
+    assert(bio::normalize_sequence("AUG").error.len > 0);
+    assert(bio::normalize_sequence("ATU", true).error.len > 0);
+    print("sequence assertions passed");
+}
