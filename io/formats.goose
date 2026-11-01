@@ -8,14 +8,14 @@ struct TextRow { fields: u8[][] }
 struct RowsResult { rows: TextRow[], error: u8[] }
 
 fn format_line(line: u8[:]) -> u8[:] {
-    if line.len > 0 && line[line.len-1] == '\r' { return line[..line.len-1]; }
+    if line.len > 0 && line[line.len - 1] == '\r' { return line[..line.len - 1]; }
     return line;
 }
 
 fn parse_fasta(text: u8[:]) -> RecordsResult {
-    var records: SequenceRecord[>..] = [];
-    var header: u8[>..] = [];
-    var sequence: u8[>..] = [];
+    var records:  SequenceRecord[>..] = [];
+    var header:   u8[>..]             = [];
+    var sequence: u8[>..]             = [];
     var active = false;
     for raw in split(text, '\n') {
         let line = format_line(raw);
@@ -46,10 +46,10 @@ fn parse_fasta(text: u8[:]) -> RecordsResult {
 }
 
 fn parse_fastq(text: u8[:]) -> RecordsResult {
-    var records: SequenceRecord[>..] = [];
-    var header: u8[>..] = [];
-    var sequence: u8[>..] = [];
-    var quality: u8[>..] = [];
+    var records:  SequenceRecord[>..] = [];
+    var header:   u8[>..]             = [];
+    var sequence: u8[>..]             = [];
+    var quality:  u8[>..]             = [];
     var state = 0;
     let lines = split(text, '\n');
     for raw, index in lines {
@@ -102,7 +102,7 @@ fn write_fasta(records: SequenceRecord[:], width: i64 = 80) -> FormatTextResult 
         out.push('>'); out.append(r.header); out.push('\n');
         for c, i in r.sequence {
             out.push(c);
-            if (i+1) % width == 0 || i+1 == r.sequence.len { out.push('\n'); }
+            if (i + 1) % width == 0 || i + 1 == r.sequence.len { out.push('\n'); }
         }
     }
     return FormatTextResult { copy(out), "" };

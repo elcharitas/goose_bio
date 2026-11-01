@@ -16,19 +16,19 @@ struct PosteriorFDR { log_fdr: f64[], selected: i64[], error: u8[] }
 fn expected_fdr(peps: const f64[:], threshold: f64) -> PosteriorFDR {
     if peps.len > 1000000 || is_nan(threshold) || threshold < 0.0 || threshold > 1.0 { return PosteriorFDR { [], [], "invalid bound or threshold" }; }
     for p in peps { if is_nan(p) || p > 0.0 { return PosteriorFDR { [], [], "invalid log PEP" }; } }
-    let order = bayes_order(peps,true);
+    let order = bayes_order(peps, true);
     var values: f64[>..] = []; for p in peps { values.push(0.0); }
     var total = log(0.0);
     for j in peps.len {
-        let i = order[j]; total = bayes_logadd(total,peps[i]);
-        let v = total-log((j+1) as f64);
+        let i = order[j]; total = bayes_logadd(total, peps[i]);
+        let v = total - log((j + 1) as f64);
         values[i] = if v > 0.0 { 0.0 } else { v };
     }
     var selected: i64[>..] = []; var start = 0;
     while start < peps.len {
-        var end = start+1;
+        var end = start + 1;
         while end < peps.len && peps[order[end]] == peps[order[start]] { end += 1; }
-        if values[order[end-1]] <= log(threshold) {
+        if values[order[end - 1]] <= log(threshold) {
             for j in start..end { selected.push(order[j]); }
         }
         start = end;

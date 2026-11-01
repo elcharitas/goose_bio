@@ -7,7 +7,7 @@ import math;
  * infinity, empty arrays, and defined=false without NaN. Check error before use. */
 struct FiniteBayes {
     posterior: f64[], log_posterior: f64[], rank: i64[],
-    map_id: i64, log_evidence: f64, defined: bool, error: u8[]
+    map_id:    i64, log_evidence: f64, defined: bool, error: u8[],
 }
 fn bayes_error(s: const u8[:]) -> FiniteBayes {
     var text: u8[>..] = []; for c in s { text.push(c); }
@@ -23,7 +23,7 @@ fn bayes_logadd(a: f64, b: f64) -> f64 {
     if is_inf(b) { return a; }
     let hi = if a > b { a } else { b };
     let lo = if a > b { b } else { a };
-    return hi + log(1.0+exp(lo-hi));
+    return hi + log(1.0 + exp(lo - hi));
 }
 // Stable bottom-up merge orders keys, retaining input order on ties.
 fn bayes_order(keys: const f64[:], ascending: bool) -> i64[] {
@@ -33,8 +33,8 @@ fn bayes_order(keys: const f64[:], ascending: bool) -> i64[] {
     while width < keys.len {
         var start = 0;
         while start < keys.len {
-            let mid = if start+width < keys.len { start+width } else { keys.len };
-            let end = if mid+width < keys.len { mid+width } else { keys.len };
+            let mid = if start + width < keys.len { start + width } else { keys.len };
+            let end = if mid + width < keys.len { mid + width } else { keys.len };
             var a = start; var b = mid;
             for k in start..end {
                 if a < mid && (b >= end || (if ascending { keys[idx[a]] <= keys[idx[b]] } else { keys[idx[a]] >= keys[idx[b]] })) {
@@ -61,25 +61,25 @@ fn finite_bayes(ids: const i64[:], prior: const f64[:], likelihood: const f64[:]
     // Sort integer IDs separately to avoid f64 identifier collisions.
     var sorted: i64[>..] = []; for id in ids { sorted.push(id); }
     let sorted_copy = bayes_sort_ids(sorted); sorted = copy(sorted_copy);
-    for i in 1..n { if sorted[i] == sorted[i-1] { return bayes_error("duplicate ID"); } }
+    for i in 1..n { if sorted[i] == sorted[i - 1] { return bayes_error("duplicate ID"); } }
     var ps = 0.0; var correction = 0.0; var offset = log(0.0);
     for i in n {
         if is_nan(prior[i]) || prior[i] > 0.0 || is_nan(likelihood[i]) || likelihood[i] > 0.0 { return bayes_error("invalid log probability"); }
-        let term = exp(prior[i])-correction;
-        let next = ps+term; correction = (next-ps)-term; ps = next;
+        let term = exp(prior[i]) - correction;
+        let next = ps + term; correction = (next - ps) - term; ps = next;
         if !is_inf(prior[i]) && likelihood[i] > offset { offset = likelihood[i]; }
     }
-    if abs(ps-1.0) > 1e-12 { return bayes_error("priors do not sum to one"); }
+    if abs(ps - 1.0) > 1e-12 { return bayes_error("priors do not sum to one"); }
     if is_inf(offset) { return FiniteBayes { [], [], [], 0, offset, false, "" }; }
     var weights: f64[>..] = []; var z = log(0.0);
     for i in n {
-        let w = prior[i]+(likelihood[i]-offset);
-        weights.push(w); z = bayes_logadd(z,w);
+        let w = prior[i] + (likelihood[i] - offset);
+        weights.push(w); z = bayes_logadd(z, w);
     }
     var p: f64[>..] = []; var lp: f64[>..] = [];
-    for w in weights { lp.push(w-z); p.push(exp(w-z)); }
-    let order = bayes_order(weights,false);
-    return FiniteBayes { copy(p), copy(lp), order, ids[order[0]], offset+z, true, "" };
+    for w in weights { lp.push(w - z); p.push(exp(w - z)); }
+    let order = bayes_order(weights, false);
+    return FiniteBayes { copy(p), copy(lp), order, ids[order[0]], offset + z, true, "" };
 }
 
 /* Strength codes: 0 none (factor<=1), 1 barely (<=3), 2 positive (<=20), 3 strong (<=150), 4 very
@@ -96,7 +96,7 @@ struct BayesEvidence { factor: f64, log_factor: f64, strength: i64, defined: boo
 fn bayes_factor(a: f64, b: f64) -> BayesEvidence {
     if is_nan(a) || is_nan(b) || (is_inf(a) && a > 0.0) || (is_inf(b) && b > 0.0) { return BayesEvidence { 0.0, 0.0, 0, false, "invalid log evidence" }; }
     if is_inf(a) && is_inf(b) { return BayesEvidence { 0.0, 0.0, 0, false, "" }; }
-    let lf = a-b; let f = exp(lf);
+    let lf = a - b; let f = exp(lf);
     let s = if f <= 1.0 { 0 } else { if f <= 3.0 { 1 } else { if f <= 20.0 { 2 } else { if f <= 150.0 { 3 } else { 4 } } } };
     return BayesEvidence { f, lf, s, true, "" };
 }
@@ -108,8 +108,8 @@ fn bayes_sort_ids(input: const i64[:]) -> i64[>..] {
     while w < a.len {
         var lo = 0;
         while lo < a.len {
-            let mid = if lo+w < a.len { lo+w } else { a.len };
-            let hi = if mid+w < a.len { mid+w } else { a.len };
+            let mid = if lo + w < a.len { lo + w } else { a.len };
+            let hi = if mid + w < a.len { mid + w } else { a.len };
             var x = lo; var y = mid;
             for k in lo..hi {
                 if x < mid && (y >= hi || a[x] <= a[y]) { b[k] = a[x]; x += 1; }

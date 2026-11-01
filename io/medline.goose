@@ -37,7 +37,7 @@ Unicode normalization, file, or network API.
 fn parse_medline(text: u8[:]) -> MedlineResult {
     var records: MedlineRecord[>..] = []; var fields: MedlineField[>..] = [];
     var last = -1;
-    for raw in split(text,'\n') {
+    for raw in split(text, '\n') {
         let line = format_line(raw);
         if line.len == 0 {
             if fields.len > 0 { records.push(medline_finish(fields)); fields.clear(); last = -1; }
@@ -56,13 +56,13 @@ fn parse_medline(text: u8[:]) -> MedlineResult {
         }
         var index = -1;
         for f, i in fields { if f.key == key { index = i; } }
-        if index < 0 { fields.push(MedlineField { copy(key), [], medline_text_key(key) }); index = fields.len-1; }
+        if index < 0 { fields.push(MedlineField { copy(key), [], medline_text_key(key) }); index = fields.len - 1; }
         var updated: MedlineField[>..] = [];
         for f, i in fields {
             if i != index { updated.push(copy(f)); continue; }
             var values: u8[][>..] = [];
             for v, j in f.values {
-                if continuation && (key == "AD" || key == "MH") && j == f.values.len-1 {
+                if continuation && (key == "AD" || key == "MH") && j == f.values.len - 1 {
                     var joined: u8[>..] = []; joined.append(v); joined.push(' '); joined.append(value); values.push(copy(joined));
                 } else { values.push(copy(v)); }
             }
@@ -81,7 +81,7 @@ an error.
 fn read_medline(text: u8[:]) -> MedlineReadResult {
     // Stop at the first record boundary.
     var first: u8[>..] = []; var started = false;
-    for raw in split(text,'\n') {
+    for raw in split(text, '\n') {
         let line = format_line(raw);
         if line.len == 0 { if started { break; } continue; }
         started = true; first.append(line); first.push('\n');
@@ -95,6 +95,6 @@ fn read_medline(text: u8[:]) -> MedlineReadResult {
 
 fn medline_rstrip(value: u8[:]) -> u8[:] {
     var end = value.len;
-    while end > 0 && (value[end-1] == ' ' || value[end-1] == '\t' || value[end-1] == '\r') { end -= 1; }
+    while end > 0 && (value[end - 1] == ' ' || value[end - 1] == '\t' || value[end - 1] == '\r') { end -= 1; }
     return value[..end];
 }

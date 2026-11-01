@@ -25,7 +25,7 @@ fn main() {
         "q\th\t100\t10\t10\t10\t1\t10\t1\t10\t0\t1",
         "q\th\t100.000\t10\t1\t0\t1\t30\t1\t10\t0\t1",
         "q\th\t90.000\t10\t0\t0\t1\t30\t1\t10\t0\t1",
-        "q\th\t100.000\t10\t0\t1\t1\t30\t1\t10\t0\t1"
+        "q\th\t100.000\t10\t0\t1\t1\t30\t1\t10\t0\t1",
     ] { assert(bio::parse_blast_tab(bad).error.len > 0); }
     for sq in ["SQ   Sequence 999 BP;", "SQ   Sequence two BP;", "SQ   Sequence 2 BP", "SQ   broken", "SQ   Sequence BP;", "SQ   Sequence  BP;", "SQ   Sequence 2 BP;\nSQ   Sequence 2 BP;", ""] {
         var bad: u8[>..] = []; bad.append("ID   X; SV 1; linear; genomic DNA; STD; UNC; 2 BP.\n"); bad.append(sq); bad.append("\nac\n//\n");
@@ -38,7 +38,7 @@ fn main() {
     for good in [
         "q\th\t66.7\t3\t1\t0\t1\t9\t1\t3\t0\t1",
         "q\th\t100\t1000000\t1\t0\t1\t3000000\t1\t1000000\t0\t1",
-        "q\th\t80.000\t10\t1\t1\t1\t27\t1\t9\t0\t1"
+        "q\th\t80.000\t10\t1\t1\t1\t27\t1\t9\t0\t1",
     ] { assert(bio::parse_blast_tab(good).error.len == 0); }
     for f in s.alignment.fields { if f.scope == "GS" { assert(f.value == "first  sequence"); } }
     let empty = bio::parse_blast_tab(""); assert(empty.error.len == 0 && empty.queries.len == 0);

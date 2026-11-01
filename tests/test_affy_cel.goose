@@ -11,10 +11,10 @@ fn main() {
         let parsed = bio::parse_affy_cel(input); assert(parsed.error.len == 0);
         assert(parsed.record.mask.len == 1 || parsed.record.modified.len == 1);
     }
-    for value in ["nan","inf","1e309","1e","--1","1x",".","0x10"] { let v,ok = bio::cel_decimal(value); assert(!ok); }
-    for value in ["0","-0.0",".5","1.","1e-300","+1E2"] { let v,ok = bio::cel_decimal(value); assert(ok); }
+    for value in ["nan", "inf", "1e309", "1e", "--1", "1x", ".", "0x10"] { let v, ok = bio::cel_decimal(value); assert(!ok); }
+    for value in ["0", "-0.0", ".5", "1.", "1e-300", "+1E2"] { let v, ok = bio::cel_decimal(value); assert(ok); }
     for bad in ["", "[CEL]\nVersion=3", "[CEL]\nVersion=3\n[HEADER]\nRows=1000000\nCols=1000000\n[INTENSITY]\n", "[CEL]\n[HEADER]\nRows=1\nCols=1\n[INTENSITY]\n"] {
         let result = bio::parse_affy_cel(bad); assert(result.error.len > 0 && result.record.intensities.len == 0);
     }
-    let corner = bio::cel_corner(copy(good.record),"GridCornerUL"); assert(!corner.present);
+    let corner = bio::cel_corner(copy(good.record), "GridCornerUL"); assert(!corner.present);
 }

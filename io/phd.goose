@@ -20,11 +20,11 @@ bases, negative quality, and invalid trim bounds fail. Empty input yields no rec
 parsing buffers bytes without files, encoding conversion, or network access.
 */
 fn parse_phd(text: u8[:]) -> PhdResult {
-    var records: PhdRecord[>..] = []; var name: u8[>..] = [];
+    var records:  PhdRecord[>..]       = []; var name: u8[>..] = [];
     var comments: SpecialistField[>..] = []; var sites: PhdSite[>..] = [];
-    var sequence: u8[>..] = []; var raw: u8[>..] = [];
+    var sequence: u8[>..]              = []; var raw: u8[>..] = [];
     var state = 0; var first = -1; var last = -1;
-    for input in split(text,'\n') {
+    for input in split(text, '\n') {
         let original = format_line(input); let line = trim(original);
         if line.len == 0 { continue; }
         if state == 0 {
@@ -35,7 +35,7 @@ fn parse_phd(text: u8[:]) -> PhdResult {
         } else if state == 2 {
             if line == "END_COMMENT" { state = 3; }
             else {
-                let p = specialist_pair(line,':');
+                let p = specialist_pair(line, ':');
                 if p.error.len > 0 { return PhdResult { [], "invalid PHD comment" }; }
                 if p.field.key == "TRIM" {
                     let tokens = alignment_words(p.field.value); var words: u8[:][>..] = []; for token in tokens.fields { words.push(token); }

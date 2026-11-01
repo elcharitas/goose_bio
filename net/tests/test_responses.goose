@@ -126,15 +126,15 @@ fn main() {
     assert(bio_http::parse_uniprot_entry("{\"primaryAccession\": \"P\", \"uniProtkbId\": \"hello\"}").error.len == 0);
     assert(bio_http::parse_uniprot_entry("{\"primaryAccession\": \"P\", \"uniProtkbId\": 12}").error.len > 0);
     let base = "http://127.0.0.1:18769";
-    let http = bio_http::request("GET", bio_http::join(base,"/json-entrez"));
+    let http = bio_http::request("GET", bio_http::join(base, "/json-entrez"));
     assert(bio_http::entrez_search_response(copy(http)).count.value == 0);
-    let up = bio_http::request("GET", bio_http::join(base,"/json-uniprot"));
+    let up = bio_http::request("GET", bio_http::join(base, "/json-uniprot"));
     assert(bio_http::uniprot_response(copy(up)).entries.len == 1);
     let next = bio_http::request("GET", bio_http::next_link(up.headers));
     assert(bio_http::uniprot_response(copy(next)).entries.len == 0);
-    assert(bio_http::uniprot_response(bio_http::request("GET",bio_http::join(base,"/json-bad"))).error.len > 0);
-    assert(bio_http::uniprot_response(bio_http::request("GET",bio_http::join(base,"/json-error"))).error.len > 0);
-    assert(bio_http::uniprot_response(bio_http::request("GET",bio_http::join(base,"/redirect"))).error.len > 0);
+    assert(bio_http::uniprot_response(bio_http::request("GET", bio_http::join(base, "/json-bad"))).error.len > 0);
+    assert(bio_http::uniprot_response(bio_http::request("GET", bio_http::join(base, "/json-error"))).error.len > 0);
+    assert(bio_http::uniprot_response(bio_http::request("GET", bio_http::join(base, "/redirect"))).error.len > 0);
     let blocked = bio_http::GooseHttpResult { 404, "{", "", "", 0 };
     assert(bio_http::uniprot_response(copy(blocked)).error == "HTTP status is not 200; see HTTP result");
     assert(bio_http::entrez_search_response(copy(blocked)).error == "HTTP status is not 200; see HTTP result");
@@ -145,5 +145,4 @@ fn main() {
     let wrong_count = bio_http::parse_entrez_search("{\"esearchresult\":{\"count\":false,\"retmax\":0,\"retstart\":0,\"idlist\":[]}}");
     let missing_count = bio_http::parse_entrez_search("{\"esearchresult\":{\"retmax\":0,\"retstart\":0,\"idlist\":[]}}");
     assert(null_count.count.state == 1 && wrong_count.count.state == 3 && missing_count.count.state == 0);
-
 }

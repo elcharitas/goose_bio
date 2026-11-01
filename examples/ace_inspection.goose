@@ -6,8 +6,8 @@ fn main() {
     for c in result.assembly.contigs {
         let exported = bio::ace_unpadded_consensus(copy(c));
         print(exported.sequence);
-        assert(exported.qualities == [10,20,30]);
+        assert(exported.qualities == [10, 20, 30]);
         let maps = bio::ace_coordinate_maps(c.consensus);
-        assert(maps.padded_to_unpadded == [1,0,2,3]);
+        assert(maps.padded_to_unpadded == [1, 0, 2, 3]);
     }
 }

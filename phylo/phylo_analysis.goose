@@ -36,8 +36,8 @@ unreachable nodes, and nonfinite present lengths. Existing serialization limits 
 fn tree_analysis(tree: const TreeResult&) -> TreeAnalysis {
     let checked = serialize_newick(tree);
     if checked.error.len > 0 { return TreeAnalysis { [], [], copy(checked.error) }; }
-    var labels: u8[][>..] = []; var masks: u64[>..] = [];
-    var refs: const TreeNode&[>..] = [];
+    var labels: u8[][>..]            = []; var masks: u64[>..] = [];
+    var refs:   const TreeNode&[>..] = [];
     for node in tree.nodes {
         refs.push(node); masks.push(0);
         if node.children.len == 1 {
@@ -127,7 +127,7 @@ fn bootstrap_support(target: const TreeResult&, replicates: const TreeResult&[:]
     }
     for node, i in target.nodes {
         if node.children.len == 0 { counts[i] = -1; }
-        else { counts[i] = 100*counts[i]/replicates.len; }
+        else { counts[i] = 100 * counts[i] / replicates.len; }
     }
     TreeSupport { copy(counts), "" }
 }
@@ -161,19 +161,19 @@ fn rooted_majority_consensus(replicates: const TreeResult&[:], cutoff: f64 = 0.5
             if !found { candidates.push(mask); counts.push(1); }
         }
     }
-    var masks: u64[>..] = []; var labels: u8[][>..] = [];
+    var masks:   u64[>..] = []; var labels: u8[][>..] = [];
     var support: f64[>..] = [];
     for label, i in first.labels {
         masks.push((1 as u64) << i); labels.push(copy(label)); support.push(-1);
     }
     for mask, i in candidates {
-        let frequency = (counts[i] as f64)/replicates.len;
+        let frequency = (counts[i] as f64) / replicates.len;
         if frequency > cutoff || (cutoff == 1 && counts[i] == replicates.len) {
-            masks.push(mask); labels.push(""); support.push(100*frequency);
+            masks.push(mask); labels.push(""); support.push(100 * frequency);
         }
     }
     let root = masks.len;
-    masks.push(((1 as u64) << first.labels.len)-1); labels.push(""); support.push(100);
+    masks.push(((1 as u64) << first.labels.len) - 1); labels.push(""); support.push(100);
     if first.labels.len == 1 {
         for label in first.labels {
             return ConsensusResult { TreeResult { [TreeNode { copy(label), [], 0, false }], 0, "" }, [-1], "" };

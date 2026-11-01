@@ -10,7 +10,7 @@ struct MatrixAffineOptions {
      * endpoints use the first positive maximum by row, column, state; zero states terminate
      * traceback. No comparison tolerance changes ties, using exact computed scores. */
     a_left_free: bool, a_right_free: bool,
-    b_left_free: bool, b_right_free: bool
+    b_left_free: bool, b_right_free: bool,
 }
 
 /* Penalizes all ends. Global traces consume all bytes, including free terminal gaps, with zero-based
@@ -46,7 +46,7 @@ fn matrix_affine(a: const u8[:], b: const u8[:], m: const SubstitutionMatrix&,
      * linear-space alignment. */
     let invalid = MatrixAlignment { 0.0, 0, 0, 0, 0, "", "", "invalid affine input or resource bound" };
     if m.error.len > 0 || m.alphabet.len == 0 || m.alphabet.len > 256
-        || m.scores.len != m.alphabet.len*m.alphabet.len
+        || m.scores.len != m.alphabet.len * m.alphabet.len
         || !(o.open >= 0.0 && o.open < 1.0e100)
         || !(o.extend >= 0.0 && o.extend < 1.0e100)
         || a.len > 1000000 || b.len > 1000000 { return invalid; }
@@ -66,58 +66,58 @@ fn matrix_affine(a: const u8[:], b: const u8[:], m: const SubstitutionMatrix&,
         for token, k in m.alphabet { if token[0] == c { index = k; } }
         if index < 0 { return invalid; } bj.push(index);
     }
-    let w = b.len+1; let cells = (a.len+1)*w;
+    let w = b.len + 1; let cells = (a.len + 1) * w;
     if cells > 4000000 { return invalid; }
     var score: f64[>..] = []; var trace: i64[>..] = [];
-    for k in cells*3 { score.push(0.0); trace.push(-1); }
+    for k in cells * 3 { score.push(0.0); trace.push(-1); }
     trace[0] = 3;
     var best = 0.0; var ei: i64 = 0; var ej: i64 = 0; var es: i64 = 0;
-    for i in 0..a.len+1 { for j in 0..w {
+    for i in 0..a.len + 1 { for j in 0..w {
         if i == 0 && j == 0 { continue; }
-        let cell = (i*w+j)*3;
+        let cell = (i * w + j) * 3;
         for state in 0..3 {
             if state == 0 && (i == 0 || j == 0) { continue; }
             if state == 1 && i == 0 { continue; }
             if state == 2 && j == 0 { continue; }
-            let prev = if state == 0 { cell-(w+1)*3 } else if state == 1 { cell-w*3 } else { cell-3 };
+            let prev = if state == 0 { cell - (w + 1) * 3 } else if state == 1 { cell - w * 3 } else { cell - 3 };
             var value = 0.0; var from: i64 = -1;
             for s in 0..3 {
-                if trace[prev+s] < 0 { continue; }
+                if trace[prev + s] < 0 { continue; }
                 var delta = 0.0;
-                if state == 0 { delta = m.scores[ai[i-1]*m.alphabet.len+bj[j-1]]; }
+                if state == 0 { delta = m.scores[ai[i - 1] * m.alphabet.len + bj[j - 1]]; }
                 else {
                     let free = !o.local && (if state == 1 {
                         (j == 0 && o.b_left_free) || (j == b.len && o.b_right_free)
                     } else { (i == 0 && o.a_left_free) || (i == a.len && o.a_right_free) });
                     if !free { delta = if s == state { -o.extend } else { -o.open }; }
                 }
-                let candidate = score[prev+s]+delta;
+                let candidate = score[prev + s] + delta;
                 if from < 0 || candidate > value { value = candidate; from = s; }
             }
             if o.local && (from < 0 || value <= 0.0) { value = 0.0; from = 3; }
-            score[cell+state] = value; trace[cell+state] = from;
+            score[cell + state] = value; trace[cell + state] = from;
             if o.local && value > best { best = value; ei = i; ej = j; es = state; }
         }
     } }
     if !o.local {
         ei = a.len; ej = b.len; es = 0;
-        let end = (ei*w+ej)*3;
+        let end = (ei * w + ej) * 3;
         for s in 0..3 {
-            if trace[end+s] >= 0 && (trace[end+es] < 0 || score[end+s] > score[end+es]) { es = s; }
+            if trace[end + s] >= 0 && (trace[end + es] < 0 || score[end + s] > score[end + es]) { es = s; }
         }
-        best = score[end+es];
+        best = score[end + es];
     }
     var i = ei; var j = ej; var state = es;
     var ar: u8[>..] = []; var br: u8[>..] = [];
     while i > 0 || j > 0 {
-        let from = trace[(i*w+j)*3+state];
+        let from = trace[(i * w + j) * 3 + state];
         if from == 3 { break; }
-        if state == 0 { ar.push(a[i-1]); br.push(b[j-1]); i -= 1; j -= 1; }
-        else if state == 1 { ar.push(a[i-1]); br.push('-'); i -= 1; }
-        else { ar.push('-'); br.push(b[j-1]); j -= 1; }
+        if state == 0 { ar.push(a[i - 1]); br.push(b[j - 1]); i -= 1; j -= 1; }
+        else if state == 1 { ar.push(a[i - 1]); br.push('-'); i -= 1; }
+        else { ar.push('-'); br.push(b[j - 1]); j -= 1; }
         state = from;
     }
     var aa: u8[>..] = []; var bb: u8[>..] = [];
-    for k in ar.len { aa.push(ar[ar.len-1-k]); bb.push(br[br.len-1-k]); }
+    for k in ar.len { aa.push(ar[ar.len - 1 - k]); bb.push(br[br.len - 1 - k]); }
     return MatrixAlignment { best, i, ei, j, ej, copy(aa), copy(bb), "" };
 }

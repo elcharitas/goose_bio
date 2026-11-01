@@ -19,7 +19,7 @@ fn parse_nexus_tree(text: const u8[:]) -> TreeResult {
     if text.len <= prefix.len + suffix.len {
         return TreeResult { [], -1, "unsupported NEXUS envelope" };
     }
-    if text[..prefix.len] != prefix || text[text.len-suffix.len..] != suffix {
+    if text[..prefix.len] != prefix || text[text.len - suffix.len..] != suffix {
         return TreeResult { [], -1, "only canonical single TREE tree envelope supported" };
     }
     for c in text {
@@ -27,7 +27,7 @@ fn parse_nexus_tree(text: const u8[:]) -> TreeResult {
             return TreeResult { [], -1, "NEXUS comments and annotations unsupported" };
         }
     }
-    let tree = parse_newick(text[prefix.len..text.len-suffix.len]);
+    let tree = parse_newick(text[prefix.len..text.len - suffix.len]);
     let a = tree_analysis(tree);
     if a.error.len > 0 { return TreeResult { [], -1, copy(a.error) }; }
     tree

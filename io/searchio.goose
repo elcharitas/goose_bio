@@ -9,11 +9,11 @@ ranges. Direction is strand, including +1 for equal endpoints. Protein/translate
 meaning requires caller knowledge; frames are not inferred.
 */
 struct BlastHsp {
-    query_id: u8[], hit_id: u8[], identity: f64,
+    query_id:         u8[], hit_id: u8[], identity: f64,
     alignment_length: i64, mismatches: i64, gap_opens: i64,
-    query_start: i64, query_end: i64, query_strand: i64,
-    hit_start: i64, hit_end: i64, hit_strand: i64,
-    evalue: f64, bitscore: f64
+    query_start:      i64, query_end: i64, query_strand: i64,
+    hit_start:        i64, hit_end: i64, hit_strand: i64,
+    evalue:           f64, bitscore: f64,
 }
 struct BlastHit { id: u8[], hsps: BlastHsp[] }
 struct BlastQuery { id: u8[], hits: BlastHit[] }
@@ -53,15 +53,15 @@ fn parse_blast_tab(text: u8[:]) -> BlastSearchResult {
             else if decimal && c >= '0' && c <= '9' { tolerance /= 10.0; }
         }
         tolerance = max(tolerance, 0.0005);
-        let low = max(0.0, identity-tolerance);
-        let high = min(100.0, identity+tolerance);
-        if gaps > length-mismatch { return BlastSearchResult { [], "inconsistent BLAST counts" }; }
-        let available = (length-mismatch-gaps)*100.0/length;
-        if low > available+0.0000001 { return BlastSearchResult { [], "inconsistent BLAST identity and counts" }; }
-        if gaps == 0 && high+0.0000001 < available { return BlastSearchResult { [], "inconsistent ungapped BLAST identity" }; }
+        let low = max(0.0, identity - tolerance);
+        let high = min(100.0, identity + tolerance);
+        if gaps > length - mismatch { return BlastSearchResult { [], "inconsistent BLAST counts" }; }
+        let available = (length - mismatch - gaps) * 100.0 / length;
+        if low > available + 0.0000001 { return BlastSearchResult { [], "inconsistent BLAST identity and counts" }; }
+        if gaps == 0 && high + 0.0000001 < available { return BlastSearchResult { [], "inconsistent ungapped BLAST identity" }; }
         hsps.push(BlastHsp { str(f[0]), str(f[1]), identity, length, mismatch, gaps,
-            min(qs, qe)-1, max(qs, qe), if qs <= qe { 1 } else { -1 },
-            min(hs, he)-1, max(hs, he), if hs <= he { 1 } else { -1 }, evalue, bits });
+            min(qs, qe) - 1, max(qs, qe), if qs <= qe { 1 } else { -1 },
+            min(hs, he) - 1, max(hs, he), if hs <= he { 1 } else { -1 }, evalue, bits });
         var seen = false; for id in query_ids { if id == f[0] { seen = true; } }
         if !seen { query_ids.push(str(f[0])); }
     }
@@ -138,8 +138,8 @@ Returns preserved column text; present=false differs from explicit zero.
 */
 fn blast_value(row: BlastRow, schema: BlastSchema, field: u8[:]) -> BlastValue {
     for i in 0..schema.fields.len {
-        if blast_at(copy(schema.fields),i) == field && i < row.values.len {
-            return BlastValue { true, blast_at(copy(row.values),i) };
+        if blast_at(copy(schema.fields), i) == field && i < row.values.len {
+            return BlastValue { true, blast_at(copy(row.values), i) };
         }
     }
     return BlastValue { false, "" };
@@ -158,7 +158,7 @@ fn blast_range(row: BlastRow, schema: BlastSchema, query: bool) -> BlastRange {
         let frame = blast_value(copy(row), copy(schema), if query { "qframe" } else { "sframe" });
         if frame.present { let n, _ = parse_int(frame.text); if n != 0 { strand = if n < 0 { -1 } else { 1 }; } }
     }
-    return BlastRange { true, min(x,y)-1, max(x,y), strand, copy(unit) };
+    return BlastRange { true, min(x, y) - 1, max(x, y), strand, copy(unit) };
 }
 fn blast_schema_error(schema: BlastSchema) -> u8[] {
     let units = [copy(schema.query_unit), copy(schema.hit_unit)];
@@ -167,8 +167,8 @@ fn blast_schema_error(schema: BlastSchema) -> u8[] {
     }
     if schema.fields.len == 0 { return "empty schema"; }
     for i in 0..schema.fields.len {
-        if blast_label(blast_at(copy(schema.fields),i)).len == 0 { return "unsupported field"; }
-        for j in 0..i { if blast_at(copy(schema.fields),i) == blast_at(copy(schema.fields),j) { return "duplicate field"; } }
+        if blast_label(blast_at(copy(schema.fields), i)).len == 0 { return "unsupported field"; }
+        for j in 0..i { if blast_at(copy(schema.fields), i) == blast_at(copy(schema.fields), j) { return "duplicate field"; } }
     }
     for names in [["qstart", "qend"], ["sstart", "send"]] {
         var n = 0; for f in schema.fields { if f == names[0] || f == names[1] { n += 1; } }
@@ -179,7 +179,7 @@ fn blast_schema_error(schema: BlastSchema) -> u8[] {
 fn blast_row_error(row: BlastRow, schema: BlastSchema) -> u8[] {
     if row.values.len != schema.fields.len { return "truncated or excess BLAST fields"; }
     for i in 0..schema.fields.len {
-        let f = blast_at(copy(schema.fields),i); let v = blast_at(copy(row.values),i);
+        let f = blast_at(copy(schema.fields), i); let v = blast_at(copy(row.values), i);
         if v.len == 0 { return "empty BLAST field"; }
         for c in v { if c < 33 || c > 126 { return "invalid field byte"; } }
         if f == "qseqid" || f == "sseqid" || f == "qseq" || f == "sseq" { continue; }
@@ -196,50 +196,50 @@ fn blast_row_error(row: BlastRow, schema: BlastSchema) -> u8[] {
             else if (f == "qstart" || f == "qend" || f == "sstart" || f == "send" || f == "qlen" || f == "slen" || f == "length") && n == 0 { return "zero length or coordinate"; }
         }
     }
-    let length = blast_value(copy(row),copy(schema),"length");
+    let length = blast_value(copy(row), copy(schema), "length");
     if length.present {
         let n, _ = parse_int(length.text);
         for f in ["mismatch", "gapopen", "nident", "positive", "gaps"] {
-            let v = blast_value(copy(row),copy(schema),f);
+            let v = blast_value(copy(row), copy(schema), f);
             if v.present { let x, _ = parse_int(v.text); if x > n { return "count exceeds alignment length"; } }
         }
         for f in ["qseq", "sseq"] {
-            let v = blast_value(copy(row),copy(schema),f);
+            let v = blast_value(copy(row), copy(schema), f);
             if v.present && v.text.len != n { return "aligned string length mismatch"; }
         }
     }
-    let mismatch = blast_value(copy(row),copy(schema),"mismatch");
-    let gaps = blast_value(copy(row),copy(schema),"gaps");
-    let identical = blast_value(copy(row),copy(schema),"nident");
+    let mismatch = blast_value(copy(row), copy(schema), "mismatch");
+    let gaps = blast_value(copy(row), copy(schema), "gaps");
+    let identical = blast_value(copy(row), copy(schema), "nident");
     if length.present && mismatch.present && gaps.present && identical.present {
         let n, _ = parse_int(length.text); let m, _ = parse_int(mismatch.text);
         let g, _ = parse_int(gaps.text); let k, _ = parse_int(identical.text);
-        if m > n-g || k != n-g-m { return "inconsistent alignment counts"; }
+        if m > n - g || k != n - g - m { return "inconsistent alignment counts"; }
     }
-    let ident = blast_value(copy(row),copy(schema),"nident");
-    let pct = blast_value(copy(row),copy(schema),"pident");
+    let ident = blast_value(copy(row), copy(schema), "nident");
+    let pct = blast_value(copy(row), copy(schema), "pident");
     if length.present && ident.present && pct.present {
         let n, _ = parse_int(length.text); let k, _ = parse_int(ident.text);
         let p, _ = parse_flt(pct.text);
         var tolerance = 0.5; var decimal = false;
         for c in pct.text { if c == '.' { decimal = true; }
             else if decimal && c >= '0' && c <= '9' { tolerance /= 10.0; } }
-        if max(p-k*100.0/n,k*100.0/n-p) > max(tolerance,0.0005)+0.0000001 { return "inconsistent identity"; }
+        if max(p - k * 100.0 / n, k * 100.0 / n - p) > max(tolerance, 0.0005) + 0.0000001 { return "inconsistent identity"; }
     }
-    for query in [true,false] {
-        let r = blast_range(copy(row),copy(schema),query);
-        let frame = blast_value(copy(row),copy(schema),if query { "qframe" } else { "sframe" });
+    for query in [true, false] {
+        let r = blast_range(copy(row), copy(schema), query);
+        let frame = blast_value(copy(row), copy(schema), if query { "qframe" } else { "sframe" });
         if frame.present && r.present {
             let f, _ = parse_int(frame.text);
             if (r.unit == "protein" && f != 0) || (r.unit == "translated" && f == 0) || (f < 0 && r.strand != -1) || (f > 0 && r.strand != 1) { return "inconsistent coordinate frame"; }
         }
-        let seq = blast_value(copy(row),copy(schema),if query { "qseq" } else { "sseq" });
+        let seq = blast_value(copy(row), copy(schema), if query { "qseq" } else { "sseq" });
         if seq.present && r.present {
             var count = 0; for c in seq.text { if c != '-' { count += 1; } }
             let scale = if r.unit == "translated" { 3 } else { 1 };
-            if r.end-r.start != count*scale { return "aligned string coordinate mismatch"; }
+            if r.end - r.start != count * scale { return "aligned string coordinate mismatch"; }
         }
-        let l = blast_value(copy(row),copy(schema),if query { "qlen" } else { "slen" });
+        let l = blast_value(copy(row), copy(schema), if query { "qlen" } else { "slen" });
         if r.present && l.present { let n, _ = parse_int(l.text); if r.end > n { return "coordinate exceeds sequence length"; } }
     }
     return "";
@@ -254,30 +254,30 @@ fn parse_blast_table(text: u8[:], schema: BlastSchema, comments: bool) -> BlastT
     var result = BlastTable { copy(schema), [], blast_schema_error(copy(schema)) };
     if result.error.len > 0 { return result; }
     var groups: BlastBlock[>..] = []; var rows: BlastRow[>..] = [];
-    var id: u8[>..] = []; var description: u8[>..] = [];
+    var id:     u8[>..]         = []; var description: u8[>..] = [];
     var declared = false; var expected: i64 = -1; var active = false;
-    for raw in split(text,'\n') {
+    for raw in split(text, '\n') {
         let line = format_line(raw); if line.len == 0 { continue; }
         if line[0] == '#' {
             if !comments { return BlastTable { copy(schema), [], "unexpected comment" }; }
-            if starts_with(line,"# Query: ") {
+            if starts_with(line, "# Query: ") {
                 if active {
                     if expected < 0 || expected != rows.len { return BlastTable { copy(schema), [], "missing or inconsistent hit count" }; }
                     groups.push(BlastBlock { copy(id), copy(description), declared, copy(rows) });
                 }
-                description = []; description.append(line[9..]); id = []; id.append(split(description,' ')[0]);
+                description = []; description.append(line[9..]); id = []; id.append(split(description, ' ')[0]);
                 rows = []; declared = false; expected = -1; active = true;
-            } else if starts_with(line,"# Fields: ") {
+            } else if starts_with(line, "# Fields: ") {
                 if !active || declared || rows.len > 0 { return BlastTable { copy(schema), [], "misplaced fields declaration" }; }
-                let labels = split(line[10..],',');
+                let labels = split(line[10..], ',');
                 if labels.len != schema.fields.len { return BlastTable { copy(schema), [], "declared schema mismatch" }; }
                 for i in 0..labels.len {
                     var label = labels[i]; if label.len > 0 && label[0] == ' ' { label = label[1..]; }
-                    if label != blast_label(blast_at(copy(schema.fields),i)) { return BlastTable { copy(schema), [], "declared schema mismatch" }; }
+                    if label != blast_label(blast_at(copy(schema.fields), i)) { return BlastTable { copy(schema), [], "declared schema mismatch" }; }
                 }
                 declared = true;
-            } else if starts_with(line,"# ") {
-                let words = split(line,' ');
+            } else if starts_with(line, "# ") {
+                let words = split(line, ' ');
                 if words.len == 5 && words[2] == "hits" && words[3] == "found" { return BlastTable { copy(schema), [], "malformed hit declaration" }; }
                 if words.len == 4 && words[2] == "hits" && words[3] == "found" {
                     let n, ok = parse_int(words[1]);
@@ -287,10 +287,10 @@ fn parse_blast_table(text: u8[:], schema: BlastSchema, comments: bool) -> BlastT
             }
             continue;
         }
-        var values: u8[][>..] = []; for v in split(line,'\t') { values.push(str(v)); }
-        let row = BlastRow { copy(values) }; let error = blast_row_error(copy(row),copy(schema));
+        var values: u8[][>..] = []; for v in split(line, '\t') { values.push(str(v)); }
+        let row = BlastRow { copy(values) }; let error = blast_row_error(copy(row), copy(schema));
         if error.len > 0 { return BlastTable { copy(schema), [], error }; }
-        let q = blast_value(copy(row),copy(schema),"qseqid");
+        let q = blast_value(copy(row), copy(schema), "qseqid");
         if comments {
             if !active || !declared || expected < 0 || (q.present && q.text != id) { return BlastTable { copy(schema), [], "row outside declared query" }; }
         } else {
@@ -333,15 +333,15 @@ fn write_blast_table(table: BlastTable, output: BlastSchema, comments: bool) -> 
             text.append("# BLAST tabular\n# Query: "); text.append(group.description); text.append("\n");
             if group.fields_declared || group.rows.len > 0 {
                 text.append("# Fields: ");
-                for i in 0..output.fields.len { if i > 0 { text.append(", "); } text.append(blast_label(blast_at(copy(output.fields),i))); }
+                for i in 0..output.fields.len { if i > 0 { text.append(", "); } text.append(blast_label(blast_at(copy(output.fields), i))); }
                 text.append("\n");
             }
             text.append("# "); text.append(str(group.rows.len)); text.append(" hits found\n");
         }
         for row in group.rows {
-            let e = blast_row_error(copy(row),copy(table.schema)); if e.len > 0 { return BlastText { "", e }; }
+            let e = blast_row_error(copy(row), copy(table.schema)); if e.len > 0 { return BlastText { "", e }; }
             for i in 0..output.fields.len {
-                let v = blast_value(copy(row),copy(table.schema),blast_at(copy(output.fields),i));
+                let v = blast_value(copy(row), copy(table.schema), blast_at(copy(output.fields), i));
                 if !v.present { return BlastText { "", "output field absent" }; }
                 if i > 0 { text.append("\t"); } text.append(v.text);
             }
@@ -361,7 +361,7 @@ fn filter_blast_table(table: BlastTable, field: u8[:], minimum: f64, maximum: f6
     for group in table.queries {
         var rows: BlastRow[>..] = [];
         for row in group.rows {
-            let v = blast_value(copy(row),copy(table.schema),field);
+            let v = blast_value(copy(row), copy(table.schema), field);
             if !v.present { return BlastTable { copy(table.schema), [], "filter field absent" }; }
             let n, ok = parse_flt(v.text);
             if !ok { return BlastTable { copy(table.schema), [], "filter requires numeric field" }; }

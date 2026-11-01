@@ -9,7 +9,7 @@ fn main() {
     let h = bio::structural_hierarchy(p.structure, true, false, 0.0);
     assert(h.error.len == 0);
     let moved = bio::structural_transform(h.hierarchy, 0, false,
-        [1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0], [10.0,0.0,0.0]);
+        [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], [10.0, 0.0, 0.0]);
     assert(moved.error.len == 0);
     let output = bio::write_mmcif(moved.hierarchy.structure.document);
     assert(output.error.len == 0);

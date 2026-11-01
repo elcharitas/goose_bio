@@ -15,31 +15,31 @@ struct GenbankLocationResult { parts: LocationPart[], error: u8[] }
 
 recursive fn genbank_location_parts(text: u8[:], parts: LocationPart[>..]&, depth: i64) -> bool {
     if depth > 64 || text.len == 0 { return false; }
-    if starts_with(text, "complement(") && text[text.len-1] == ')' {
+    if starts_with(text, "complement(") && text[text.len - 1] == ')' {
         let begin = parts.len;
-        if !genbank_location_parts(text[11..text.len-1], parts, depth+1) { return false; }
-        let count = parts.len-begin;
-        for i in (count+1)/2 {
-            let a = parts[begin+i]; let b = parts[begin+count-1-i];
-            parts[begin+i] = LocationPart { b.start, b.end, -b.strand, false };
-            parts[begin+count-1-i] = LocationPart { a.start, a.end, -a.strand, false };
+        if !genbank_location_parts(text[11..text.len - 1], parts, depth + 1) { return false; }
+        let count = parts.len - begin;
+        for i in (count + 1) / 2 {
+            let a = parts[begin + i]; let b = parts[begin + count - 1 - i];
+            parts[begin + i] = LocationPart { b.start, b.end, -b.strand, false };
+            parts[begin + count - 1 - i] = LocationPart { a.start, a.end, -a.strand, false };
         }
         return true;
     }
-    if starts_with(text, "join(") && text[text.len-1] == ')' {
+    if starts_with(text, "join(") && text[text.len - 1] == ')' {
         var level = 0; var begin = 5;
         for i in text.len {
-            if i < 5 || i == text.len-1 { continue; }
+            if i < 5 || i == text.len - 1 { continue; }
             if text[i] == '(' { level += 1; }
             if text[i] == ')' { level -= 1; }
             if level < 0 { return false; }
             if text[i] == ',' && level == 0 {
-                if !genbank_location_parts(text[begin..i], parts, depth+1) { return false; }
-                begin = i+1;
+                if !genbank_location_parts(text[begin..i], parts, depth + 1) { return false; }
+                begin = i + 1;
             }
         }
         if level != 0 { return false; }
-        return genbank_location_parts(text[begin..text.len-1], parts, depth+1);
+        return genbank_location_parts(text[begin..text.len - 1], parts, depth + 1);
     }
     var dot = -1;
     for c, i in text {
@@ -47,9 +47,9 @@ recursive fn genbank_location_parts(text: u8[:], parts: LocationPart[>..]&, dept
         else if c < '0' || c > '9' { return false; }
     }
     let first, ok = parse_int(if dot < 0 { text } else { text[..dot] });
-    let last, end_ok = parse_int(if dot < 0 { text } else if dot+2 <= text.len { text[dot+2..] } else { "" });
-    if !ok || !end_ok || first < 1 || last < first || (dot >= 0 && (dot+1 >= text.len || text[dot+1] != '.')) { return false; }
-    parts.push(LocationPart { first-1, last, 1, false }); return true;
+    let last, end_ok = parse_int(if dot < 0 { text } else if dot + 2 <= text.len { text[dot + 2..] } else { "" });
+    if !ok || !end_ok || first < 1 || last < first || (dot >= 0 && (dot + 1 >= text.len || text[dot + 1] != '.')) { return false; }
+    parts.push(LocationPart { first - 1, last, 1, false }); return true;
 }
 fn genbank_location(text: u8[:]) -> GenbankLocationResult {
     var parts: LocationPart[>..] = [];
@@ -64,11 +64,11 @@ fn genbank_token(text: u8[:]) -> bool {
 }
 
 fn parse_genbank(text: u8[:]) -> AnnotatedRecordsResult {
-    var records: AnnotatedRecord[>..] = [];
-    var id: u8[>..] = []; var description: u8[>..] = [];
-    var headers: u8[][>..] = []; var sequence: u8[>..] = [];
-    var features: AnnotatedFeature[>..] = [];
-    var kind: u8[>..] = []; var location: u8[>..] = [];
+    var records:    AnnotatedRecord[>..]  = [];
+    var id:         u8[>..]               = []; var description: u8[>..] = [];
+    var headers:    u8[][>..]             = []; var sequence: u8[>..] = [];
+    var features:   AnnotatedFeature[>..] = [];
+    var kind:       u8[>..]               = []; var location: u8[>..] = [];
     var qualifiers: FeatureQualifier[>..] = [];
     var definition = false; var definition_seen = false;
     var state = 0; var length = 0; var rna = false;
@@ -135,15 +135,15 @@ fn parse_genbank(text: u8[:]) -> AnnotatedRecordsResult {
                 if !genbank_token(key) { return AnnotatedRecordsResult { [], "invalid qualifier key" }; }
                 if eq < 0 { qualifiers.push(FeatureQualifier { str(key), [] }); }
                 else {
-                    let v = value[eq+1..];
+                    let v = value[eq + 1..];
                     if v.len == 0 { return AnnotatedRecordsResult { [], "empty unquoted qualifier" }; }
                     var decoded: u8[>..] = [];
                     if v[0] == '"' {
-                        if v.len < 2 || v[v.len-1] != '"' { return AnnotatedRecordsResult { [], "multiline qualifier unsupported" }; }
+                        if v.len < 2 || v[v.len - 1] != '"' { return AnnotatedRecordsResult { [], "multiline qualifier unsupported" }; }
                         var i = 1;
-                        while i < v.len-1 {
+                        while i < v.len - 1 {
                             if v[i] == '"' {
-                                if i+1 >= v.len-1 || v[i+1] != '"' { return AnnotatedRecordsResult { [], "invalid quoted qualifier" }; }
+                                if i + 1 >= v.len - 1 || v[i + 1] != '"' { return AnnotatedRecordsResult { [], "invalid quoted qualifier" }; }
                                 i += 1;
                             }
                             decoded.push(v[i]); i += 1;
@@ -195,13 +195,13 @@ fn write_genbank(records: AnnotatedRecord[:]) -> FormatTextResult {
         for f in r.features {
             if !genbank_token(f.kind) || f.kind.len > 15 { return FormatTextResult { "", "invalid feature key" }; }
             out.append("     "); out.append(f.kind);
-            for i in 16-f.kind.len { out.push(' '); }
+            for i in 16 - f.kind.len { out.push(' '); }
             if f.parts.len > 1 { out.append("join("); }
             for p, i in f.parts {
                 if i > 0 { out.push(','); }
                 if p.strand == -1 { out.append("complement("); }
-                out.append(str(p.start+1));
-                if p.end != p.start+1 { out.append(".."); out.append(str(p.end)); }
+                out.append(str(p.start + 1));
+                if p.end != p.start + 1 { out.append(".."); out.append(str(p.end)); }
                 if p.strand == -1 { out.push(')'); }
             }
             if f.parts.len > 1 { out.push(')'); } out.push('\n');
@@ -220,10 +220,10 @@ fn write_genbank(records: AnnotatedRecord[:]) -> FormatTextResult {
         }
         out.append("ORIGIN\n");
         for c, i in r.sequence {
-            if i % 60 == 0 { out.append("        "); out.append(str(i+1)); }
+            if i % 60 == 0 { out.append("        "); out.append(str(i + 1)); }
             if i % 10 == 0 { out.push(' '); }
             out.push(c);
-            if (i+1) % 60 == 0 || i+1 == r.sequence.len { out.push('\n'); }
+            if (i + 1) % 60 == 0 || i + 1 == r.sequence.len { out.push('\n'); }
         }
         out.append("//\n");
     }

@@ -3,7 +3,7 @@ import bio from "..";
 fn main() {
     let schema = bio::BlastSchema {
         ["qseqid", "sseqid", "qstart", "qend", "sstart", "send", "evalue", "bitscore"],
-        "nucleotide", "nucleotide"
+        "nucleotide", "nucleotide",
     };
     let input = "q1\thit1\t1\t10\t20\t11\t1e-12\t50\nq1\thit2\t1\t10\t1\t10\t0.1\t8\n";
     let parsed = bio::parse_blast_table(input, copy(schema), false);

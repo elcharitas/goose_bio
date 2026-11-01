@@ -11,7 +11,7 @@ struct DefinedSegment { start: i64, value: u8[] }
  * mixed-strand parts are legal. Origin-spanning parts use biological extraction order, such as [6,8),
  * [0,2) on length eight. Remote references reject; there is no resolver. */
 struct RecordFeature {
-    kind: u8[], parts: RecordLocationPart[], qualifiers: FeatureQualifier[]
+    kind: u8[], parts: RecordLocationPart[], qualifiers: FeatureQualifier[],
 }
 // kind: 0 bytes, 1 integers, 2 floats; other arrays must be empty.
 
@@ -19,7 +19,7 @@ struct RecordFeature {
  * equal to record length; keys must be unique. Quality values have no implicit encoding, range, or
  * probability meaning. Per-position strings, booleans, and arbitrary objects are unsupported. */
 struct LetterTrack {
-    key: u8[], kind: i64, bytes: u8[], integers: i64[], floats: f64[]
+    key: u8[], kind: i64, bytes: u8[], integers: i64[], floats: f64[],
 }
 // topology: 0 linear, 1 circular. Parts retain extraction order.
 
@@ -27,9 +27,9 @@ struct LetterTrack {
  * existing IUPAC alphabets; proteins are unsupported. Topology is 0 linear or 1 circular, without
  * implicit wrapping or origin rotation. */
 struct RichRecord {
-    id: u8[], description: u8[], length: i64, segments: DefinedSegment[],
+    id:       u8[], description: u8[], length: i64, segments: DefinedSegment[],
     metadata: FeatureQualifier[], features: RecordFeature[],
-    tracks: LetterTrack[], rna: bool, topology: i64
+    tracks:   LetterTrack[], rna: bool, topology: i64,
 }
 struct RichRecordResult { record: RichRecord, error: u8[] }
 
@@ -155,11 +155,11 @@ fn reverse_complement_rich_record(r: RichRecord) -> RichRecordResult {
     var segments: DefinedSegment[>..] = [];
     /* Reversal scans the segment list for each output segment: O(segments^2). */
     for i in r.segments.len {
-      for s, j in r.segments {
-        if j != r.segments.len - i - 1 { continue; }
-        segments.push(DefinedSegment { r.length - s.start - s.value.len,
-            reverse_defined_segment(s.value, r.rna) });
-      }
+        for s, j in r.segments {
+            if j != r.segments.len - i - 1 { continue; }
+            segments.push(DefinedSegment { r.length - s.start - s.value.len,
+                reverse_defined_segment(s.value, r.rna) });
+        }
     }
     var features: RecordFeature[>..] = [];
     for f in r.features {

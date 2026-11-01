@@ -20,7 +20,7 @@ fn scop_id(s: u8[:]) -> bool {
     var i = 0; if s[0] == '-' { i = 1; } let first = i;
     while i < s.len && s[i] >= '0' && s[i] <= '9' { i += 1; }
     if i == first { return false; }
-    return i == s.len || (i+1 == s.len && ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z')));
+    return i == s.len || (i + 1 == s.len && ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z')));
 }
 /*
 Accepts comma-separated chain ranges, optional parentheses, signed PDB residue numbers
@@ -30,7 +30,7 @@ caps at 65,536 bytes.
 */
 fn scop_fragments(text: u8[:]) -> ScopFragments {
     var s = trim(text); if s.len > 65536 { return ScopFragments { [], "fragment limit" }; }
-    if s.len >= 2 && s[0] == '(' && s[s.len-1] == ')' { s = s[1..s.len-1]; }
+    if s.len >= 2 && s[0] == '(' && s[s.len - 1] == ')' { s = s[1..s.len - 1]; }
     var out: ScopFragment[>..] = [];
     if s == "-" || s.len == 0 { out.push(ScopFragment { "_", "", "" }); return ScopFragments { copy(out), "" }; }
     for part in split(s, ',') {
@@ -40,7 +40,7 @@ fn scop_fragments(text: u8[:]) -> ScopFragments {
         if r.len > 0 {
             var dash = -1; for c, i in r { if c == '-' && i > 0 && dash < 0 { dash = i; } }
             if dash < 0 { return ScopFragments { [], "expected residue range" }; }
-            a.append(r[..dash]); b.append(r[dash+1..]);
+            a.append(r[..dash]); b.append(r[dash + 1..]);
             if (a.len > 0 && !scop_id(a)) || (b.len > 0 && !scop_id(b)) { return ScopFragments { [], "invalid PDB residue ID" }; }
         }
         out.push(ScopFragment { copy(chain), copy(a), copy(b) });
@@ -59,7 +59,7 @@ fn scop_sort(nr: ScopNode&[:], dr: const ScopDomain&[:], sid: bool) -> i64[] {
     while width < n {
         var start = 0;
         while start < n {
-            let mid = min(start+width, n); let end = min(start+2*width, n);
+            let mid = min(start + width, n); let end = min(start + 2 * width, n);
             var l = start; var r = mid; var k = start;
             while k < end {
                 var left = r >= end;
@@ -79,14 +79,14 @@ and expect a valid graph; traversal caps do not repeat validation.
 */
 fn scop_node(g: const ScopGraph&, id: i64) -> i64 {
     var lo = 0; var hi = g.id_order.len;
-    while lo < hi { let mid = lo+(hi-lo)/2; let i = g.id_order[mid]; if i < 0 || i >= g.keys.len { return -1; } let v = g.keys[i]; if v == id { return i; } if v < id { lo = mid+1; } else { hi = mid; } } return -1;
+    while lo < hi { let mid = lo + (hi - lo) / 2; let i = g.id_order[mid]; if i < 0 || i >= g.keys.len { return -1; } let v = g.keys[i]; if v == id { return i; } if v < id { lo = mid + 1; } else { hi = mid; } } return -1;
 }
 /*
 Returns a domain index or -1 in O(log N) SID comparisons.
 */
 fn scop_sid(g: const ScopGraph&, sid: u8[:]) -> i64 {
     var lo = 0; var hi = g.sid_order.len;
-    while lo < hi { let mid = lo+(hi-lo)/2; let i = g.sid_order[mid]; if i < 0 || i+1 >= g.sid_offsets.len { return -1; } if g.sid_bytes[g.sid_offsets[i]..g.sid_offsets[i+1]] == sid { return i; } if scop_less(g.sid_bytes[g.sid_offsets[i]..g.sid_offsets[i+1]], sid) { lo = mid+1; } else { hi = mid; } } return -1;
+    while lo < hi { let mid = lo + (hi - lo) / 2; let i = g.sid_order[mid]; if i < 0 || i + 1 >= g.sid_offsets.len { return -1; } if g.sid_bytes[g.sid_offsets[i]..g.sid_offsets[i + 1]] == sid { return i; } if scop_less(g.sid_bytes[g.sid_offsets[i]..g.sid_offsets[i + 1]], sid) { lo = mid + 1; } else { hi = mid; } } return -1;
 }
 fn scop_bad(s: u8[:]) -> ScopGraph { return ScopGraph { str(s), [], [], [], [], [], [], [], [], [], [], [] }; }
 /*
@@ -105,7 +105,7 @@ sorted bytes. Construction is O((N+E) log N + P), plus byte/text work; records r
 once, not per lookup/edge.
 */
 fn parse_scop(cla: u8[:], des: u8[:], hie: u8[:]) -> ScopGraph {
-    if cla.len+des.len+hie.len > 67108864 { return scop_bad("input limit"); }
+    if cla.len + des.len + hie.len > 67108864 { return scop_bad("input limit"); }
     var nodes: ScopNode[>..] = [];
     for raw in split(des, '\n') {
         let s = trim(raw); if s.len == 0 || s[0] == '#' { continue; }
@@ -118,7 +118,7 @@ fn parse_scop(cla: u8[:], des: u8[:], hie: u8[:]) -> ScopGraph {
     for n in nodes { nr.push(n); keys.push(n.sunid); }
     let order = scop_sort(nr, [], false);
     let g = ScopGraph { "", copy(order), [], [], copy(keys), [], [], [], [], [], [], [] };
-    var j = 1; while j < g.id_order.len { if nr[g.id_order[j-1]].sunid == nr[g.id_order[j]].sunid { return scop_bad("duplicate DES"); } j += 1; }
+    var j = 1; while j < g.id_order.len { if nr[g.id_order[j - 1]].sunid == nr[g.id_order[j]].sunid { return scop_bad("duplicate DES"); } j += 1; }
     var seen: bool[>..] = []; var child_seen: bool[>..] = []; var domain_at: i64[>..] = [];
     for n in nodes { seen.push(false); child_seen.push(false); domain_at.push(-1); }
     var edges = 0; var edge_data: i64[>..] = []; var starts: i64[>..] = []; var ends: i64[>..] = [];
@@ -154,11 +154,11 @@ fn parse_scop(cla: u8[:], des: u8[:], hie: u8[:]) -> ScopGraph {
     var queue: i64[>..] = [scop_node(g, 0)]; var depths: i64[>..] = [];
     for n in nodes { depths.push(-1); } depths[queue[0]] = 0; var at = 0;
     while at < queue.len { let i = queue[at]; at += 1;
-        for c in nr[i].children { let ci = scop_node(g, c); if depths[ci] >= 0 { return scop_bad("cycle"); } depths[ci] = depths[i]+1; if depths[ci] > 100000 { return scop_bad("depth limit"); } queue.push(ci); }
+        for c in nr[i].children { let ci = scop_node(g, c); if depths[ci] >= 0 { return scop_bad("cycle"); } depths[ci] = depths[i] + 1; if depths[ci] > 100000 { return scop_bad("depth limit"); } queue.push(ci); }
     }
     if queue.len != g.keys.len { return scop_bad("cycle"); }
-    var parent_pos: i64[>..] = []; for n in joined { parent_pos.push(if n.has_parent { scop_node(g, n.parent) } else { -1 }); }
-    var domains: ScopDomain[>..] = []; var work = 0;
+    var parent_pos: i64[>..]        = []; for n in joined { parent_pos.push(if n.has_parent { scop_node(g, n.parent) } else { -1 }); }
+    var domains:    ScopDomain[>..] = []; var work = 0;
     for raw in split(cla, '\n') {
         let s = trim(raw); if s.len == 0 || s[0] == '#' { continue; } let f = split(s, '\t');
         if f.len != 6 || domains.len >= 100000 { return scop_bad("CLA fields or limit"); }
@@ -184,7 +184,7 @@ fn parse_scop(cla: u8[:], des: u8[:], hie: u8[:]) -> ScopGraph {
     var dr: const ScopDomain&[>..] = []; var bytes: u8[>..] = []; var so: i64[>..] = [0];
     for d in domains { dr.push(d); bytes.append(d.sid); so.push(bytes.len); }
     let sid_order = scop_sort(nr, dr, true);
-    j = 1; while j < sid_order.len { if dr[sid_order[j-1]].sid == dr[sid_order[j]].sid { return scop_bad("duplicate CLA"); } j += 1; }
+    j = 1; while j < sid_order.len { if dr[sid_order[j - 1]].sid == dr[sid_order[j]].sid { return scop_bad("duplicate CLA"); } j += 1; }
     var parents: i64[>..] = []; var offsets: i64[>..] = [0]; var child_ids: i64[>..] = [];
     for n in joined { parents.push(if n.has_parent { scop_node(g, n.parent) } else { -1 }); for c in n.children { child_ids.push(scop_node(g, c)); } offsets.push(child_ids.len); }
     return ScopGraph { "", copy(g.id_order), copy(sid_order), copy(domain_at), copy(keys), copy(parents), copy(offsets), copy(child_ids), copy(bytes), copy(so), copy(joined), copy(domains) };
@@ -206,7 +206,7 @@ at 100,001 nodes.
 fn scop_descendant_domains(g: const ScopGraph&, id: i64) -> ScopIDs {
     let first = scop_node(g, id); if first < 0 { return ScopIDs { [], "unknown id" }; }
     var queue: i64[>..] = [first]; var out: i64[>..] = []; var at = 0;
-    while at < queue.len { let i = queue[at]; at += 1; if queue.len > 100001 || i < 0 || i >= g.domain_at.len || i+1 >= g.offsets.len { return ScopIDs { [], "traversal limit or invalid index" }; } if g.domain_at[i] >= 0 { out.push(g.keys[i]); } for k in g.offsets[i]..g.offsets[i+1] { queue.push(g.edges[k]); } }
+    while at < queue.len { let i = queue[at]; at += 1; if queue.len > 100001 || i < 0 || i >= g.domain_at.len || i + 1 >= g.offsets.len { return ScopIDs { [], "traversal limit or invalid index" }; } if g.domain_at[i] >= 0 { out.push(g.keys[i]); } for k in g.offsets[i]..g.offsets[i + 1] { queue.push(g.edges[k]); } }
     return ScopIDs { copy(out), "" };
 }
 /* Canonical cla/des/hie visits each record once, dropping comments/trailing whitespace and original

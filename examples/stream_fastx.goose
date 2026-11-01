@@ -11,8 +11,8 @@ fn main() {
     let handle = bio::fastx_open(arguments[1]);
     if handle == 0 { write_stderr("cannot open sequence input\n"); exit(1); }
     var records: i64 = 0;
-    var bases: i64 = 0;
-    var status: i32 = 1;
+    var bases:   i64 = 0;
+    var status:  i32 = 1;
     while status == 1 {
         status = bio::fastx_next(handle);
         if status == 1 {

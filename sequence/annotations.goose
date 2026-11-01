@@ -9,11 +9,11 @@ import .sequence;
 struct LocationPart { start: i64, end: i64, strand: i64, fuzzy: bool }
 struct FeatureQualifier { key: u8[], values: u8[][] }
 struct AnnotatedFeature {
-    kind: u8[], parts: LocationPart[], qualifiers: FeatureQualifier[]
+    kind: u8[], parts: LocationPart[], qualifiers: FeatureQualifier[],
 }
 struct AnnotatedRecord {
-    id: u8[], description: u8[], sequence: u8[],
-    metadata: FeatureQualifier[], features: AnnotatedFeature[], rna: bool
+    id:       u8[], description: u8[], sequence: u8[],
+    metadata: FeatureQualifier[], features: AnnotatedFeature[], rna: bool,
 }
 struct AnnotatedRecordResult { record: AnnotatedRecord, error: u8[] }
 

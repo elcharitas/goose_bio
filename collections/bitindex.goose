@@ -6,7 +6,7 @@ struct BitIndex { words: u64[], prefix: i64[], length: i64 }
 fn bit_index(bits: const u8[:]) -> BitIndex {
     assert(bits.len < 9223372036854775807);
     var words: u64[>..] = []; var prefix: i64[>..] = [0];
-    var count: i64 = 0;
+    var count: i64      = 0;
     for b, i in bits {
         assert(b <= 1);
         if i % 64 == 0 { words.push(0); }
@@ -40,8 +40,8 @@ fn bit_select(index: const BitIndex&, bit: u8, occurrence: i64) -> i64 {
 // Access, rank and half-open value range counts take O(8) time.
 struct WaveletMatrix { levels: BitIndex[], zeros: i64[], length: i64 }
 fn wavelet_matrix(values: const u8[:]) -> WaveletMatrix {
-    var current: u8[>..] = []; for v in values { current.push(v); }
-    var levels: BitIndex[>..] = []; var zeros: i64[>..] = [];
+    var current: u8[>..]       = []; for v in values { current.push(v); }
+    var levels:  BitIndex[>..] = []; var zeros: i64[>..] = [];
     for level in 8 {
         var bits: u8[>..] = []; var next: u8[>..] = []; var zero: i64 = 0;
         for v in current { let b = (v >> (7 - level)) & 1; bits.push(b); if b == 0 { zero += 1; } }

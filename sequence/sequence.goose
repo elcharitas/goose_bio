@@ -58,13 +58,13 @@ fn transcribe(text: u8[:], reverse: bool = false) -> SequenceResult {
 
 // Strict partial codons preserve the positional translate API.
 struct TranslationOptions {
-    table: i64 = 1,
-    rna: bool = false,
-    frame: i64 = 0,
-    to_stop: bool = false,
-    cds: bool = false,
+    table:         i64  = 1,
+    rna:           bool = false,
+    frame:         i64  = 0,
+    to_stop:       bool = false,
+    cds:           bool = false,
     allow_partial: bool = false,
-    gap: u8 = 0
+    gap:           u8   = 0,
 }
 
 fn codon_bases(c: u8) -> u8[] {
@@ -72,7 +72,7 @@ fn codon_bases(c: u8) -> u8[] {
         'T', 'U' => "T", 'C' => "C", 'A' => "A", 'G' => "G",
         'R' => "AG", 'Y' => "CT", 'S' => "GC", 'W' => "AT",
         'K' => "GT", 'M' => "AC", 'B' => "CGT", 'D' => "AGT",
-        'H' => "ACT", 'V' => "ACG", 'N' => "TCAG", _ => ""
+        'H' => "ACT", 'V' => "ACG", 'N' => "TCAG", _ => "",
     };
 }
 
@@ -101,8 +101,8 @@ fn translate_with_options(text: u8[:], options: TranslationOptions = Translation
         var valid = true;
         var gaps: i64 = 0;
         for j in 3 {
-            if codon_bases(normalized[pos+j]).len == 0 { valid = false; }
-            if options.gap != 0 && normalized[pos+j] == options.gap { gaps++; }
+            if codon_bases(normalized[pos + j]).len == 0 { valid = false; }
+            if options.gap != 0 && normalized[pos + j] == options.gap { gaps++; }
         }
         if !valid {
             if gaps != 3 || (options.cds && (pos == frame || pos + 3 == normalized.len)) {
@@ -114,10 +114,10 @@ fn translate_with_options(text: u8[:], options: TranslationOptions = Translation
         var all_start = true;
         var all_stop = true;
         for a in codon_bases(normalized[pos]) {
-            for b in codon_bases(normalized[pos+1]) {
-                for c in codon_bases(normalized[pos+2]) {
+            for b in codon_bases(normalized[pos + 1]) {
+                for c in codon_bases(normalized[pos + 2]) {
                     var index: i64 = 0;
-                    let triplet: u8[3] = [a,b,c];
+                    let triplet: u8[3] = [a, b, c];
                     for base in triplet {
                         let digit: i64 = match base { 'T' => 0, 'C' => 1, 'A' => 2, _ => 3 };
                         index = index * 4 + digit;
@@ -179,7 +179,7 @@ fn kmers(text: u8[:], k: i64, rna: bool = false) -> KmerResult {
     if result.error.len > 0 { return KmerResult { [], copy(result.error) }; }
     var out: u8[][>..] = [];
     if k <= text.len {
-        for i in text.len - k + 1 { out.push(str(result.value[i..i+k])); }
+        for i in text.len - k + 1 { out.push(str(result.value[i..i + k])); }
     }
     return KmerResult { copy(out), "" };
 }

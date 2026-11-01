@@ -30,8 +30,8 @@ validation/updates may be quadratic.
 /* Population statistics and Tajima D are not computed.
  */
 fn parse_genepop(text: u8[:]) -> GenePopResult {
-    var comment: u8[>..] = []; var loci: u8[][>..] = [];
-    var pops: GenePopPopulation[>..] = [];
+    var comment:     u8[>..]                = []; var loci: u8[][>..] = [];
+    var pops:        GenePopPopulation[>..] = [];
     var individuals: GenePopIndividual[>..] = [];
     var first = true; var active = false; var width = 0; var ploidy = 0;
     for raw in split(text, '\n') {
@@ -66,13 +66,13 @@ fn parse_genepop(text: u8[:]) -> GenePopResult {
         for token in words.fields {
             var w = 0; var p = 0;
             if token.len == 2 || token.len == 3 { w = token.len; p = 1; }
-            if token.len == 4 || token.len == 6 { w = token.len/2; p = 2; }
+            if token.len == 4 || token.len == 6 { w = token.len / 2; p = 2; }
             if w == 0 { return genepop_error("invalid genotype width"); }
             if width == 0 { width = w; ploidy = p; }
             if w != width || p != ploidy { return genepop_error("inconsistent width or ploidy"); }
             for c in token { if c < '0' || c > '9' { return genepop_error("nondecimal allele"); } }
             for a in 0..p {
-                let value, ok = parse_int(token[a*w..(a+1)*w]);
+                let value, ok = parse_int(token[a * w..(a + 1) * w]);
                 if !ok { return genepop_error("invalid allele"); }
                 alleles.push(value);
             }
@@ -106,14 +106,14 @@ fn write_genepop(r: GenePopRecord) -> FormatTextResult {
         if pop.individuals.len == 0 { return FormatTextResult { "", "empty population" }; }
         out.append("Pop\n");
         for ind in pop.individuals {
-            if ind.name.len == 0 || trim(ind.name) != ind.name || !genepop_line(ind.name) || split(ind.name, ',').len != 1 || ind.alleles.len != r.loci.len*r.ploidy { return FormatTextResult { "", "invalid individual" }; }
+            if ind.name.len == 0 || trim(ind.name) != ind.name || !genepop_line(ind.name) || split(ind.name, ',').len != 1 || ind.alleles.len != r.loci.len * r.ploidy { return FormatTextResult { "", "invalid individual" }; }
             out.append(ind.name); out.push(',');
             for a, i in ind.alleles {
                 if i % r.ploidy == 0 { out.push(' '); }
                 let limit = if r.width == 2 { 100 } else { 1000 };
                 if a < 0 || a >= limit { return FormatTextResult { "", "allele outside width" }; }
-                var divisor = limit/10;
-                while divisor > 0 { out.push((48 + (a/divisor)%10) as u8); divisor /= 10; }
+                var divisor = limit / 10;
+                while divisor > 0 { out.push((48 + (a / divisor) % 10) as u8); divisor /= 10; }
             }
             out.push('\n');
         }
@@ -135,17 +135,17 @@ fail; input remains unchanged.
 fn genepop_select(r: GenePopRecord, populations: i64[:], loci: i64[:]) -> GenePopResult {
     let checked = write_genepop(copy(r));
     if checked.error.len > 0 { return genepop_error(checked.error); }
-    if !genepop_indices(populations,r.populations.len) || !genepop_indices(loci,r.loci.len) { return genepop_error("invalid or empty selection"); }
+    if !genepop_indices(populations, r.populations.len) || !genepop_indices(loci, r.loci.len) { return genepop_error("invalid or empty selection"); }
     var names: u8[][>..] = []; var pops: GenePopPopulation[>..] = [];
     for l in loci { for name, i in r.loci { if i == l { names.push(copy(name)); } } }
     for p in populations {
         var inds: GenePopIndividual[>..] = [];
         for pop, pi in r.populations { if pi != p { continue; }
-        for ind in pop.individuals {
-            var alleles: i64[>..] = [];
-            for l in loci { for a in 0..r.ploidy { alleles.push(ind.alleles[l*r.ploidy+a]); } }
-            inds.push(GenePopIndividual { copy(ind.name), copy(alleles) });
-        }
+            for ind in pop.individuals {
+                var alleles: i64[>..] = [];
+                for l in loci { for a in 0..r.ploidy { alleles.push(ind.alleles[l * r.ploidy + a]); } }
+                inds.push(GenePopIndividual { copy(ind.name), copy(alleles) });
+            }
         }
         pops.push(GenePopPopulation { copy(inds) });
     }
@@ -160,7 +160,7 @@ fn genepop_remove(r: GenePopRecord, population: i64, locus: i64) -> GenePopResul
     var ps: i64[>..] = []; var ls: i64[>..] = [];
     for i in 0..r.populations.len { if i != population { ps.push(i); } }
     for i in 0..r.loci.len { if i != locus { ls.push(i); } }
-    return genepop_select(copy(r),ps,ls);
+    return genepop_select(copy(r), ps, ls);
 }
 /*
 Returns ordered records: by_population=true gives one population each; false gives one
@@ -175,7 +175,7 @@ fn genepop_split(r: GenePopRecord, by_population: bool) -> GenePopSplit {
         var ps: i64[>..] = []; var ls: i64[>..] = [];
         for i in 0..r.populations.len { if !by_population || i == n { ps.push(i); } }
         for i in 0..r.loci.len { if by_population || i == n { ls.push(i); } }
-        records.push(copy(genepop_select(copy(r),ps,ls).record));
+        records.push(copy(genepop_select(copy(r), ps, ls).record));
     }
     return GenePopSplit { copy(records), "" };
 }

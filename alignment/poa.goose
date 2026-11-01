@@ -8,8 +8,8 @@ struct PoaEdge { from: i64, to: i64 }
  * endpoints are harmless. Graphs can encode recombinant paths and retain neither edge counts nor read
  * provenance. */
 struct PoaGraph {
-    bases: u8[], weights: i64[], edges: PoaEdge[],
-    starts: i64[], ends: i64[], empty: bool
+    bases:  u8[], weights: i64[], edges: PoaEdge[],
+    starts: i64[], ends: i64[], empty: bool,
 }
 struct PoaOrder { nodes: i64[], error: u8[] }
 
@@ -22,7 +22,7 @@ struct PoaScoring { match_score: i64, mismatch: i64, gap: i64 }
  * other pairs consume both. Graph nodes follow start-to-end edges and query indexes run 0..length-1.
  * Reachability tags distinguish unreachable cells from negative scores. */
 struct PoaAlignment {
-    score: i64, nodes: i64[], query_indices: i64[], error: u8[]
+    score: i64, nodes: i64[], query_indices: i64[], error: u8[],
 }
 
 /* Errors preserve the input and return an empty placeholder graph; check error. Updates copy graphs,
@@ -37,13 +37,13 @@ struct PoaConsensus { sequence: u8[], weight: i64, error: u8[] }
 /* Copies a single path with unit support; validation occurs before alignment, update, or consensus.
  */
 fn poa_sequence(s: const u8[:]) -> PoaGraph {
-    var bases: u8[>..] = []; var weights: i64[>..] = []; var edges: PoaEdge[>..] = [];
+    var bases:  u8[>..]  = []; var weights: i64[>..] = []; var edges: PoaEdge[>..] = [];
     var starts: i64[>..] = []; var ends: i64[>..] = [];
     for c, i in s {
         bases.push(c); weights.push(1);
-        if i > 0 { edges.push(PoaEdge { i-1, i }); }
+        if i > 0 { edges.push(PoaEdge { i - 1, i }); }
     }
-    if s.len > 0 { starts.push(0); ends.push(s.len-1); }
+    if s.len > 0 { starts.push(0); ends.push(s.len - 1); }
     return PoaGraph { copy(bases), copy(weights), copy(edges), copy(starts), copy(ends), s.len == 0 };
 }
 
@@ -79,7 +79,7 @@ fn poa_order(g: const PoaGraph&) -> PoaOrder {
     for v in g.starts { reach[v] = true; }
     for v in order { for e in g.edges { if e.from == v && reach[v] { reach[e.to] = true; } } }
     for v in g.ends { finish[v] = true; }
-    for k in n { let v = order[n-1-k]; for e in g.edges { if e.from == v && finish[e.to] { finish[v] = true; } } }
+    for k in n { let v = order[n - 1 - k]; for e in g.edges { if e.from == v && finish[e.to] { finish[v] = true; } } }
     for i in n { if !reach[i] || !finish[i] { return bad; } }
     if n == 0 && !g.empty { return bad; }
     return PoaOrder { order, "" };
@@ -92,49 +92,49 @@ fn poa_order(g: const PoaGraph&) -> PoaOrder {
 fn poa_align(g: const PoaGraph&, q: const u8[:], s: PoaScoring) -> PoaAlignment {
     let bad = PoaAlignment { 0, [], [], "invalid graph, scoring, or cell bound" };
     let order = poa_order(g);
-    if order.error.len > 0 || q.len > 100000 || (g.bases.len+1)*(q.len+1) > 2000000
+    if order.error.len > 0 || q.len > 100000 || (g.bases.len + 1) * (q.len + 1) > 2000000
         || s.match_score < -1000000 || s.match_score > 1000000
         || s.mismatch < -1000000 || s.mismatch > 1000000 || s.gap < 0 || s.gap > 1000000 { return bad; }
-    let w = q.len+1; let cells = (g.bases.len+1)*w;
+    let w = q.len + 1; let cells = (g.bases.len + 1) * w;
     var d: i64[>..] = []; var prev: i64[>..] = []; var op: i64[>..] = [];
     for k in cells { d.push(0); prev.push(-1); op.push(-1); }
     prev[0] = 0;
-    for j in 1..w { d[j] = -j*s.gap; prev[j] = j-1; op[j] = 2; }
+    for j in 1..w { d[j] = -j * s.gap; prev[j] = j - 1; op[j] = 2; }
     for v in order.nodes {
-        let row = (v+1)*w;
+        let row = (v + 1) * w;
         for j in w {
-            for pass in 0..g.edges.len+1 {
+            for pass in 0..g.edges.len + 1 {
                 var p: i64 = -2;
                 if pass == 0 { for start in g.starts { if start == v { p = -1; } } }
-                else { let e = g.edges[pass-1]; if e.to == v { p = e.from; } }
+                else { let e = g.edges[pass - 1]; if e.to == v { p = e.from; } }
                 if p == -2 { continue; }
-                let before = (p+1)*w+j;
+                let before = (p + 1) * w + j;
                 if prev[before] >= 0 {
-                    let value = d[before]-s.gap;
-                    if prev[row+j] < 0 || value > d[row+j] { d[row+j] = value; prev[row+j] = before; op[row+j] = 1; }
+                    let value = d[before] - s.gap;
+                    if prev[row + j] < 0 || value > d[row + j] { d[row + j] = value; prev[row + j] = before; op[row + j] = 1; }
                 }
-                if j > 0 && prev[before-1] >= 0 {
-                    let value = d[before-1]+(if g.bases[v] == q[j-1] { s.match_score } else { s.mismatch });
-                    if prev[row+j] < 0 || value > d[row+j] { d[row+j] = value; prev[row+j] = before-1; op[row+j] = 0; }
+                if j > 0 && prev[before - 1] >= 0 {
+                    let value = d[before - 1] + (if g.bases[v] == q[j - 1] { s.match_score } else { s.mismatch });
+                    if prev[row + j] < 0 || value > d[row + j] { d[row + j] = value; prev[row + j] = before - 1; op[row + j] = 0; }
                 }
             }
-            if j > 0 && prev[row+j-1] >= 0 {
-                let value = d[row+j-1]-s.gap;
-                if prev[row+j] < 0 || value > d[row+j] { d[row+j] = value; prev[row+j] = row+j-1; op[row+j] = 2; }
+            if j > 0 && prev[row + j - 1] >= 0 {
+                let value = d[row + j - 1] - s.gap;
+                if prev[row + j] < 0 || value > d[row + j] { d[row + j] = value; prev[row + j] = row + j - 1; op[row + j] = 2; }
             }
         }
     }
     var end: i64 = if g.empty { q.len } else { -1 };
-    for v in g.ends { let cell = (v+1)*w+q.len; if end < 0 || d[cell] > d[end] { end = cell; } }
+    for v in g.ends { let cell = (v + 1) * w + q.len; if end < 0 || d[cell] > d[end] { end = cell; } }
     if end < 0 { return bad; }
     let score = d[end]; var rn: i64[>..] = []; var rq: i64[>..] = [];
     while end != 0 {
         let action = op[end];
-        rn.push(if action == 2 { -1 } else { end/w-1 });
-        rq.push(if action == 1 { -1 } else { end%w-1 }); end = prev[end];
+        rn.push(if action == 2 { -1 } else { end / w - 1 });
+        rq.push(if action == 1 { -1 } else { end % w - 1 }); end = prev[end];
     }
     var ns: i64[>..] = []; var qs: i64[>..] = [];
-    for k in rn.len { ns.push(rn[rn.len-1-k]); qs.push(rq[rq.len-1-k]); }
+    for k in rn.len { ns.push(rn[rn.len - 1 - k]); qs.push(rq[rq.len - 1 - k]); }
     return PoaAlignment { score, ns, qs, "" };
 }
 
@@ -142,9 +142,9 @@ fn poa_align(g: const PoaGraph&, q: const u8[:], s: PoaScoring) -> PoaAlignment 
  * unit nodes; deletions skip nodes. Consecutive read nodes gain edges; endpoints retain old paths and
  * add the new one. Empty reads add the empty path. Revalidation includes new edges to lower IDs. */
 fn poa_add_read(g: const PoaGraph&, q: const u8[:], s: PoaScoring) -> PoaUpdate {
-    var bases: u8[>..] = []; var weights: i64[>..] = []; var edges: PoaEdge[>..] = [];
+    var bases:  u8[>..]  = []; var weights: i64[>..] = []; var edges: PoaEdge[>..] = [];
     var starts: i64[>..] = []; var ends: i64[>..] = []; var empty = g.empty;
-    let a = poa_align(g,q,s);
+    let a = poa_align(g, q, s);
     if a.error.len > 0 { return PoaUpdate { PoaGraph { [], [], [], [], [], true }, copy(a.error) }; }
     for c in g.bases { bases.push(c); }
     for weight in g.weights { weights.push(weight); }
@@ -186,13 +186,13 @@ fn poa_consensus(g: const PoaGraph&) -> PoaConsensus {
     for v in g.starts { d[v] = g.weights[v]; }
     for v in order.nodes {
         for e in g.edges { if e.to == v && d[e.from] >= 0 {
-            let value = d[e.from]+g.weights[v];
+            let value = d[e.from] + g.weights[v];
             if value > d[v] { d[v] = value; prev[v] = e.from; }
         } }
     }
     var end: i64 = -1; var best: i64 = if g.empty { 0 } else { -1 };
     for v in g.ends { if d[v] > best { best = d[v]; end = v; } }
     var rev: u8[>..] = []; while end >= 0 { rev.push(g.bases[end]); end = prev[end]; }
-    var seq: u8[>..] = []; for k in rev.len { seq.push(rev[rev.len-1-k]); }
+    var seq: u8[>..] = []; for k in rev.len { seq.push(rev[rev.len - 1 - k]); }
     return PoaConsensus { copy(seq), best, "" };
 }

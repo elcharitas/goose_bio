@@ -9,8 +9,8 @@ struct RecordPosition { kind: i64, value: i64 }
 /* Half-open boundaries use strand 1 or -1. Empty, overlapping, and mixed-strand parts are legal;
  * remote references reject. There is no implicit circular wrapping. */
 struct RecordLocationPart {
-    start: RecordPosition, end: RecordPosition, strand: i64,
-    remote: u8[]
+    start:  RecordPosition, end: RecordPosition, strand: i64,
+    remote: u8[],
 }
 fn validate_record_position(p: RecordPosition, length: i64) -> bool {
     if p.kind == 3 { return p.value == 0; }

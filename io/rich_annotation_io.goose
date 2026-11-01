@@ -34,31 +34,31 @@ struct RichLocationResult { parts: RecordLocationPart[], error: u8[] }
 
 recursive fn rich_genbank_location_parts(text: u8[:], parts: RecordLocationPart[>..]&, depth: i64) -> bool {
     if depth > 64 || text.len == 0 { return false; }
-    if starts_with(text, "complement(") && text[text.len-1] == ')' {
+    if starts_with(text, "complement(") && text[text.len - 1] == ')' {
         let begin = parts.len;
-        if !rich_genbank_location_parts(text[11..text.len-1], parts, depth+1) { return false; }
+        if !rich_genbank_location_parts(text[11..text.len - 1], parts, depth + 1) { return false; }
         var ordered: RecordLocationPart[>..] = [];
         for p, j in parts { if j < begin { ordered.push(copy(p)); } }
-        for i in parts.len-begin { for p, j in parts {
-            if j == parts.len-1-i { ordered.push(RecordLocationPart { copy(p.start), copy(p.end), -p.strand, "" }); }
+        for i in parts.len - begin { for p, j in parts {
+            if j == parts.len - 1 - i { ordered.push(RecordLocationPart { copy(p.start), copy(p.end), -p.strand, "" }); }
         } }
         parts.clear(); parts.append(ordered);
         return true;
     }
-    if starts_with(text, "join(") && text[text.len-1] == ')' {
+    if starts_with(text, "join(") && text[text.len - 1] == ')' {
         var level = 0; var begin = 5;
         for i in text.len {
-            if i < 5 || i == text.len-1 { continue; }
+            if i < 5 || i == text.len - 1 { continue; }
             if text[i] == '(' { level += 1; }
             if text[i] == ')' { level -= 1; }
             if level < 0 { return false; }
             if text[i] == ',' && level == 0 {
-                if !rich_genbank_location_parts(text[begin..i], parts, depth+1) { return false; }
-                begin = i+1;
+                if !rich_genbank_location_parts(text[begin..i], parts, depth + 1) { return false; }
+                begin = i + 1;
             }
         }
         if level != 0 { return false; }
-        return rich_genbank_location_parts(text[begin..text.len-1], parts, depth+1);
+        return rich_genbank_location_parts(text[begin..text.len - 1], parts, depth + 1);
     }
     let dots = split(text, '.');
     if dots.len != 1 && (dots.len != 3 || dots[1].len != 0) { return false; }
@@ -74,7 +74,7 @@ fn rich_position(text: u8[:], start: bool) -> RecordPosition {
     for c in digits { if c < '0' || c > '9' { return RecordPosition { -1, 0 }; } }
     let n, ok = parse_int(digits);
     if !ok || n < 1 { return RecordPosition { -1, 0 }; }
-    return RecordPosition { kind, if start { n-1 } else { n } };
+    return RecordPosition { kind, if start { n - 1 } else { n } };
 }
 
 /*
@@ -102,11 +102,11 @@ continuations concatenate; other continuations join with one space. Sequence nor
 uppercase; wholly undefined sequence keeps length.
 */
 fn rich_parse_genbank(text: u8[:]) -> RichRecordsResult {
-    var records: RichRecord[>..] = [];
-    var id: u8[>..] = []; var description: u8[>..] = [];
-    var headers: u8[][>..] = []; var sequence: u8[>..] = [];
-    var features: RecordFeature[>..] = [];
-    var kind: u8[>..] = []; var location: u8[>..] = [];
+    var records:    RichRecord[>..]       = [];
+    var id:         u8[>..]               = []; var description: u8[>..] = [];
+    var headers:    u8[][>..]             = []; var sequence: u8[>..] = [];
+    var features:   RecordFeature[>..]    = [];
+    var kind:       u8[>..]               = []; var location: u8[>..] = [];
     var qualifiers: FeatureQualifier[>..] = [];
     var definition = false; var definition_seen = false;
     var state = 0; var length = 0; var rna = false; var topology = 0;
@@ -179,15 +179,15 @@ fn rich_parse_genbank(text: u8[:]) -> RichRecordsResult {
                 if !rich_io_token(key) { return RichRecordsResult { [], "invalid qualifier key" }; }
                 if eq < 0 { qualifiers.push(FeatureQualifier { str(key), [] }); }
                 else {
-                    let v = value[eq+1..];
+                    let v = value[eq + 1..];
                     if v.len == 0 { return RichRecordsResult { [], "empty unquoted qualifier" }; }
                     var decoded: u8[>..] = [];
                     if v[0] == '"' {
-                        if v.len < 2 || v[v.len-1] != '"' { return RichRecordsResult { [], "multiline qualifier unsupported" }; }
+                        if v.len < 2 || v[v.len - 1] != '"' { return RichRecordsResult { [], "multiline qualifier unsupported" }; }
                         var i = 1;
-                        while i < v.len-1 {
+                        while i < v.len - 1 {
                             if v[i] == '"' {
-                                if i+1 >= v.len-1 || v[i+1] != '"' { return RichRecordsResult { [], "invalid quoted qualifier" }; }
+                                if i + 1 >= v.len - 1 || v[i + 1] != '"' { return RichRecordsResult { [], "invalid quoted qualifier" }; }
                                 i += 1;
                             }
                             decoded.push(v[i]); i += 1;
@@ -244,10 +244,10 @@ fn rich_write_genbank(records: RichRecord[:]) -> FormatTextResult {
         } }
         if r.id.len > 16 { return FormatTextResult { "", "LOCUS name too long" }; }
         out.append("LOCUS       "); out.append(r.id);
-        for i in 16-r.id.len { out.push(' '); }
+        for i in 16 - r.id.len { out.push(' '); }
         let size = str(r.length);
         if size.len > 11 { return FormatTextResult { "", "LOCUS length too large" }; }
-        for i in 12-size.len { out.push(' '); } out.append(size);
+        for i in 12 - size.len { out.push(' '); } out.append(size);
         out.append(if r.rna { " bp    RNA     " } else { " bp    DNA     " });
         out.append(if r.topology == 1 { "circular " } else { "linear   " });
         out.append(division); out.push(' '); out.append(date); out.push('\n');
@@ -263,7 +263,7 @@ fn rich_write_genbank(records: RichRecord[:]) -> FormatTextResult {
         for f in r.features {
             if !rich_io_token(f.kind) || f.kind.len > 15 { return FormatTextResult { "", "invalid feature key" }; }
             out.append("     "); out.append(f.kind);
-            for i in 16-f.kind.len { out.push(' '); }
+            for i in 16 - f.kind.len { out.push(' '); }
             if f.parts.len > 1 { out.append("join("); }
             for p, i in f.parts {
                 if i > 0 { out.push(','); }
@@ -289,10 +289,10 @@ fn rich_write_genbank(records: RichRecord[:]) -> FormatTextResult {
         }
         out.append("ORIGIN\n");
         for c, i in sequence {
-            if i % 60 == 0 { out.append("        "); out.append(str(i+1)); }
+            if i % 60 == 0 { out.append("        "); out.append(str(i + 1)); }
             if i % 10 == 0 { out.push(' '); }
             out.push(c);
-            if (i+1) % 60 == 0 || i+1 == sequence.len { out.push('\n'); }
+            if (i + 1) % 60 == 0 || i + 1 == sequence.len { out.push('\n'); }
         }
         out.append("//\n");
     }
@@ -316,9 +316,9 @@ Other header shapes fail. Ordered opaque lines use embl_header/genbank_header. S
 adapters remain separate; no full INSDC claim.
 */
 fn rich_parse_embl(text: u8[:]) -> RichRecordsResult {
-    var result: RichRecord[>..] = [];
-    var gb: u8[>..] = []; var headers: u8[][>..] = [];
-    var declared_length: i64 = 0;
+    var result:          RichRecord[>..] = [];
+    var gb:              u8[>..]         = []; var headers: u8[][>..] = [];
+    var declared_length: i64             = 0;
     var description_seen = false;
     var active = false; var sequence = false; var features = false;
     for raw in split(text, '\n') {
@@ -331,10 +331,10 @@ fn rich_parse_embl(text: u8[:]) -> RichRecordsResult {
             let id = trim(fields[0]); let molecule = trim(fields[3]);
             let size = trim(fields[6]);
             if !ends_with(size, " BP.") || (molecule != "genomic DNA" && molecule != "DNA" && molecule != "RNA") { return RichRecordsResult { [], "unsupported EMBL molecule or size" }; }
-            let size_number, size_ok = parse_int(size[..size.len-4]);
+            let size_number, size_ok = parse_int(size[..size.len - 4]);
             if !size_ok || size_number < 0 { return RichRecordsResult { [], "invalid EMBL ID length" }; }
             declared_length = size_number;
-            gb.clear(); gb.append("LOCUS       "); gb.append(id); gb.push(' '); gb.append(size[..size.len-4]);
+            gb.clear(); gb.append("LOCUS       "); gb.append(id); gb.push(' '); gb.append(size[..size.len - 4]);
             gb.append(if molecule == "RNA" { " bp RNA " } else { " bp DNA " });
             let topology = trim(fields[2]);
             if topology != "linear" && topology != "circular" { return RichRecordsResult { [], "unsupported topology" }; }
@@ -352,7 +352,7 @@ fn rich_parse_embl(text: u8[:]) -> RichRecordsResult {
             if sq.len < 2 { return RichRecordsResult { [], "malformed EMBL SQ summary" }; }
             let summary = trim(sq[0]);
             if summary.len < 13 || !starts_with(summary, "Sequence ") || !ends_with(summary, " BP") { return RichRecordsResult { [], "malformed EMBL SQ length" }; }
-            let sq_length, sq_ok = parse_int(summary[9..summary.len-3]);
+            let sq_length, sq_ok = parse_int(summary[9..summary.len - 3]);
             if !sq_ok || sq_length != declared_length { return RichRecordsResult { [], "EMBL SQ and ID lengths differ" }; }
             gb.append("ORIGIN\n"); sequence = true;
         } else if sequence {
@@ -410,13 +410,12 @@ fn rich_write_embl(records: RichRecord[:]) -> FormatTextResult {
                 for c, i in selected.value {
                     if i % 60 == 0 { out.append("     "); }
                     out.push(c);
-                    if (i+1) % 10 == 0 { out.push(' '); }
-                    if (i+1) % 60 == 0 || i+1 == selected.value.len { out.push(' '); out.append(str(i+1)); out.push('\n'); }
+                    if (i + 1) % 10 == 0 { out.push(' '); }
+                    if (i + 1) % 60 == 0 || i + 1 == selected.value.len { out.push(' '); out.append(str(i + 1)); out.push('\n'); }
                 }
                 out.append("//\n");
             }
             else if state == 1 { out.append("FT   "); out.append(line[5..]); out.push('\n'); }
-
         }
     }
     let parsed = rich_parse_embl(out);

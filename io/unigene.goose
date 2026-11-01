@@ -16,10 +16,10 @@ CRLF, and ends with LF; field order and duplicate keys survive. Whole-input byte
 has no file, encoding, or network API.
 */
 fn parse_unigene(text: u8[:]) -> UniGeneResult {
-    var records: UniGeneRecord[>..] = []; var id: u8[>..] = [];
+    var records:  UniGeneRecord[>..]   = []; var id: u8[>..] = [];
     var metadata: SpecialistField[>..] = []; var sequences: UniGeneEntry[>..] = [];
-    var raw: u8[>..] = []; var count = -1;
-    for input in split(text,'\n') {
+    var raw:      u8[>..]              = []; var count = -1;
+    for input in split(text, '\n') {
         let line = format_line(input);
         if line.len == 0 { continue; }
         if line == "//" {
@@ -45,8 +45,8 @@ fn parse_unigene(text: u8[:]) -> UniGeneResult {
             }
             if key == "SEQUENCE" {
                 var fields: SpecialistField[>..] = [];
-                for part in split(value,';') {
-                    let p = specialist_pair(part,'=');
+                for part in split(value, ';') {
+                    let p = specialist_pair(part, '=');
                     if p.error.len > 0 { return UniGeneResult { [], "invalid UniGene sequence entry" }; }
                     fields.push(copy(p.field));
                 }

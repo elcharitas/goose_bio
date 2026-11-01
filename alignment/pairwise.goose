@@ -26,8 +26,8 @@ fn edit_distance(a: const u8[:], b: const u8[:]) -> i64 {
 }
 
 struct Alignment {
-    score: i64, a_start: i64, a_end: i64, b_start: i64, b_end: i64,
-    a_aligned: u8[], b_aligned: u8[]
+    score:     i64, a_start: i64, a_end: i64, b_start: i64, b_end: i64,
+    a_aligned: u8[], b_aligned: u8[],
 }
 
 // A gap of length k costs open + (k - 1) * extend.
@@ -44,7 +44,7 @@ fn affine_alignment(a: const u8[:], b: const u8[:], match_score: i64 = 2,
     let size = (a.len + 1) * w;
     let neg: i64 = -1152921504606846976;
     var scores: i64[>..] = [];
-    var trace: i64[>..] = [];
+    var trace:  i64[>..] = [];
     for k in size * 3 { scores.push(neg); trace.push(-1); }
     scores[0] = 0;
     for i in 1..a.len + 1 {
@@ -58,7 +58,7 @@ fn affine_alignment(a: const u8[:], b: const u8[:], match_score: i64 = 2,
         if local { scores[j * 3] = 0; }
     }
     var best: i64 = 0;
-    var bi: i64 = 0; var bj: i64 = 0; var bs: i64 = 0;
+    var bi:   i64 = 0; var bj: i64 = 0; var bs: i64 = 0;
     for i in 1..a.len + 1 {
         for j in 1..w {
             let cell = (i * w + j) * 3;

@@ -13,11 +13,11 @@ import std;
  * rounding odd cysteine counts down. Helix/turn/sheet propensities use overlapping EMALK/NPGSD/VIYFWLT
  * sets; these are not structural predictions. */
 struct ProteinProperties {
-    sequence: u8[], counts: i64[], fractions: f64[],
-    molecular_weight: f64, aromaticity: f64, gravy: f64,
-    charge: f64, isoelectric_point: f64,
+    sequence:           u8[], counts: i64[], fractions: f64[],
+    molecular_weight:   f64, aromaticity: f64, gravy: f64,
+    charge:             f64, isoelectric_point: f64,
     extinction_reduced: i64, extinction_disulfide: i64,
-    helix: f64, turn: f64, sheet: f64, error: u8[]
+    helix:              f64, turn: f64, sheet: f64, error: u8[],
 }
 
 /* Counts and fractions follow ACDEFGHIKLMNPQRSTVWY order. Input accepts lowercase standard residues;
@@ -73,8 +73,8 @@ fn protein_properties(text: const u8[:], ph: f64 = 7.0,
         sequence.push(aa); counts[index] += 1;
     }
     let average: f64[] = [89.0932, 121.1582, 133.1027, 147.1293, 165.1891, 75.0666, 155.1546, 131.1729, 146.1876, 131.1729, 149.2113, 132.1179, 115.1305, 146.1445, 174.201, 105.0926, 119.1192, 117.1463, 204.2252, 181.1885];
-    let mono: f64[] = [89.047678, 121.019749, 133.037508, 147.053158, 165.078979, 75.032028, 155.069477, 131.094629, 146.105528, 131.094629, 149.051049, 132.053492, 115.063329, 146.069142, 174.111676, 105.042593, 119.058243, 117.078979, 204.089878, 181.073893];
-    let kd: f64[] = [1.8, 2.5, -3.5, -3.5, 2.8, -0.4, -3.2, 4.5, -3.9, 3.8, 1.9, -3.5, -1.6, -3.5, -4.5, -0.8, -0.7, 4.2, -0.9, -1.3];
+    let mono:    f64[] = [89.047678, 121.019749, 133.037508, 147.053158, 165.078979, 75.032028, 155.069477, 131.094629, 146.105528, 131.094629, 149.051049, 132.053492, 115.063329, 146.069142, 174.111676, 105.042593, 119.058243, 117.078979, 204.089878, 181.073893];
+    let kd:      f64[] = [1.8, 2.5, -3.5, -3.5, 2.8, -0.4, -3.2, 4.5, -3.9, 3.8, 1.9, -3.5, -1.6, -3.5, -4.5, -0.8, -0.7, 4.2, -0.9, -1.3];
     var weight = 0.0; var gravy = 0.0; var fractions: f64[>..] = [];
     for n, i in counts {
         weight += n * (if monoisotopic { mono[i] } else { average[i] });

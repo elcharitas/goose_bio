@@ -25,7 +25,7 @@ fn main() {
         "ATOM 1 A ? ? '' ALA ? CA ? . ? 1 0 0 0 1\n",
         "ATOM 1 A ? 1 ? '' ? CA ? . ? 1 0 0 0 1\n",
         "ATOM 1 A ? 1 ? ALA ? '' ? . ? 1 0 0 0 1\n",
-        "ATOM 1 '' ? 1 ? ALA ? CA ? . ? 1 0 0 0 1\n"
+        "ATOM 1 '' ? 1 ? ALA ? CA ? . ? 1 0 0 0 1\n",
     ] { assert(bio::parse_mmcif_structure(str(header, row)).error.len > 0); }
     let fallback = bio::parse_mmcif_structure(str(header,
         "ATOM 1 A ? '' 1 ALA ? CA ? . ? 1 0 0 0 1\n",

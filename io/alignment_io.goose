@@ -8,7 +8,6 @@ namespace bio;
 import std;
 import .formats;
 
-
 fn alignment_words(line: u8[:]) -> TextRow {
     var fields: u8[][>..] = []; var start = -1;
     for c, i in line {
@@ -60,7 +59,7 @@ fn parse_alignment_io(text: u8[:], phylip: bool) -> RecordsResult {
         if !phylip && (line[0] == ' ' || line[0] == '\t') {
             var consensus = true;
             for c in line { if c != ' ' && c != '*' && c != ':' && c != '.' { consensus = false; } }
-            if consensus && records.len >= 2 && column >= 0 && line.len == column+length {
+            if consensus && records.len >= 2 && column >= 0 && line.len == column + length {
                 var placed = true;
                 for c, i in line { if i < column && c != ' ' { placed = false; } }
                 if placed { consensus_seen = true; continue; }
@@ -104,7 +103,7 @@ fn write_alignment_io(records: SequenceRecord[:], phylip: bool) -> FormatTextRes
     for r in records {
         if phylip { for c in r.sequence { if c == '.' { return FormatTextResult { "", "PHYLIP dot residues unsupported" }; } } }
         out.append(r.header);
-        for i in (if phylip { 1 } else { width-r.header.len+1 }) { out.push(' '); }
+        for i in (if phylip { 1 } else { width - r.header.len + 1 }) { out.push(' '); }
         out.append(r.sequence); out.push('\n');
     }
     return FormatTextResult { copy(out), "" };

@@ -11,7 +11,7 @@ fn first_value(values: bio::FeatureQualifier[:]) -> u8[] {
 fn main() {
     let f = bio::AnnotatedFeature { "CDS", [
         bio::LocationPart { 0, 2, 1, false },
-        bio::LocationPart { 4, 6, -1, false }
+        bio::LocationPart { 4, 6, -1, false },
     ], [bio::FeatureQualifier { "gene", ["example"] }] };
     let record = bio::AnnotatedRecord { "id", "description", "ACGTAGTC",
         [bio::FeatureQualifier { "source", ["test"] }], [copy(f)], false };
@@ -43,12 +43,12 @@ fn main() {
     assert(bio::validate_location([bio::LocationPart { 0, 1, 1, true }], 8).len > 0);
     let minus = bio::AnnotatedFeature { "gene", [
         bio::LocationPart { 6, 8, -1, false },
-        bio::LocationPart { 2, 4, -1, false }
+        bio::LocationPart { 2, 4, -1, false },
     ], [] };
     assert(bio::extract_feature(record.sequence, copy(minus)).value == "GAAC");
     assert(bio::extract_feature("ACGT?GTC", copy(f)).error.len > 0);
     let simple = bio::AnnotatedRecord { "rna", "", "AAUGCC", [], [
-        bio::AnnotatedFeature { "gene", [bio::LocationPart { 2, 4, -1, false }], [] }
+        bio::AnnotatedFeature { "gene", [bio::LocationPart { 2, 4, -1, false }], [] },
     ], true };
     let shifted = bio::slice_annotated_record(copy(simple), 1, 5);
     assert(shifted.error.len == 0 && first_feature(copy(shifted.record)).parts[0].start == 1);

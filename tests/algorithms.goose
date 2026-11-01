@@ -55,10 +55,10 @@ fn main() {
     assert(wide_gap.score == -100000000000000000 && wide_gap.a_aligned == "-");
     let free_gap = bio::affine_alignment("AAC", "AC", 2, -1, 0, 0);
     assert(free_gap.score == 4);
-    let obs: i64[2] = [0, 1];
-    let initial: f64[2] = [log(0.6), log(0.4)];
+    let obs:        i64[2] = [0, 1];
+    let initial:    f64[2] = [log(0.6), log(0.4)];
     let transition: f64[4] = [log(0.7), log(0.3), log(0.4), log(0.6)];
-    let emission: f64[4] = [log(0.5), log(0.5), log(0.1), log(0.9)];
+    let emission:   f64[4] = [log(0.5), log(0.5), log(0.1), log(0.9)];
     let likelihood = bio::hmm_forward_log(obs, initial, transition, emission, 2);
     assert(abs(exp(likelihood) - 0.2156) < 1e-12);
     let no_obs: i64[0] = [];

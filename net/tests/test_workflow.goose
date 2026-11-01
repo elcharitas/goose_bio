@@ -19,7 +19,7 @@ fn main() {
     assert(w.ready == 1110);
     send(w, "{\"results\":[{\"primaryAccession\":\"A1\"},{\"primaryAccession\":\"B2\"}]}", "Link: <search?page=3>; rel=next\r\n");
     send(w, "{\"results\":[{\"primaryAccession\":\"C3\"}]}");
-    for k in 0 .. 3 {
+    for k in 0..3 {
         let id = if k == 0 { "A1" } else { if k == 1 { "B2" } else { "C3" } };
         let body = bio_http::join(bio_http::join("{\"primaryAccession\":\"", id), "\",\"sequence\":{\"value\":\"MPE\",\"length\":3}}");
         send(w, body);
@@ -56,7 +56,7 @@ fn main() {
     send(later, "{\"primaryAccession\":\"A1\",\"sequence\":{\"value\":\"M\",\"length\":1}}");
     send(later, "failure", "", 404);
     assert(!later.complete && bio_http::workflow_data(later).records.len == 1);
-    for field in 0 .. 5 {
+    for field in 0..5 {
         var cap = limits();
         if field == 0 { cap.pages = 1; }
         if field == 1 { cap.entries = 1; }

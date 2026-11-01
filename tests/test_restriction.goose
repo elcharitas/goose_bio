@@ -15,7 +15,7 @@ fn main() {
     for h in f.cuts { assert(h.start == 3 && h.top == 10 && h.bottom == 14); }
     let r = bio::catalog_search("TTTTTTTTTTTTTGAGACCTTT", "BsaI");
     assert(r.cuts.len == 1);
-    for h in r.cuts { assert(h.strand == -1 && h.top == h.start-5 && h.bottom == h.start-1); }
+    for h in r.cuts { assert(h.strand == -1 && h.top == h.start - 5 && h.bottom == h.start - 1); }
     let origin = bio::catalog_search("AATTCAAAAG", "EcoRI", true);
     assert(origin.cuts.len == 1);
     let d = bio::catalog_digest("AATTCAAAAG", "EcoRI", true);

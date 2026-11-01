@@ -42,7 +42,7 @@ fn parse_stockholm(text: u8[:]) -> StockholmResult {
             var id: u8[>..] = []; var tag: u8[>..] = [];
             for w, i in words.fields { if per_id && i == 0 { id.append(w); } if i == (if per_id { 1 } else { 0 }) { tag.append(w); } }
             var pos = 5; var count = 0;
-            while count < need-1 {
+            while count < need - 1 {
                 while pos < line.len && (line[pos] == ' ' || line[pos] == '\t') { pos += 1; }
                 while pos < line.len && line[pos] != ' ' && line[pos] != '\t' { pos += 1; }
                 count += 1;
