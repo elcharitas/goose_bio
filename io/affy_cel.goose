@@ -15,7 +15,7 @@ struct CelResult { record: CelRecord, error: u8[] }
 fn cel_fail(s: u8[:]) -> CelResult { return CelResult { CelRecord { 0,0,0,0,[],[],[],[],[],[],[] }, str(s) }; }
 fn cel_integer(s: u8[:]) -> i64 { if s.len == 0 || s.len > 20 { return -9223372036854775807; } var p = 0; if s[0] == '-' || s[0] == '+' { p = 1; } if p == s.len { return -9223372036854775807; } for b in s[p..] { if b < '0' || b > '9' { return -9223372036854775807; } } let n, ok = parse_int(s); if !ok { return -9223372036854775807; } return n; }
 fn cel_finite(x: f64) -> bool { return !is_nan(x) && !is_inf(x); }
-fn cel_u32(b: u8[:], p: i64) -> i64 { return (b[p] as i64)+(b[p+1] as i64)*256+(b[p+2] as i64)*65536+(b[p+3] as i64)*16777216; }
+fn cel_u32(b: u8[:], p: i64) -> i64 { return b[p]+(b[p+1] as i64)*256+(b[p+2] as i64)*65536+(b[p+3] as i64)*16777216; }
 fn cel_float(b: u8[:], p: i64) -> f64 {
     let bits = cel_u32(b,p); let e = (bits/8388608)%256; let m = bits%8388608;
     if e == 255 { return log(0.0); }
@@ -71,7 +71,7 @@ fn cel_binary(data: u8[:]) -> CelResult {
     p += 16;
     if p > data.len || n > (data.len-p)/10 { return cel_fail("truncated binary cells/padding"); }
     var a: f64[>..] = []; var s: f64[>..] = []; var pixels: i64[>..] = [];
-    for i in 0..n { let x = cel_float(data,p); let y = cel_float(data,p+4); var z = (data[p+8] as i64)+256*(data[p+9] as i64); if z >= 32768 { z -= 65536; }
+    for i in 0..n { let x = cel_float(data,p); let y = cel_float(data,p+4); var z = data[p+8]+256*(data[p+9] as i64); if z >= 32768 { z -= 65536; }
         if !cel_finite(x) || !cel_finite(y) || y < 0.0 { return cel_fail("nonfinite cell or negative stdev"); }
         a.push(x); s.push(y); pixels.push(z); p += 10;
     }

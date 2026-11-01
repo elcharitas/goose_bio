@@ -2,10 +2,10 @@ namespace bio_http;
 import .responses;
 import .workflow;
 
-extern "bio_http_start" fn native_start(method: const u8[:], url: const u8[:], payload: const u8[:], timeout: i64, cap: i64, header_cap: i64) -> i64;
-extern "bio_http_number" fn native_number(handle: i64, field: i32) -> i64;
-extern "bio_http_copy" fn native_copy(handle: i64, field: i32, out: u8[>..]&) -> i32;
-extern "bio_http_close" fn native_close(handle: i64) -> i32;
+extern fn native_start(method: const u8[:], url: const u8[:], payload: const u8[:], timeout: i64, cap: i64, header_cap: i64) -> i64 = "bio_http_start";
+extern fn native_number(handle: i64, field: i32) -> i64 = "bio_http_number";
+extern fn native_copy(handle: i64, field: i32, out: u8[>..]&) -> i32 = "bio_http_copy";
+extern fn native_close(handle: i64) -> i32 = "bio_http_close";
 
 struct GooseHttpResult {
     status: i64, body: u8[], headers: u8[], error: u8[], code: i64
