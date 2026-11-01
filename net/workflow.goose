@@ -67,24 +67,23 @@ fn workflow_link_value(value: u8[:]) -> u8[], bool {
     return json_bytes(found), value.len > 0;
 }
 
-
 extern fn workflow_now() -> i64 = "bio_workflow_now";
 extern fn workflow_sleep(ms: i64) = "bio_workflow_sleep";
 extern fn workflow_url(base: const u8[:], current: const u8[:], target: const u8[:], out: u8[>..]&) -> i32 = "bio_workflow_url";
 struct UniProtLimits {
-    pages: i64, entries: i64, requests: i64, bytes: i64,
-    deadline_ms: i64, interval_ms: i64, retries: i64
+    pages:       i64, entries: i64, requests: i64, bytes: i64,
+    deadline_ms: i64, interval_ms: i64, retries: i64,
 }
 struct UniProtAttempt { url: u8[], started_ms: i64, response: GooseHttpResult }
 struct UniProtWorkflowData {
     records: UniProtEntry[], attempts: UniProtAttempt[], reason: u8[],
-    url: u8[], accessions: u8[][], visited: u8[][]
+    url:     u8[], accessions: u8[][], visited: u8[][],
 }
 struct UniProtWorkflow {
     complete: bool, done: bool, base: u8[], limits: UniProtLimits,
     deadline: i64, ready: i64, last: i64, pages: i64, bytes: i64,
-    retry: i64, fetch: i64, pending: bool, started: i64,
-    data: UniProtWorkflowData[>..]
+    retry:    i64, fetch: i64, pending: bool, started: i64,
+    data:     UniProtWorkflowData[>..],
 }
 fn workflow_data(w: UniProtWorkflow&) -> UniProtWorkflowData {
     for d in w.data { return copy(d); }

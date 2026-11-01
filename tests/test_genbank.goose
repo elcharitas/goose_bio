@@ -54,7 +54,7 @@ fn main() {
         "LOCUS x 2 bp DNA\nFEATURES             Location/Qualifiers\n     gene            <1..2\nORIGIN\nac\n//\n",
         "LOCUS x 2 bp DNA\nFEATURES             Location/Qualifiers\n     gene            1..3\nORIGIN\nac\n//\n",
         "LOCUS x 2 bp DNA\nFEATURES             Location/Qualifiers\n     gene            1..2\n                     /note=\"unfinished\nORIGIN\nac\n//\n",
-        "LOCUS x 2 bp DNA\nDEFINITION  first\n            continuation\nORIGIN\nac\n//\n"
+        "LOCUS x 2 bp DNA\nDEFINITION  first\n            continuation\nORIGIN\nac\n//\n",
     ] { assert(bio::parse_genbank(t).error.len > 0); }
     assert(bio::parse_genbank("LOCUS x 1 bp DNA\nDEFINITION \nORIGIN\na\n//\n").error.len > 0);
     assert(bio::parse_genbank("LOCUS x 1 bp DNA\nDEFINITION  \nDEFINITION  again\nORIGIN\na\n//\n").error.len > 0);

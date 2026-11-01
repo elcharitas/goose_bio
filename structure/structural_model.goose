@@ -5,21 +5,21 @@ import .mmcif;
 
 // Indices retain row order and all alternate sites without selection.
 struct StructuralAtom {
-    row: i64, model: u8[],
-    label_chain: CifToken, author_chain: CifToken,
-    label_residue: CifToken, author_residue: CifToken,
+    row:             i64, model: u8[],
+    label_chain:     CifToken, author_chain: CifToken,
+    label_residue:   CifToken, author_residue: CifToken,
     label_component: CifToken, author_component: CifToken,
-    label_atom: CifToken, author_atom: CifToken,
-    alternate: CifToken, insertion: CifToken,
-    hetero: bool, x: f64, y: f64, z: f64
+    label_atom:      CifToken, author_atom: CifToken,
+    alternate:       CifToken, insertion: CifToken,
+    hetero:          bool, x: f64, y: f64, z: f64,
 }
 struct StructuralGroup {
-    model: u8[], label_chain: CifToken, author_chain: CifToken,
+    model:         u8[], label_chain: CifToken, author_chain: CifToken,
     label_residue: CifToken, author_residue: CifToken,
-    insertion: CifToken, hetero: bool, atoms: i64[]
+    insertion:     CifToken, hetero: bool, atoms: i64[],
 }
 struct StructuralModel {
-    document: CifDocument, atoms: StructuralAtom[], residues: StructuralGroup[]
+    document: CifDocument, atoms: StructuralAtom[], residues: StructuralGroup[],
 }
 struct StructuralResult { structure: StructuralModel, error: u8[] }
 
@@ -48,7 +48,7 @@ hetero status, and atom indices.
 */
 fn mmcif_structure(doc: const CifDocument&) -> StructuralResult {
     let empty = StructuralModel { CifDocument { "", [] }, [], [] };
-    var atoms: StructuralAtom[>..] = [];
+    var atoms:  StructuralAtom[>..]  = [];
     var groups: StructuralGroup[>..] = [];
     var found = false;
     for item in doc.items {
@@ -110,14 +110,14 @@ fn mmcif_structure(doc: const CifDocument&) -> StructuralResult {
                 cif_cell(values, offset, aa),
                 cif_cell(values, offset, alt),
                 cif_cell(values, offset, ins),
-                group.text == "HETATM", x, y, z
+                group.text == "HETATM", x, y, z,
             };
             if a.label_chain.kind != 0 || a.label_chain.text.len == 0 || a.label_atom.kind != 0 || a.label_atom.text.len == 0 ||
                 a.label_component.kind != 0 || a.label_component.text.len == 0 ||
                 ((a.label_residue.kind != 0 || a.label_residue.text.len == 0) &&
                  (a.author_residue.kind != 0 || a.author_residue.text.len == 0)) {
-                return StructuralResult { empty, "insufficient atom_site identity for residue grouping" };
-            }
+                    return StructuralResult { empty, "insufficient atom_site identity for residue grouping" };
+                }
             atoms.push(copy(a)); offset += item.tags.len;
         }
     }

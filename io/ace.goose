@@ -48,7 +48,7 @@ zero-based, values one-based; padded-to-unpadded uses zero for pads.
 */
 fn ace_coordinate_maps(sequence: u8[:]) -> AceMaps {
     var p: i64[>..] = []; var u: i64[>..] = []; var n = 0;
-    for b, i in sequence { if b == '*' { p.push(0); } else { n += 1; p.push(n); u.push(i+1); } }
+    for b, i in sequence { if b == '*' { p.push(0); } else { n += 1; p.push(n); u.push(i + 1); } }
     return AceMaps { copy(p), copy(u) };
 }
 /*
@@ -74,8 +74,8 @@ fn ace_inspect_placement(contig: AceContig, name: u8[:]) -> AceInspection {
     for af in contig.placements { if af.name == name { for r in contig.reads { if r.name == name {
         var bases: AcePlacedBase[>..] = [];
         for b, i in r.sequence {
-            let p = af.padded_start+i; let inside = p >= 1 && p <= contig.consensus.len;
-            bases.push(AcePlacedBase { i+1, p, if inside { maps.padded_to_unpadded[p-1] } else { 0 }, b, inside, r.quality_clip.usable && i+1 >= r.quality_clip.start && i+1 <= r.quality_clip.end, r.alignment_clip.usable && i+1 >= r.alignment_clip.start && i+1 <= r.alignment_clip.end });
+            let p = af.padded_start + i; let inside = p >= 1 && p <= contig.consensus.len;
+            bases.push(AcePlacedBase { i + 1, p, if inside { maps.padded_to_unpadded[p - 1] } else { 0 }, b, inside, r.quality_clip.usable && i + 1 >= r.quality_clip.start && i + 1 <= r.quality_clip.end, r.alignment_clip.usable && i + 1 >= r.alignment_clip.start && i + 1 <= r.alignment_clip.end });
         }
         return AceInspection { copy(bases), "" };
     } } } }
@@ -198,24 +198,24 @@ fn parse_ace(text: u8[:]) -> AceResult {
             let q_tokens = alignment_words(ace_line(c)); var q: u8[:][>..] = []; for token in q_tokens.fields { q.push(token); }
             if q.len != 5 || q[0] != "QA" { return ace_fail("expected QA"); }
             let a = ace_number(q[1]); let b = ace_number(q[2]); let d = ace_number(q[3]); let e = ace_number(q[4]);
-            if !ace_clip(a,b,length) || !ace_clip(d,e,length) { return ace_fail("invalid QA clipping"); }
+            if !ace_clip(a, b, length) || !ace_clip(d, e, length) { return ace_fail("invalid QA clipping"); }
             ace_skip(c); var ds: u8[>..] = []; var has_ds = false;
             if c.position < c.lines.len && starts_with(trim(c.lines[c.position]), "DS ") {
                 let raw = format_line(c.lines[c.position]); var begin = 0;
                 while begin < raw.len && (raw[begin] == ' ' || raw[begin] == '\t') { begin += 1; }
-                ds.append(raw[begin+3..]); c.position += 1; has_ds = true;
+                ds.append(raw[begin + 3..]); c.position += 1; has_ds = true;
             }
-            rd.push(AceRead { str(r[1]), copy(sequence), info, nt, AceClip { a,b,a>0 }, AceClip { d,e,d>0 }, has_ds, copy(ds) });
+            rd.push(AceRead { str(r[1]), copy(sequence), info, nt, AceClip { a, b, a > 0 }, AceClip { d, e, d > 0 }, has_ds, copy(ds) });
         }
         for a in af {
             var found = false; for r in rd { if r.name == a.name {
                 found = true;
-                if a.padded_start+r.sequence.len-1 < 1 { return ace_fail("placement outside contig"); }
-                if r.alignment_clip.usable && (a.padded_start+r.alignment_clip.start-1 < 1 || a.padded_start+r.alignment_clip.end-1 > nb) { return ace_fail("aligned clip outside contig"); }
+                if a.padded_start + r.sequence.len - 1 < 1 { return ace_fail("placement outside contig"); }
+                if r.alignment_clip.usable && (a.padded_start + r.alignment_clip.start - 1 < 1 || a.padded_start + r.alignment_clip.end - 1 > nb) { return ace_fail("aligned clip outside contig"); }
             } }
             if !found { return ace_fail("unresolved AF"); }
         }
-        for b in bs { var found = false; for a in af { if a.name == b.name { found = true; for r in rd { if r.name == a.name && (b.padded_start < a.padded_start || b.padded_end >= a.padded_start+r.sequence.len) { return ace_fail("BS outside read"); } } } } if !found { return ace_fail("unresolved BS"); } }
+        for b in bs { var found = false; for a in af { if a.name == b.name { found = true; for r in rd { if r.name == a.name && (b.padded_start < a.padded_start || b.padded_end >= a.padded_start + r.sequence.len) { return ace_fail("BS outside read"); } } } } if !found { return ace_fail("unresolved BS"); } }
         contigs.push(AceContig { str(w[1]), nb, reads, segments, str(w[5]), copy(seq), copy(qualities), copy(af), copy(bs), copy(rd) });
     }
     var count = 0; for x in contigs { count += x.reads.len; }

@@ -8,15 +8,15 @@ extern fn native_copy(handle: i64, field: i32, out: u8[>..]&) -> i32 = "bio_http
 extern fn native_close(handle: i64) -> i32 = "bio_http_close";
 
 struct GooseHttpResult {
-    status: i64, body: u8[], headers: u8[], error: u8[], code: i64
+    status: i64, body: u8[], headers: u8[], error: u8[], code: i64,
 }
 
 fn request(method: u8[:], url: u8[:], payload: u8[:] = "", timeout_ms: i64 = 10000, body_cap: i64 = 8388608, header_cap: i64 = 65536) -> GooseHttpResult {
     let h = native_start(method, url, payload, timeout_ms, body_cap, header_cap);
     if h == 0 { return GooseHttpResult { 0, "", "", "allocation failure", -1 }; }
-    var body: u8[>..] = [];
+    var body:    u8[>..] = [];
     var headers: u8[>..] = [];
-    var error: u8[>..] = [];
+    var error:   u8[>..] = [];
     let status = native_number(h, 0);
     let code = native_number(h, 1);
     native_copy(h, 0, body);
@@ -230,7 +230,7 @@ fn next_link(headers: u8[:]) -> u8[] {
 // Only GET retries; the caller chooses at most two additional attempts.
 fn get_retry(url: u8[:], retries: i32 = 0, timeout_ms: i64 = 10000) -> GooseHttpResult {
     if retries < 0 || retries > 2 { return GooseHttpResult { 0, "", "", "retries must be 0..2", -1 }; }
-    for attempt in 0 .. retries + 1 {
+    for attempt in 0..retries + 1 {
         let result = request("GET", url, "", timeout_ms);
         if attempt == retries || (result.code == 0 && result.status != 429 && result.status < 500) { return copy(result); }
     }

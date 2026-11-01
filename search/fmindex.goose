@@ -1,8 +1,8 @@
 namespace bio;
 
 struct FMIndex {
-    bwt: u8[], sa: i64[], cumulative: i64[], checkpoints: i64[],
-    stride: i64, length: i64, error: u8[]
+    bwt:    u8[], sa: i64[], cumulative: i64[], checkpoints: i64[],
+    stride: i64, length: i64, error: u8[],
 }
 struct FMRange { start: i64, end: i64, error: u8[] }
 struct FMLocations { positions: i64[], error: u8[] }
@@ -15,7 +15,7 @@ fn fm_pair_less(a: i64, b: i64, ranks: const i64[:], k: i64) -> bool {
 }
 // Merge-sorted prefix doubling: O(n log^2 n) time, O(n) workspace.
 fn fm_suffix_array(text: const u8[:]) -> i64[] {
-    var sa: i64[>..] = []; var ranks: i64[>..] = [];
+    var sa:  i64[>..] = []; var ranks: i64[>..] = [];
     var tmp: i64[>..] = []; var next: i64[>..] = [];
     for c, i in text { sa.push(i); ranks.push(c); tmp.push(0); next.push(0); }
     var k: i64 = 1;
@@ -56,7 +56,7 @@ fn fm_index(text: const u8[:], checkpoint_stride: i64 = 128) -> FMIndex {
     var terminated: u8[>..] = [];
     for c in text { terminated.push(c); } terminated.push(0);
     let sa = fm_suffix_array(terminated);
-    var bwt: u8[>..] = []; var counts: i64[>..] = [];
+    var bwt:        u8[>..]  = []; var counts: i64[>..] = [];
     var cumulative: i64[>..] = []; var checkpoints: i64[>..] = [];
     for i in 256 { counts.push(0); cumulative.push(0); }
     for pos in sa { bwt.push(terminated[if pos == 0 { text.len } else { pos - 1 }]); }

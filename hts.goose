@@ -31,7 +31,6 @@ extern fn hts_bgzf_copy(source: const u8[:], destination: const u8[:], compress:
 extern fn hts_tabix_index(path: const u8[:]) -> i32 = "bio_tabix_index";
 extern fn hts_tabix_query(path: const u8[:], region: const u8[:], out: u8[>..]&) -> i32 = "bio_tabix_query";
 
-
 /* Streams local plain/gzip FASTA or FASTQ, retaining one current record. Each line/field has a
  * 64 MiB limit. A failed open returns 0; close each successful handle once. */
 extern fn fastx_open(path: const u8[:]) -> i64 = "bio_fastx_open";
@@ -47,100 +46,100 @@ extern fn fastx_close(handle: i64) -> i32 = "bio_fastx_close";
 /*
 Uses the current valid alignment. Returns the SAM type byte, or -1.
 */
-extern fn bam_aux_type( handle: i64, tag: const u8[:]) -> i32 = "bio_bam_aux_type";
+extern fn bam_aux_type(handle: i64, tag: const u8[:]) -> i32 = "bio_bam_aux_type";
 /*
 Returns array length, 1 for a scalar, or -1 on failure.
 */
-extern fn bam_aux_count( handle: i64, tag: const u8[:]) -> i64 = "bio_bam_aux_count";
+extern fn bam_aux_count(handle: i64, tag: const u8[:]) -> i64 = "bio_bam_aux_count";
 /*
 Reads an integer scalar at index zero or an integer array element. Failure is INT64_MIN,
 outside the stored BAM integer range.
 */
-extern fn bam_aux_int( handle: i64, tag: const u8[:], index: i64) -> i64 = "bio_bam_aux_int";
+extern fn bam_aux_int(handle: i64, tag: const u8[:], index: i64) -> i64 = "bio_bam_aux_int";
 /*
 Reads a floating scalar/array element. Failure is NaN, indistinguishable from a stored
 NaN.
 */
-extern fn bam_aux_float( handle: i64, tag: const u8[:], index: i64) -> f64 = "bio_bam_aux_float";
+extern fn bam_aux_float(handle: i64, tag: const u8[:], index: i64) -> f64 = "bio_bam_aux_float";
 /*
 Copies A, Z, or H bytes into the builder.
 */
-extern fn bam_aux_string( handle: i64, tag: const u8[:], out: u8[>..]&) -> i32 = "bio_bam_aux_string";
+extern fn bam_aux_string(handle: i64, tag: const u8[:], out: u8[>..]&) -> i32 = "bio_bam_aux_string";
 /*
 Aux setters add or replace values after validating a two-byte SAM tag. Integer, float,
 string, i32-array, and f32-array forms are supported.
 */
-extern fn bam_aux_set_int( handle: i64, tag: const u8[:], value: i64) -> i32 = "bio_bam_aux_set_int";
-extern fn bam_aux_set_float( handle: i64, tag: const u8[:], value: f64) -> i32 = "bio_bam_aux_set_float";
-extern fn bam_aux_set_string( handle: i64, tag: const u8[:], value: const u8[:]) -> i32 = "bio_bam_aux_set_string";
+extern fn bam_aux_set_int(handle: i64, tag: const u8[:], value: i64) -> i32 = "bio_bam_aux_set_int";
+extern fn bam_aux_set_float(handle: i64, tag: const u8[:], value: f64) -> i32 = "bio_bam_aux_set_float";
+extern fn bam_aux_set_string(handle: i64, tag: const u8[:], value: const u8[:]) -> i32 = "bio_bam_aux_set_string";
 /*
 An absent tag is an error.
 */
-extern fn bam_aux_delete( handle: i64, tag: const u8[:]) -> i32 = "bio_bam_aux_delete";
+extern fn bam_aux_delete(handle: i64, tag: const u8[:]) -> i32 = "bio_bam_aux_delete";
 /*
 Requires the same record family and identical formatted headers, including samples;
 numeric dictionaries are not guessed. This restriction belongs to this strict copy only.
 Rejection can leave header bytes already emitted by writer open. Close the writer
 explicitly.
 */
-extern fn hts_copy_record( source: i64, destination: i64) -> i32 = "bio_hts_copy_record";
+extern fn hts_copy_record(source: i64, destination: i64) -> i32 = "bio_hts_copy_record";
 /*
 Copies decoded bases; same-length setters preserve layout and aux fields. Combined
 resizing uses bam_edit.
 */
-extern fn bam_sequence( handle: i64, out: u8[>..]&) -> i32 = "bio_bam_sequence";
+extern fn bam_sequence(handle: i64, out: u8[>..]&) -> i32 = "bio_bam_sequence";
 /*
 Copies numeric PHRED bytes, including 255 for missing quality.
 */
-extern fn bam_quality( handle: i64, out: u8[>..]&) -> i32 = "bio_bam_quality";
+extern fn bam_quality(handle: i64, out: u8[>..]&) -> i32 = "bio_bam_quality";
 /*
 Returns packed (length << 4) | opcode, or -1 for an invalid index.
 */
-extern fn bam_cigar( handle: i64, index: i64) -> i64 = "bio_bam_cigar";
+extern fn bam_cigar(handle: i64, index: i64) -> i64 = "bio_bam_cigar";
 /*
 Integer INFO/FORMAT getters use sample-major FORMAT arrays. INT64_MIN indicates getter
 failure; stored i32 missing (-2147483648) and vector end (-2147483647) remain distinct.
 */
-extern fn bcf_int_count( handle: i64, tag: const u8[:], format: bool) -> i64 = "bio_bcf_int_count";
+extern fn bcf_int_count(handle: i64, tag: const u8[:], format: bool) -> i64 = "bio_bcf_int_count";
 /*
 GT uses encoded HTSlib integers: zero is missing, (allele + 1) << 1 is unphased, and bit
 zero marks phase. Vector ends preserve variable ploidy. Reader-side sample selection is
 unavailable; mapped copy can select writer samples.
 */
-extern fn bcf_int( handle: i64, tag: const u8[:], format: bool, index: i64) -> i64 = "bio_bcf_int";
+extern fn bcf_int(handle: i64, tag: const u8[:], format: bool, index: i64) -> i64 = "bio_bcf_int";
 /* Requires Integer in the selected INFO/FORMAT namespace; FORMAT GT instead requires String.
  * Unknown IDs, namespaces, or types fail before mutation, including empty-array deletion.
  * Fixed/A/R counts and padded FORMAT widths must match; one missing value is allowed.
  * Data after vector end and Number=G updates fail. GT alleles must fit; phase and ploidy survive. */
-extern fn bcf_set_int( handle: i64, tag: const u8[:], format: bool, values: const i32[:]) -> i32 = "bio_bcf_set_int";
+extern fn bcf_set_int(handle: i64, tag: const u8[:], format: bool, values: const i32[:]) -> i32 = "bio_bcf_set_int";
 /*
 Returns an opaque handle or 0; readers require an EOF marker. Independent writers
 truncate their path: use distinct input/output paths. hts_bgzf_copy provides the
 separate alias-protected copying operation. Calls remain main thread only.
 */
-extern fn bgzf_open( path: const u8[:], writing: bool) -> i64 = "bio_bgzf_open";
+extern fn bgzf_open(path: const u8[:], writing: bool) -> i64 = "bio_bgzf_open";
 /*
 Flushes writers and invalidates the handle, returning 0 or -1.
 */
-extern fn bgzf_close( handle: i64) -> i32 = "bio_bgzf_close";
+extern fn bgzf_close(handle: i64) -> i32 = "bio_bgzf_close";
 /*
 Returns a virtual offset or -1. Writer offsets can refer to buffered data.
 */
-extern fn bgzf_tell( handle: i64) -> i64 = "bio_bgzf_tell";
+extern fn bgzf_tell(handle: i64) -> i64 = "bio_bgzf_tell";
 /*
 Accepts reader offsets only. Save an offset and reopen the same file before seeking;
 arbitrary offsets may not identify valid blocks.
 */
-extern fn bgzf_seek( handle: i64, offset: i64) -> i32 = "bio_bgzf_seek";
+extern fn bgzf_seek(handle: i64, offset: i64) -> i32 = "bio_bgzf_seek";
 /*
 Appends up to the requested count, capped at 64 MiB per call. Returns bytes read, 0 at
 EOF, or -1.
 */
-extern fn bgzf_read( handle: i64, count: i64, out: u8[>..]&) -> i64 = "bio_bgzf_read";
+extern fn bgzf_read(handle: i64, count: i64, out: u8[>..]&) -> i64 = "bio_bgzf_read";
 /*
 Returns 0 or -1; failures can leave partial output.
 */
-extern fn bgzf_write( handle: i64, data: const u8[:]) -> i32 = "bio_bgzf_write";
+extern fn bgzf_write(handle: i64, data: const u8[:]) -> i32 = "bio_bgzf_write";
 
 extern fn bam_aux_set_int_array(handle: i64, tag: const u8[:], values: const i32[:]) -> i32 = "bio_bam_aux_set_int_array";
 extern fn bam_aux_set_float_array(handle: i64, tag: const u8[:], values: const f32[:]) -> i32 = "bio_bam_aux_set_float_array";

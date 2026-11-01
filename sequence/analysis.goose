@@ -25,19 +25,19 @@ fn find_orfs(text: u8[:], table: i64 = 1, both_strands: bool = true) -> ORFResul
         let dna = if side == 0 { copy(normalized.value) } else { copy(rc.value) };
         for frame in 3 {
             var pos = frame;
-            while pos+2 < dna.len {
+            while pos + 2 < dna.len {
                 var index: i64 = 0;
-                for k in 3 { index = index*4 + (match dna[pos+k] { 'T' => 0, 'C' => 1, 'A' => 2, _ => 3 }); }
+                for k in 3 { index = index * 4 + (match dna[pos + k] { 'T' => 0, 'C' => 1, 'A' => 2, _ => 3 }); }
                 if code.starts[index] == '1' {
-                    var end = pos+3;
-                    while end+2 < dna.len {
+                    var end = pos + 3;
+                    while end + 2 < dna.len {
                         var stop: i64 = 0;
-                        for k in 3 { stop = stop*4 + (match dna[end+k] { 'T' => 0, 'C' => 1, 'A' => 2, _ => 3 }); }
+                        for k in 3 { stop = stop * 4 + (match dna[end + k] { 'T' => 0, 'C' => 1, 'A' => 2, _ => 3 }); }
                         if code.stops[stop] == '1' {
-                            let protein = translate_with_options(dna[pos..end+3], TranslationOptions { table: table, cds: true });
+                            let protein = translate_with_options(dna[pos..end + 3], TranslationOptions { table: table, cds: true });
                             assert(protein.error.len == 0);
-                            out.push(ORF { if side == 0 { pos } else { dna.len-end-3 },
-                                if side == 0 { end+3 } else { dna.len-pos },
+                            out.push(ORF { if side == 0 { pos } else { dna.len - end - 3 },
+                                if side == 0 { end + 3 } else { dna.len - pos },
                                 if side == 0 { 1 } else { -1 }, frame, copy(protein.value) });
                             break;
                         }
@@ -73,29 +73,29 @@ fn restriction_sites(text: u8[:], pattern: u8[:], top_offset: i64,
     let rc = reverse_complement(motif.value);
     let palindrome = rc.value == motif.value;
     if motif.value.len > dna.value.len { return RestrictionResult { copy(sites), "" }; }
-    for pos in 0..(dna.value.len-motif.value.len+1) {
+    for pos in 0..(dna.value.len - motif.value.len + 1) {
         for side in (if palindrome { 1 } else { 2 }) {
             let p = if side == 0 { copy(motif.value) } else { copy(rc.value) };
             var hit = true;
             for k in p.len {
                 var found = false;
-                for b in codon_bases(p[k]) { if b == dna.value[pos+k] { found = true; } }
+                for b in codon_bases(p[k]) { if b == dna.value[pos + k] { found = true; } }
                 if !found { hit = false; }
             }
             if !hit { continue; }
             // Check bounds before offset arithmetic can overflow.
-            let low = if side == 0 { -pos } else { pos+p.len-dna.value.len };
-            let high = if side == 0 { dna.value.len-pos } else { pos+p.len };
+            let low = if side == 0 { -pos } else { pos + p.len - dna.value.len };
+            let high = if side == 0 { dna.value.len - pos } else { pos + p.len };
             if top_offset < low || top_offset > high ||
                 bottom_offset < low || bottom_offset > high {
                 return RestrictionResult { [], "cut outside linear molecule" };
             }
-            let top = if side == 0 { pos+top_offset } else { pos+p.len-bottom_offset };
-            let bottom = if side == 0 { pos+bottom_offset } else { pos+p.len-top_offset };
+            let top = if side == 0 { pos + top_offset } else { pos + p.len - bottom_offset };
+            let bottom = if side == 0 { pos + bottom_offset } else { pos + p.len - top_offset };
             if top < 0 || bottom < 0 || top > dna.value.len || bottom > dna.value.len {
                 return RestrictionResult { [], "cut outside linear molecule" };
             }
-            sites.push(RestrictionSite { pos, pos+p.len, if side == 0 { 1 } else { -1 }, top, bottom });
+            sites.push(RestrictionSite { pos, pos + p.len, if side == 0 { 1 } else { -1 }, top, bottom });
         }
     }
     return RestrictionResult { copy(sites), "" };

@@ -27,7 +27,7 @@ dependency.
 */
 struct StructuralHierarchy {
     structure: StructuralModel, nodes: StructuralNode[], selected: bool[],
-    author: bool, occupancy: f64[], alternate_selected: bool[]
+    author:    bool, occupancy: f64[], alternate_selected: bool[],
 }
 struct HierarchyResult { hierarchy: StructuralHierarchy, error: u8[] }
 fn hierarchy_empty() -> StructuralHierarchy {
@@ -105,19 +105,19 @@ fn structural_hierarchy(s: const StructuralModel&, author: bool,
             model = hierarchy_node(nodes, 0, 1, str(occurrence));
         }
         let ch = hierarchy_node(nodes, model, 2, chain.text);
-        let het: u8[>..] = if !a.hetero { " " } else if a.label_component.text == "HOH" || a.label_component.text == "WAT" { "W" } else { str("H_", a.label_component.text) };
+        let het:       u8[>..] = if !a.hetero { " " } else if a.label_component.text == "HOH" || a.label_component.text == "WAT" { "W" } else { str("H_", a.label_component.text) };
         let insertion: u8[>..] = if a.insertion.kind == 0 { hierarchy_token(a.insertion) } else { "blank" };
         let res = hierarchy_node(nodes, ch, 3, str(het, ":", rn, ":", insertion));
         let comp = hierarchy_node(nodes, res, 4, a.label_component.text);
         for n in nodes { if n.parent == res && n.kind == 4 &&
             n.id == a.label_component.text && n.rows.len > 0 {
-            for r in nodes { if r.parent == ch && r.kind == 3 &&
-                r.id == str(het, ":", rn, ":", insertion) && r.rows.len > 0 {
-                if atoms[r.rows[r.rows.len - 1]].label_component.text != a.label_component.text {
-                    return HierarchyResult { empty, "component reentry ordering unsupported" };
-                }
+                for r in nodes { if r.parent == ch && r.kind == 3 &&
+                    r.id == str(het, ":", rn, ":", insertion) && r.rows.len > 0 {
+                        if atoms[r.rows[r.rows.len - 1]].label_component.text != a.label_component.text {
+                            return HierarchyResult { empty, "component reentry ordering unsupported" };
+                        }
+                    } }
             } }
-        } }
         let at = hierarchy_node(nodes, comp, 5, atom.text);
         var refs: StructuralNode&[>..] = [];
         for n in nodes { refs.push(n); }

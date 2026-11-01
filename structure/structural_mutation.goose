@@ -62,15 +62,15 @@ fn structural_transform(h: const StructuralHierarchy&, node: i64, all_alternates
     }
     for x in rotation { if !structural_finite(x) { return HierarchyResult { copy(h), "nonfinite rotation" }; } }
     for x in translation { if !structural_finite(x) { return HierarchyResult { copy(h), "nonfinite translation" }; } }
-    var edits: StructuralCoordinate[>..] = [];
+    var edits: StructuralCoordinate[>..]  = [];
     var atoms: const StructuralAtom&[>..] = [];
     for a in h.structure.atoms { atoms.push(a); }
     for row in structural_rows(h, node, all_alternates) {
         let a = atoms[row];
         edits.push(StructuralCoordinate { row,
-            a.x*rotation[0]+a.y*rotation[3]+a.z*rotation[6]+translation[0],
-            a.x*rotation[1]+a.y*rotation[4]+a.z*rotation[7]+translation[1],
-            a.x*rotation[2]+a.y*rotation[5]+a.z*rotation[8]+translation[2] });
+            a.x * rotation[0] + a.y * rotation[3] + a.z * rotation[6] + translation[0],
+            a.x * rotation[1] + a.y * rotation[4] + a.z * rotation[7] + translation[1],
+            a.x * rotation[2] + a.y * rotation[5] + a.z * rotation[8] + translation[2] });
     }
     structural_set(h, edits)
 }

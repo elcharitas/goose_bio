@@ -8,14 +8,14 @@ fn main() {
     assert(bio::rich_sequence_slice(copy(converted.record), 0, 8).value == original.sequence);
     let f = bio::RecordFeature { "gene", [
         bio::RecordLocationPart { bio::RecordPosition { 1, 6 }, bio::RecordPosition { 2, 8 }, 1, "" },
-        bio::RecordLocationPart { bio::RecordPosition { 0, 0 }, bio::RecordPosition { 0, 2 }, 1, "" }
+        bio::RecordLocationPart { bio::RecordPosition { 0, 0 }, bio::RecordPosition { 0, 2 }, 1, "" },
     ], [bio::FeatureQualifier { "gene", ["origin"] }] };
     let r = bio::RichRecord { "id", "description", 8, [
-        bio::DefinedSegment { 0, "AC" }, bio::DefinedSegment { 6, "TC" }
+        bio::DefinedSegment { 0, "AC" }, bio::DefinedSegment { 6, "TC" },
     ], copy(original.metadata), [copy(f)], [
-        bio::LetterTrack { "quality", 1, "", [1,2,3,4,5,6,7,8], [] },
+        bio::LetterTrack { "quality", 1, "", [1, 2, 3, 4, 5, 6, 7, 8], [] },
         bio::LetterTrack { "mask", 0, "abcdefgh", [], [] },
-        bio::LetterTrack { "score", 2, "", [], [0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0] }
+        bio::LetterTrack { "score", 2, "", [], [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0] },
     ], false, 1 };
     assert(bio::validate_rich_record(copy(r)).len == 0);
     assert(bio::rich_sequence_slice(copy(r), 0, 8).error.len > 0);
@@ -32,7 +32,7 @@ fn main() {
     }
     for t in rev.record.tracks {
         if t.kind == 0 { assert(t.bytes == "hgfedcba"); }
-        if t.kind == 2 { for v, i in t.floats { assert(v == 7-i); } }
+        if t.kind == 2 { for v, i in t.floats { assert(v == 7 - i); } }
     }
     for m in rev.record.metadata { assert(m.key == "source"); for v in m.values { assert(v == "test"); } }
     let twice = bio::reverse_complement_rich_record(copy(rev.record));
@@ -76,7 +76,7 @@ fn main() {
         if a > b { continue; }
         let part = bio::slice_rich_record(copy(converted.record), a, b);
         assert(part.error.len == 0);
-        assert(bio::rich_sequence_slice(copy(part.record), 0, b-a).value == original.sequence[a..b]);
+        assert(bio::rich_sequence_slice(copy(part.record), 0, b - a).value == original.sequence[a..b]);
     } }
     let empty_feature = bio::RecordFeature { "site", [bio::RecordLocationPart {
         bio::RecordPosition { 0, 0 }, bio::RecordPosition { 0, 0 }, 1, "" }], [] };

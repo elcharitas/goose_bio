@@ -9,7 +9,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 91639\nchr1\t.\tgene\t91572\t91639\t-1.25e-3\t?\t.\tID=g0;Note=a%2C0%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 91571 && r.end == 91639); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,0;= %\t"); } }
+        for r in g.features { assert(r.start == 91571 && r.end == 91639); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,0;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -21,7 +21,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 81623\nchr1\t.\tgene\t81544\t81623\t-1.25e-3\t?\t.\tID=g1;Note=a%2C1%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 81543 && r.end == 81623); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,1;= %\t"); } }
+        for r in g.features { assert(r.start == 81543 && r.end == 81623); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,1;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -33,7 +33,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 53621\nchr1\t.\tgene\t53593\t53621\t-1.25e-3\t?\t.\tID=g2;Note=a%2C2%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 53592 && r.end == 53621); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,2;= %\t"); } }
+        for r in g.features { assert(r.start == 53592 && r.end == 53621); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,2;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -45,7 +45,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 90989\nchr1\t.\tgene\t90914\t90989\t-1.25e-3\t?\t.\tID=g3;Note=a%2C3%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 90913 && r.end == 90989); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,3;= %\t"); } }
+        for r in g.features { assert(r.start == 90913 && r.end == 90989); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,3;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -57,7 +57,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 9973\nchr1\t.\tgene\t9881\t9973\t-1.25e-3\t?\t.\tID=g4;Note=a%2C4%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 9880 && r.end == 9973); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,4;= %\t"); } }
+        for r in g.features { assert(r.start == 9880 && r.end == 9973); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,4;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -69,7 +69,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 9590\nchr1\t.\tgene\t9534\t9590\t-1.25e-3\t?\t.\tID=g5;Note=a%2C5%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 9533 && r.end == 9590); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,5;= %\t"); } }
+        for r in g.features { assert(r.start == 9533 && r.end == 9590); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,5;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -81,7 +81,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 71758\nchr1\t.\tgene\t71728\t71758\t-1.25e-3\t?\t.\tID=g6;Note=a%2C6%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 71727 && r.end == 71758); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,6;= %\t"); } }
+        for r in g.features { assert(r.start == 71727 && r.end == 71758); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,6;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -93,7 +93,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 11454\nchr1\t.\tgene\t11393\t11454\t-1.25e-3\t?\t.\tID=g7;Note=a%2C7%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 11392 && r.end == 11454); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,7;= %\t"); } }
+        for r in g.features { assert(r.start == 11392 && r.end == 11454); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,7;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -105,7 +105,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 51611\nchr1\t.\tgene\t51526\t51611\t-1.25e-3\t?\t.\tID=g8;Note=a%2C8%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 51525 && r.end == 51611); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,8;= %\t"); } }
+        for r in g.features { assert(r.start == 51525 && r.end == 51611); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,8;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -117,7 +117,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 68934\nchr1\t.\tgene\t68878\t68934\t-1.25e-3\t?\t.\tID=g9;Note=a%2C9%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 68877 && r.end == 68934); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,9;= %\t"); } }
+        for r in g.features { assert(r.start == 68877 && r.end == 68934); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,9;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -129,7 +129,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 99276\nchr1\t.\tgene\t99202\t99276\t-1.25e-3\t?\t.\tID=g10;Note=a%2C10%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 99201 && r.end == 99276); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,10;= %\t"); } }
+        for r in g.features { assert(r.start == 99201 && r.end == 99276); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,10;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -141,7 +141,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 85939\nchr1\t.\tgene\t85876\t85939\t-1.25e-3\t?\t.\tID=g11;Note=a%2C11%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 85875 && r.end == 85939); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,11;= %\t"); } }
+        for r in g.features { assert(r.start == 85875 && r.end == 85939); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,11;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -153,7 +153,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 62774\nchr1\t.\tgene\t62680\t62774\t-1.25e-3\t?\t.\tID=g12;Note=a%2C12%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 62679 && r.end == 62774); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,12;= %\t"); } }
+        for r in g.features { assert(r.start == 62679 && r.end == 62774); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,12;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -165,7 +165,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 65570\nchr1\t.\tgene\t65526\t65570\t-1.25e-3\t?\t.\tID=g13;Note=a%2C13%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 65525 && r.end == 65570); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,13;= %\t"); } }
+        for r in g.features { assert(r.start == 65525 && r.end == 65570); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,13;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -177,7 +177,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 36080\nchr1\t.\tgene\t36048\t36080\t-1.25e-3\t?\t.\tID=g14;Note=a%2C14%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 36047 && r.end == 36080); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,14;= %\t"); } }
+        for r in g.features { assert(r.start == 36047 && r.end == 36080); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,14;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -189,7 +189,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 47925\nchr1\t.\tgene\t47851\t47925\t-1.25e-3\t?\t.\tID=g15;Note=a%2C15%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 47850 && r.end == 47925); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,15;= %\t"); } }
+        for r in g.features { assert(r.start == 47850 && r.end == 47925); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,15;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -201,7 +201,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 98737\nchr1\t.\tgene\t98688\t98737\t-1.25e-3\t?\t.\tID=g16;Note=a%2C16%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 98687 && r.end == 98737); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,16;= %\t"); } }
+        for r in g.features { assert(r.start == 98687 && r.end == 98737); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,16;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -213,7 +213,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 45628\nchr1\t.\tgene\t45572\t45628\t-1.25e-3\t?\t.\tID=g17;Note=a%2C17%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 45571 && r.end == 45628); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,17;= %\t"); } }
+        for r in g.features { assert(r.start == 45571 && r.end == 45628); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,17;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -225,7 +225,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 17144\nchr1\t.\tgene\t17100\t17144\t-1.25e-3\t?\t.\tID=g18;Note=a%2C18%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 17099 && r.end == 17144); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,18;= %\t"); } }
+        for r in g.features { assert(r.start == 17099 && r.end == 17144); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,18;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -237,7 +237,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 92654\nchr1\t.\tgene\t92558\t92654\t-1.25e-3\t?\t.\tID=g19;Note=a%2C19%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 92557 && r.end == 92654); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,19;= %\t"); } }
+        for r in g.features { assert(r.start == 92557 && r.end == 92654); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,19;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -249,7 +249,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 29570\nchr1\t.\tgene\t29531\t29570\t-1.25e-3\t?\t.\tID=g20;Note=a%2C20%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 29530 && r.end == 29570); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,20;= %\t"); } }
+        for r in g.features { assert(r.start == 29530 && r.end == 29570); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,20;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -261,7 +261,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 17893\nchr1\t.\tgene\t17842\t17893\t-1.25e-3\t?\t.\tID=g21;Note=a%2C21%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 17841 && r.end == 17893); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,21;= %\t"); } }
+        for r in g.features { assert(r.start == 17841 && r.end == 17893); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,21;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -273,7 +273,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 60546\nchr1\t.\tgene\t60477\t60546\t-1.25e-3\t?\t.\tID=g22;Note=a%2C22%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 60476 && r.end == 60546); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,22;= %\t"); } }
+        for r in g.features { assert(r.start == 60476 && r.end == 60546); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,22;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -285,7 +285,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 4887\nchr1\t.\tgene\t4813\t4887\t-1.25e-3\t?\t.\tID=g23;Note=a%2C23%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 4812 && r.end == 4887); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,23;= %\t"); } }
+        for r in g.features { assert(r.start == 4812 && r.end == 4887); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,23;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -297,7 +297,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 92900\nchr1\t.\tgene\t92814\t92900\t-1.25e-3\t?\t.\tID=g24;Note=a%2C24%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 92813 && r.end == 92900); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,24;= %\t"); } }
+        for r in g.features { assert(r.start == 92813 && r.end == 92900); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,24;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -309,7 +309,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 20050\nchr1\t.\tgene\t19967\t20050\t-1.25e-3\t?\t.\tID=g25;Note=a%2C25%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 19966 && r.end == 20050); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,25;= %\t"); } }
+        for r in g.features { assert(r.start == 19966 && r.end == 20050); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,25;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -321,7 +321,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 45457\nchr1\t.\tgene\t45355\t45457\t-1.25e-3\t?\t.\tID=g26;Note=a%2C26%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 45354 && r.end == 45457); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,26;= %\t"); } }
+        for r in g.features { assert(r.start == 45354 && r.end == 45457); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,26;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -333,7 +333,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 93429\nchr1\t.\tgene\t93370\t93429\t-1.25e-3\t?\t.\tID=g27;Note=a%2C27%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 93369 && r.end == 93429); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,27;= %\t"); } }
+        for r in g.features { assert(r.start == 93369 && r.end == 93429); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,27;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -345,7 +345,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 2326\nchr1\t.\tgene\t2255\t2326\t-1.25e-3\t?\t.\tID=g28;Note=a%2C28%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 2254 && r.end == 2326); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,28;= %\t"); } }
+        for r in g.features { assert(r.start == 2254 && r.end == 2326); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,28;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -357,7 +357,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 31722\nchr1\t.\tgene\t31619\t31722\t-1.25e-3\t?\t.\tID=g29;Note=a%2C29%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 31618 && r.end == 31722); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,29;= %\t"); } }
+        for r in g.features { assert(r.start == 31618 && r.end == 31722); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,29;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -369,7 +369,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 82552\nchr1\t.\tgene\t82508\t82552\t-1.25e-3\t?\t.\tID=g30;Note=a%2C30%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 82507 && r.end == 82552); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,30;= %\t"); } }
+        for r in g.features { assert(r.start == 82507 && r.end == 82552); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,30;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -381,7 +381,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 49467\nchr1\t.\tgene\t49390\t49467\t-1.25e-3\t?\t.\tID=g31;Note=a%2C31%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 49389 && r.end == 49467); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,31;= %\t"); } }
+        for r in g.features { assert(r.start == 49389 && r.end == 49467); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,31;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -393,7 +393,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 4897\nchr1\t.\tgene\t4835\t4897\t-1.25e-3\t?\t.\tID=g32;Note=a%2C32%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 4834 && r.end == 4897); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,32;= %\t"); } }
+        for r in g.features { assert(r.start == 4834 && r.end == 4897); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,32;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -405,7 +405,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 79818\nchr1\t.\tgene\t79752\t79818\t-1.25e-3\t?\t.\tID=g33;Note=a%2C33%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 79751 && r.end == 79818); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,33;= %\t"); } }
+        for r in g.features { assert(r.start == 79751 && r.end == 79818); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,33;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -417,7 +417,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 37554\nchr1\t.\tgene\t37479\t37554\t-1.25e-3\t?\t.\tID=g34;Note=a%2C34%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 37478 && r.end == 37554); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,34;= %\t"); } }
+        for r in g.features { assert(r.start == 37478 && r.end == 37554); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,34;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -429,7 +429,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 16754\nchr1\t.\tgene\t16670\t16754\t-1.25e-3\t?\t.\tID=g35;Note=a%2C35%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 16669 && r.end == 16754); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,35;= %\t"); } }
+        for r in g.features { assert(r.start == 16669 && r.end == 16754); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,35;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -441,7 +441,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 18240\nchr1\t.\tgene\t18148\t18240\t-1.25e-3\t?\t.\tID=g36;Note=a%2C36%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 18147 && r.end == 18240); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,36;= %\t"); } }
+        for r in g.features { assert(r.start == 18147 && r.end == 18240); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,36;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -453,7 +453,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 1493\nchr1\t.\tgene\t1410\t1493\t-1.25e-3\t?\t.\tID=g37;Note=a%2C37%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 1409 && r.end == 1493); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,37;= %\t"); } }
+        for r in g.features { assert(r.start == 1409 && r.end == 1493); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,37;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -465,7 +465,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 1534\nchr1\t.\tgene\t1486\t1534\t-1.25e-3\t?\t.\tID=g38;Note=a%2C38%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 1485 && r.end == 1534); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,38;= %\t"); } }
+        for r in g.features { assert(r.start == 1485 && r.end == 1534); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,38;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -477,7 +477,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 68615\nchr1\t.\tgene\t68532\t68615\t-1.25e-3\t?\t.\tID=g39;Note=a%2C39%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 68531 && r.end == 68615); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,39;= %\t"); } }
+        for r in g.features { assert(r.start == 68531 && r.end == 68615); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,39;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -489,7 +489,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 92477\nchr1\t.\tgene\t92388\t92477\t-1.25e-3\t?\t.\tID=g40;Note=a%2C40%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 92387 && r.end == 92477); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,40;= %\t"); } }
+        for r in g.features { assert(r.start == 92387 && r.end == 92477); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,40;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -501,7 +501,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 19545\nchr1\t.\tgene\t19469\t19545\t-1.25e-3\t?\t.\tID=g41;Note=a%2C41%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 19468 && r.end == 19545); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,41;= %\t"); } }
+        for r in g.features { assert(r.start == 19468 && r.end == 19545); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,41;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -513,7 +513,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 16163\nchr1\t.\tgene\t16112\t16163\t-1.25e-3\t?\t.\tID=g42;Note=a%2C42%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 16111 && r.end == 16163); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,42;= %\t"); } }
+        for r in g.features { assert(r.start == 16111 && r.end == 16163); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,42;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -525,7 +525,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 54896\nchr1\t.\tgene\t54795\t54896\t-1.25e-3\t?\t.\tID=g43;Note=a%2C43%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 54794 && r.end == 54896); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,43;= %\t"); } }
+        for r in g.features { assert(r.start == 54794 && r.end == 54896); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,43;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -537,7 +537,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 34850\nchr1\t.\tgene\t34791\t34850\t-1.25e-3\t?\t.\tID=g44;Note=a%2C44%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 34790 && r.end == 34850); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,44;= %\t"); } }
+        for r in g.features { assert(r.start == 34790 && r.end == 34850); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,44;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -549,7 +549,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 78635\nchr1\t.\tgene\t78550\t78635\t-1.25e-3\t?\t.\tID=g45;Note=a%2C45%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 78549 && r.end == 78635); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,45;= %\t"); } }
+        for r in g.features { assert(r.start == 78549 && r.end == 78635); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,45;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -561,7 +561,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 4991\nchr1\t.\tgene\t4950\t4991\t-1.25e-3\t?\t.\tID=g46;Note=a%2C46%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 4949 && r.end == 4991); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,46;= %\t"); } }
+        for r in g.features { assert(r.start == 4949 && r.end == 4991); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,46;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -573,7 +573,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 18578\nchr1\t.\tgene\t18531\t18578\t-1.25e-3\t?\t.\tID=g47;Note=a%2C47%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 18530 && r.end == 18578); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,47;= %\t"); } }
+        for r in g.features { assert(r.start == 18530 && r.end == 18578); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,47;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -585,7 +585,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 60701\nchr1\t.\tgene\t60619\t60701\t-1.25e-3\t?\t.\tID=g48;Note=a%2C48%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 60618 && r.end == 60701); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,48;= %\t"); } }
+        for r in g.features { assert(r.start == 60618 && r.end == 60701); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,48;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -597,7 +597,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 51080\nchr1\t.\tgene\t51029\t51080\t-1.25e-3\t?\t.\tID=g49;Note=a%2C49%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 51028 && r.end == 51080); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,49;= %\t"); } }
+        for r in g.features { assert(r.start == 51028 && r.end == 51080); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,49;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -609,7 +609,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 51067\nchr1\t.\tgene\t50996\t51067\t-1.25e-3\t?\t.\tID=g50;Note=a%2C50%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 50995 && r.end == 51067); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,50;= %\t"); } }
+        for r in g.features { assert(r.start == 50995 && r.end == 51067); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,50;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -621,7 +621,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 38663\nchr1\t.\tgene\t38616\t38663\t-1.25e-3\t?\t.\tID=g51;Note=a%2C51%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 38615 && r.end == 38663); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,51;= %\t"); } }
+        for r in g.features { assert(r.start == 38615 && r.end == 38663); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,51;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -633,7 +633,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 68014\nchr1\t.\tgene\t67949\t68014\t-1.25e-3\t?\t.\tID=g52;Note=a%2C52%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 67948 && r.end == 68014); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,52;= %\t"); } }
+        for r in g.features { assert(r.start == 67948 && r.end == 68014); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,52;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -645,7 +645,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 24299\nchr1\t.\tgene\t24229\t24299\t-1.25e-3\t?\t.\tID=g53;Note=a%2C53%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 24228 && r.end == 24299); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,53;= %\t"); } }
+        for r in g.features { assert(r.start == 24228 && r.end == 24299); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,53;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -657,7 +657,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 98296\nchr1\t.\tgene\t98203\t98296\t-1.25e-3\t?\t.\tID=g54;Note=a%2C54%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 98202 && r.end == 98296); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,54;= %\t"); } }
+        for r in g.features { assert(r.start == 98202 && r.end == 98296); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,54;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -669,7 +669,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 73154\nchr1\t.\tgene\t73127\t73154\t-1.25e-3\t?\t.\tID=g55;Note=a%2C55%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 73126 && r.end == 73154); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,55;= %\t"); } }
+        for r in g.features { assert(r.start == 73126 && r.end == 73154); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,55;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -681,7 +681,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 16638\nchr1\t.\tgene\t16534\t16638\t-1.25e-3\t?\t.\tID=g56;Note=a%2C56%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 16533 && r.end == 16638); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,56;= %\t"); } }
+        for r in g.features { assert(r.start == 16533 && r.end == 16638); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,56;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -693,7 +693,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 52738\nchr1\t.\tgene\t52655\t52738\t-1.25e-3\t?\t.\tID=g57;Note=a%2C57%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 52654 && r.end == 52738); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,57;= %\t"); } }
+        for r in g.features { assert(r.start == 52654 && r.end == 52738); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,57;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -705,7 +705,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 66737\nchr1\t.\tgene\t66669\t66737\t-1.25e-3\t?\t.\tID=g58;Note=a%2C58%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 66668 && r.end == 66737); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,58;= %\t"); } }
+        for r in g.features { assert(r.start == 66668 && r.end == 66737); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,58;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }
@@ -717,7 +717,7 @@ fn main() {
         assert(bio::write_typed_bed(bio::parse_typed_bed(w.text).records).text == w.text);
         let g = bio::parse_gff3("##gff-version 3\n##sequence-region chr1 1 62106\nchr1\t.\tgene\t62032\t62106\t-1.25e-3\t?\t.\tID=g59;Note=a%2C59%3B%3D%20%25%09");
         assert(g.error.len == 0);
-        for r in g.features { assert(r.start == 62031 && r.end == 62106); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r),"Note") { assert(v == "a,59;= %\t"); } }
+        for r in g.features { assert(r.start == 62031 && r.end == 62106); assert(r.score_known && r.score == -0.00125); for v in bio::gff3_values(copy(r), "Note") { assert(v == "a,59;= %\t"); } }
         let gw = bio::write_gff3(copy(g)); assert(gw.error.len == 0);
         assert(bio::write_gff3(bio::parse_gff3(gw.text)).text == gw.text);
     }

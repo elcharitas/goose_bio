@@ -33,7 +33,7 @@ fn main() {
     let ambiguous = "TCAGRYWSKMBDHVN";
     for table in table_ids {
         for a in ambiguous { for b in ambiguous { for c in ambiguous {
-            let codon: u8[3] = [a,b,c];
+            let codon: u8[3] = [a, b, c];
             emit(bio::translate_with_options(codon, bio::TranslationOptions { table: table }));
         } } }
     }
@@ -56,10 +56,10 @@ fn main() {
     emit(bio::translate_with_options("GGA", bio::TranslationOptions { gap: 'G' }));
     emit(bio::translate_with_options("TAA???", bio::TranslationOptions { to_stop: true }));
     emit(bio::translate_with_options("ATG?", bio::TranslationOptions { allow_partial: true }));
-    emit(bio::translate_with_options("AUG", bio::TranslationOptions {  }));
-    emit(bio::translate_with_options("ATU", bio::TranslationOptions {  }));
-    emit(bio::translate_with_options("augatu", bio::TranslationOptions {  }));
-    emit(bio::translate_with_options("ATG???", bio::TranslationOptions {  }));
+    emit(bio::translate_with_options("AUG", bio::TranslationOptions {}));
+    emit(bio::translate_with_options("ATU", bio::TranslationOptions {}));
+    emit(bio::translate_with_options("augatu", bio::TranslationOptions {}));
+    emit(bio::translate_with_options("ATG???", bio::TranslationOptions {}));
     emit(bio::translate_with_options("???TAA", bio::TranslationOptions { to_stop: true }));
     emit(bio::translate_with_options("ATG??", bio::TranslationOptions { allow_partial: true }));
     emit(bio::translate_with_options("ATG?AA", bio::TranslationOptions { allow_partial: true }));
@@ -252,7 +252,7 @@ fn main() {
     print(bio::affine_alignment("", "AAA", 2, -1, 3, 1).score);
     let feature = bio::AnnotatedFeature { "CDS", [
         bio::LocationPart { 0, 2, 1, false },
-        bio::LocationPart { 4, 6, -1, false }
+        bio::LocationPart { 4, 6, -1, false },
     ], [] };
     emit(bio::extract_feature("ACGTAGTC", copy(feature)));
     let record = bio::AnnotatedRecord { "id", "", "ACGTAGTC", [], [copy(feature)], false };

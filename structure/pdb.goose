@@ -4,26 +4,26 @@ import math;
 import std;
 
 struct Atom {
-    serial: i64,
-    name: u8[],
-    alternate: u8,
-    residue: u8[],
-    chain: u8,
+    serial:         i64,
+    name:           u8[],
+    alternate:      u8,
+    residue:        u8[],
+    chain:          u8,
     residue_number: i64,
-    insertion: u8,
-    x: f64, y: f64, z: f64,
-    occupancy: f64,
-    b_factor: f64,
-    element: u8[],
-    hetero: bool,
-    model: i64
+    insertion:      u8,
+    x:              f64, y: f64, z: f64,
+    occupancy:      f64,
+    b_factor:       f64,
+    element:        u8[],
+    hetero:         bool,
+    model:          i64,
 }
 
 struct StructureResult { atoms: Atom[], error: u8[] }
 
 fn parse_pdb(text: const u8[:]) -> StructureResult {
     var atoms: Atom[>..] = [];
-    var model: i64 = 1;
+    var model: i64       = 1;
     for line in split(text, '\n') {
         if starts_with(line, "MODEL ") {
             let n, ok = parse_int(trim(line[6..]));

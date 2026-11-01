@@ -5,5 +5,5 @@ fn main() {
     let parsed = bio::parse_affy_cel(input);
     assert(parsed.error.len == 0);
     let y = 0; let x = 1;
-    assert(parsed.record.intensities[y*parsed.record.ncols+x] == 21.5);
+    assert(parsed.record.intensities[y * parsed.record.ncols + x] == 21.5);
 }

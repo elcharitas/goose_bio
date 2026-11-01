@@ -14,7 +14,7 @@ fn quality_roundtrip(mode: u8[..], q: u8[..], edit: bool) {
     if (edit) { assert(bio::bam_edit(r, cigar, "AC", q) == 0); }
     else { assert(bio::bam_set_quality(r, q) == 0); }
     let before = text(r);
-    let first: u8[2] = [255,20]; let last: u8[2] = [20,255];
+    let first: u8[2] = [255, 20]; let last: u8[2] = [20, 255];
     if (edit) {
         assert(bio::bam_edit(r, cigar, "GT", first) == -1);
         assert(text(r) == before);
@@ -35,7 +35,7 @@ fn quality_roundtrip(mode: u8[..], q: u8[..], edit: bool) {
     assert(bio::hts_next(reopened) == 0 && bio::hts_close(reopened) == 0);
 }
 fn main() {
-    let missing: u8[2] = [255,255]; let present: u8[2] = [0,93];
+    let missing: u8[2] = [255, 255]; let present: u8[2] = [0, 93];
     quality_roundtrip("w", missing, true);
     quality_roundtrip("wb", missing, true);
     quality_roundtrip("w", present, true);
@@ -72,8 +72,8 @@ fn main() {
     assert(bio::bcf_set_flag(r, "YES", true) == 0 && bio::bcf_flag(r, "YES") == 1);
     assert(bio::bcf_set_alleles(r, "T,C,A") == 0);
     let before = text(r);
-    let bad: u32[1] = [1065353216];
-    let middle: u32[6] = [2139095042,1065353216,2139095042,0,0,0];
+    let bad:    u32[1] = [1065353216];
+    let middle: u32[6] = [2139095042, 1065353216, 2139095042, 0, 0, 0];
     assert(bio::bcf_set_float_bits(r, "AF", false, bad) == -1);
     assert(bio::bcf_set_float_bits(r, "FV", true, middle) == -1);
     assert(bio::bcf_set_float_bits(r, "LABEL", false, af) == -1);
@@ -120,13 +120,13 @@ fn main() {
     assert(bio::hts_close(bw) == 0);
     let br = bio::hts_open(".tools/edit.bam", "r", false, "", "");
     assert(bio::hts_next(br) == 1);
-    let cigar: u32[5] = [20,32,17,18,16];
-    let q: u8[5] = [1,2,3,4,5];
+    let cigar: u32[5] = [20, 32, 17, 18, 16];
+    let q:     u8[5]  = [1, 2, 3, 4, 5];
     assert(bio::bam_edit(br, cigar, "AACGT", q) == 0);
     let bt = text(br);
-    let mismatch: u32[1] = [16]; let span: u32[2] = [80,16002];
+    let mismatch: u32[1] = [16]; let span: u32[2] = [80, 16002];
     assert(bio::bam_edit(br, mismatch, "AACGT", q) == -1);
-    let badclip: u32[3] = [32,20,32];
+    let badclip: u32[3] = [32, 20, 32];
     assert(bio::bam_edit(br, badclip, "AACGT", q) == -1);
     assert(bio::bam_edit(br, span, "AACGT", q) == -1);
     assert(bio::bam_edit(br, cigar, "AACG!", q) == -1);

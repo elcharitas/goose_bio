@@ -37,7 +37,7 @@ fn hmm_forward_log(observations: const i64[:], initial: const f64[:],
     if observations.len == 0 { return 0.0; }
     for symbol in observations { assert(symbol >= 0 && symbol < alphabet); }
     let neg = log(0.0);
-    var row: f64[>..] = [];
+    var row:  f64[>..] = [];
     var next: f64[>..] = [];
     for s in n {
         row.push(initial[s] + emission[s * alphabet + observations[0]]);

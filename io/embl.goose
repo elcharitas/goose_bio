@@ -15,9 +15,9 @@ qualifiers. Exact parts use zero-based half-open coordinates in extraction order
 becomes description.
 */
 fn parse_embl(text: u8[:]) -> AnnotatedRecordsResult {
-    var result: AnnotatedRecord[>..] = [];
-    var gb: u8[>..] = []; var headers: u8[][>..] = [];
-    var declared_length: i64 = 0;
+    var result:          AnnotatedRecord[>..] = [];
+    var gb:              u8[>..]              = []; var headers: u8[][>..] = [];
+    var declared_length: i64                  = 0;
     var active = false; var sequence = false; var features = false;
     for raw in split(text, '\n') {
         let line = format_line(raw);
@@ -29,10 +29,10 @@ fn parse_embl(text: u8[:]) -> AnnotatedRecordsResult {
             let id = trim(fields[0]); let molecule = trim(fields[3]);
             let size = trim(fields[6]);
             if !ends_with(size, " BP.") || (molecule != "genomic DNA" && molecule != "DNA" && molecule != "RNA") { return AnnotatedRecordsResult { [], "unsupported EMBL molecule or size" }; }
-            let size_number, size_ok = parse_int(size[..size.len-4]);
+            let size_number, size_ok = parse_int(size[..size.len - 4]);
             if !size_ok || size_number < 0 { return AnnotatedRecordsResult { [], "invalid EMBL ID length" }; }
             declared_length = size_number;
-            gb.clear(); gb.append("LOCUS       "); gb.append(id); gb.push(' '); gb.append(size[..size.len-4]);
+            gb.clear(); gb.append("LOCUS       "); gb.append(id); gb.push(' '); gb.append(size[..size.len - 4]);
             gb.append(if molecule == "RNA" { " bp RNA\n" } else { " bp DNA\n" });
             headers.clear(); headers.push(str(line)); active = true; sequence = false; features = false;
         } else if line == "//" {
@@ -46,7 +46,7 @@ fn parse_embl(text: u8[:]) -> AnnotatedRecordsResult {
             if sq.len < 2 { return AnnotatedRecordsResult { [], "malformed EMBL SQ summary" }; }
             let summary = trim(sq[0]);
             if summary.len < 13 || !starts_with(summary, "Sequence ") || !ends_with(summary, " BP") { return AnnotatedRecordsResult { [], "malformed EMBL SQ length" }; }
-            let sq_length, sq_ok = parse_int(summary[9..summary.len-3]);
+            let sq_length, sq_ok = parse_int(summary[9..summary.len - 3]);
             if !sq_ok || sq_length != declared_length { return AnnotatedRecordsResult { [], "EMBL SQ and ID lengths differ" }; }
             gb.append("ORIGIN\n"); sequence = true;
         } else if sequence {
@@ -97,13 +97,12 @@ fn write_embl(records: AnnotatedRecord[:]) -> FormatTextResult {
                 for c, i in r.sequence {
                     if i % 60 == 0 { out.append("     "); }
                     out.push(c);
-                    if (i+1) % 10 == 0 { out.push(' '); }
-                    if (i+1) % 60 == 0 || i+1 == r.sequence.len { out.push(' '); out.append(str(i+1)); out.push('\n'); }
+                    if (i + 1) % 10 == 0 { out.push(' '); }
+                    if (i + 1) % 60 == 0 || i + 1 == r.sequence.len { out.push(' '); out.append(str(i + 1)); out.push('\n'); }
                 }
                 out.append("//\n");
             }
             else if state == 1 { out.append("FT   "); out.append(line[5..]); out.push('\n'); }
-
         }
     }
     let parsed = parse_embl(out);

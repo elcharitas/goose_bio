@@ -4,9 +4,9 @@ namespace bio;
  * checkpoint i64s, and 2*(floor((N-1)/s)+1) sample i64s, plus array overhead. This is dense byte
  * checkpoint storage, not succinct rank. */
 struct CompactFMIndex {
-    bwt: u8[], sample_rows: i64[], sample_values: i64[],
-    cumulative: i64[], checkpoints: i64[], stride: i64,
-    sample_stride: i64, length: i64, error: u8[]
+    bwt:           u8[], sample_rows: i64[], sample_values: i64[],
+    cumulative:    i64[], checkpoints: i64[], stride: i64,
+    sample_stride: i64, length: i64, error: u8[],
 }
 // Byte zero is reserved; all other bytes are matched literally.
 
@@ -19,7 +19,7 @@ fn compact_fm_index(text: const u8[:], checkpoint_stride: i64 = 128, sample_stri
     var terminated: u8[>..] = [];
     for c in text { terminated.push(c); } terminated.push(0);
     let sa = fm_suffix_array(terminated);
-    var bwt: u8[>..] = []; var counts: i64[>..] = [];
+    var bwt:        u8[>..]  = []; var counts: i64[>..] = [];
     var cumulative: i64[>..] = []; var checkpoints: i64[>..] = [];
     for i in 256 { counts.push(0); cumulative.push(0); }
     for pos in sa { bwt.push(terminated[if pos == 0 { text.len } else { pos - 1 }]); }

@@ -36,31 +36,31 @@ fn catalog_search(text: u8[:], name: u8[:], circular: bool = false) -> CatalogSe
     if e.support != "single" { return CatalogSearch { [], "unknown or unsupported enzyme" }; }
     if !restriction_dna(text) { return CatalogSearch { [], "concrete uppercase DNA required within bounds" }; }
     let m = e.recognition.len; let n = text.len;
-    if n*m*2 > 16777216 { return CatalogSearch { [], "estimated work exceeds bound" }; }
+    if n * m * 2 > 16777216 { return CatalogSearch { [], "estimated work exceeds bound" }; }
     var hits: CatalogCut[>..] = [];
     if m > n { return CatalogSearch { [], "" }; }
     var rc: u8[>..] = [];
     for k in e.recognition.len {
-        let c = e.recognition[e.recognition.len-1-k];
+        let c = e.recognition[e.recognition.len - 1 - k];
         rc.push(match c { 'A' => 'T', 'T' => 'A', 'C' => 'G', 'G' => 'C', 'R' => 'Y', 'Y' => 'R', 'M' => 'K', 'K' => 'M', 'B' => 'V', 'V' => 'B', 'D' => 'H', 'H' => 'D', _ => c });
     }
-    for p in (if circular { n } else { n-m+1 }) {
+    for p in (if circular { n } else { n - m + 1 }) {
         for side in (if rc == e.recognition { 1 } else { 2 }) {
             var motif: u8[>..] = [];
             if side == 0 { motif.append(e.recognition); } else { motif.append(rc); }
             var hit = true;
             for k in m {
                 var found = false;
-                let c = text[(p+k)%n];
+                let c = text[(p + k) % n];
                 let mask = match motif[k] { 'A' => "A", 'C' => "C", 'G' => "G", 'T' => "T", 'R' => "AG", 'Y' => "CT", 'S' => "CG", 'W' => "AT", 'K' => "GT", 'M' => "AC", 'B' => "CGT", 'D' => "AGT", 'H' => "ACT", 'V' => "ACG", _ => "ACGT" };
                 for b in mask { if b == c { found = true; } }
                 if !found { hit = false; break; }
             }
             if !hit { continue; }
-            var top = if side == 0 { p+e.fst5 } else { p-e.fst3 };
-            var bottom = if side == 0 { p+m+e.fst3 } else { p+m-e.fst5 };
+            var top = if side == 0 { p + e.fst5 } else { p - e.fst3 };
+            var bottom = if side == 0 { p + m + e.fst3 } else { p + m - e.fst5 };
             if !circular && (top <= 0 || top >= n || bottom <= 0 || bottom >= n) { break; }
-            if circular { top = ((top%n)+n)%n; bottom = ((bottom%n)+n)%n; }
+            if circular { top = ((top % n) + n) % n; bottom = ((bottom % n) + n) % n; }
             if hits.len >= 1048576 { return CatalogSearch { [], "event bound exceeded" }; }
             hits.push(CatalogCut { p, if side == 0 { 1 } else { -1 }, top, bottom });
             break;
@@ -77,26 +77,26 @@ fn restriction_copy(text: u8[:]) -> u8[] { var out: u8[>..] = []; out.append(tex
 fn catalog_digest(text: u8[:], name: u8[:], circular: bool = false) -> CatalogDigest {
     let result = catalog_search(text, name, circular);
     if result.error.len > 0 { return CatalogDigest { [], copy(result.error) }; }
-    if result.cuts.len*result.cuts.len > 16777216 { return CatalogDigest { [], "estimated sorting work exceeds bound" }; }
+    if result.cuts.len * result.cuts.len > 16777216 { return CatalogDigest { [], "estimated sorting work exceeds bound" }; }
     var positions: i64[>..] = [];
     for h in result.cuts {
         var at: i64 = 0;
         while at < positions.len && positions[at] < h.top { at += 1; }
         if at < positions.len && positions[at] == h.top { continue; }
         positions.push(h.top);
-        var j = positions.len-1;
-        while j > at { positions[j] = positions[j-1]; j -= 1; }
+        var j = positions.len - 1;
+        while j > at { positions[j] = positions[j - 1]; j -= 1; }
         positions[at] = h.top;
     }
     if positions.len == 0 { return CatalogDigest { [restriction_copy(text)], "" }; }
     var fragments: u8[][>..] = [];
     if circular {
         var bridge: u8[>..] = [];
-        bridge.append(text[positions[positions.len-1]..text.len]);
+        bridge.append(text[positions[positions.len - 1]..text.len]);
         bridge.append(text[0..positions[0]]); fragments.push(copy(bridge));
     } else { fragments.push(restriction_copy(text[0..positions[0]])); }
-    for i in 1..positions.len { fragments.push(restriction_copy(text[positions[i-1]..positions[i]])); }
-    if !circular { fragments.push(restriction_copy(text[positions[positions.len-1]..text.len])); }
+    for i in 1..positions.len { fragments.push(restriction_copy(text[positions[i - 1]..positions[i]])); }
+    if !circular { fragments.push(restriction_copy(text[positions[positions.len - 1]..text.len])); }
     return CatalogDigest { copy(fragments), "" };
 }
 
@@ -106,36 +106,36 @@ fn catalog_digest(text: u8[:], name: u8[:], circular: bool = false) -> CatalogDi
 fn catalog_caps(rows: u8[][], names: u8[][]) -> CapsResult {
     if rows.len == 0 || rows.len > 1024 || names.len > 256 { return CapsResult { [], "CAPS bounds exceeded" }; }
     var n: i64 = 0; for row in rows { n = row.len; break; }
-    if n > 16777216/rows.len { return CapsResult { [], "cell bound exceeded" }; }
+    if n > 16777216 / rows.len { return CapsResult { [], "cell bound exceeded" }; }
     var work: i64 = 0;
     for name in names {
         let e = catalog_enzyme(name);
         if e.support != "single" { return CapsResult { [], "unknown or unsupported enzyme" }; }
-        work += n*rows.len*e.recognition.len*2;
+        work += n * rows.len * e.recognition.len * 2;
         if work > 16777216 { return CapsResult { [], "estimated work exceeds bound" }; }
     }
     for row in rows { if row.len != n || !restriction_dna(row) { return CapsResult { [], "equal ungapped concrete DNA rows required" }; } }
     var markers: CapsMarker[>..] = []; var events: i64 = 0;
     for name in names {
         let e = catalog_enzyme(name);
-        var cuts: i64[][>..] = []; var starts: i64[>..] = [];
-        var enzyme_events: i64 = 0;
+        var cuts:          i64[][>..] = []; var starts: i64[>..] = [];
+        var enzyme_events: i64        = 0;
         for row in rows {
             let r = catalog_search(row, name);
             if r.error.len > 0 { return CapsResult { [], copy(r.error) }; }
             enzyme_events += r.cuts.len;
-            if enzyme_events*enzyme_events > 16777216 { return CapsResult { [], "estimated sorting work exceeds bound" }; }
+            if enzyme_events * enzyme_events > 16777216 { return CapsResult { [], "estimated sorting work exceeds bound" }; }
             var values: i64[>..] = [];
             for h in r.cuts {
                 events += 1;
                 if events > 1048576 { return CapsResult { [], "event bound exceeded" }; }
-                let s = h.top-e.fst5;
+                let s = h.top - e.fst5;
                 values.push(s);
                 var at: i64 = 0;
                 while at < starts.len && starts[at] < s { at += 1; }
                 if at == starts.len || starts[at] != s {
-                    starts.push(s); var j = starts.len-1;
-                    while j > at { starts[j] = starts[j-1]; j -= 1; }
+                    starts.push(s); var j = starts.len - 1;
+                    while j > at { starts[j] = starts[j - 1]; j -= 1; }
                     starts[at] = s;
                 }
             }

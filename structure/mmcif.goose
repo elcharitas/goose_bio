@@ -43,7 +43,7 @@ fn tokenize_mmcif(input: const u8[:]) -> CifTokens {
     while pos < input.len {
         if input[pos] == '\r' {
             normalized.push('\n');
-            if pos + 1 < input.len && input[pos+1] == '\n' { pos += 1; }
+            if pos + 1 < input.len && input[pos + 1] == '\n' { pos += 1; }
         } else { normalized.push(input[pos]); }
         pos += 1;
     }
@@ -63,12 +63,12 @@ fn tokenize_mmcif(input: const u8[:]) -> CifTokens {
         }
         var value: u8[>..] = [];
         var quoted = false;
-        if text[i] == ';' && (i == 0 || text[i-1] == '\n') {
+        if text[i] == ';' && (i == 0 || text[i - 1] == '\n') {
             quoted = true; i += 1;
             var closed = false;
             while i < text.len {
-                if text[i] == ';' && text[i-1] == '\n' {
-                    if value.len > 0 && value[value.len-1] == '\n' { value.pop(); }
+                if text[i] == ';' && text[i - 1] == '\n' {
+                    if value.len > 0 && value[value.len - 1] == '\n' { value.pop(); }
                     i += 1; closed = true; break;
                 }
                 value.push(text[i]); i += 1;
@@ -85,7 +85,7 @@ fn tokenize_mmcif(input: const u8[:]) -> CifTokens {
                 if text[i] == '\n' || text[i] == '\r' {
                     return CifTokens { [], "newline in CIF quoted token" };
                 }
-                if text[i] == quote && (i+1 == text.len || cif_space(text[i+1])) {
+                if text[i] == quote && (i + 1 == text.len || cif_space(text[i + 1])) {
                     i += 1; closed = true; break;
                 }
                 value.push(text[i]); i += 1;
@@ -122,7 +122,7 @@ fn parse_mmcif(text: const u8[:]) -> CifResult {
         return CifResult { empty, "expected one named CIF data block" };
     }
     var items: CifItem[>..] = [];
-    var seen: u8[][>..] = [];
+    var seen:  u8[][>..]    = [];
     var i = 1;
     while i < ts.len {
         let looped = !ts[i].quoted && cif_lower(ts[i].text) == "loop_";
@@ -167,7 +167,7 @@ fn cif_encode(t: const CifToken&) -> CifText {
     if !multiline && !single { return CifText { str("'", t.text, "'"), "" }; }
     if !multiline && !double_quote { return CifText { str("\"", t.text, "\""), "" }; }
     for c, i in t.text {
-        if c == ';' && (i == 0 || t.text[i-1] == '\n') {
+        if c == ';' && (i == 0 || t.text[i - 1] == '\n') {
             return CifText { "", "CIF value cannot use text delimiter" };
         }
     }

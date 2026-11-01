@@ -12,32 +12,32 @@ fn main() {
     let r = bio::structural_hierarchy(p.structure, true, false, 0.0);
     assert(r.error.len == 0);
     let h = r.hierarchy;
-    assert(bio::structural_rows(h, 0, false) == [0,3]);
+    assert(bio::structural_rows(h, 0, false) == [0, 3]);
     var atom = -1; var residue = -1;
     for n, i in h.nodes {
-        if n.kind == 5 && n.rows == [0,1] { atom = i; }
-        if n.kind == 3 && n.rows == [2,3] { residue = i; }
+        if n.kind == 5 && n.rows == [0, 1] { atom = i; }
+        if n.kind == 3 && n.rows == [2, 3] { residue = i; }
     }
     let sel = bio::structural_select(h, atom, "B");
-    assert(sel.error.len == 0 && bio::structural_rows(sel.hierarchy, 0, false) == [1,3]);
+    assert(sel.error.len == 0 && bio::structural_rows(sel.hierarchy, 0, false) == [1, 3]);
     let comp = bio::structural_select(h, residue, "SER");
-    assert(comp.error.len == 0 && bio::structural_rows(comp.hierarchy, 0, false) == [0,2]);
+    assert(comp.error.len == 0 && bio::structural_rows(comp.hierarchy, 0, false) == [0, 2]);
     assert(bio::structural_select(h, atom, "Z").error.len > 0);
     assert(bio::structural_select(h, -1, "A").error.len > 0);
     let before = bio::write_mmcif(h.structure.document);
-    let bad = bio::structural_set(h, [bio::StructuralCoordinate { 0,9.0,9.0,9.0 }, bio::StructuralCoordinate { 99,0.0,0.0,0.0 }]);
+    let bad = bio::structural_set(h, [bio::StructuralCoordinate { 0, 9.0, 9.0, 9.0 }, bio::StructuralCoordinate { 99, 0.0, 0.0, 0.0 }]);
     assert(bad.error.len > 0 && bio::write_mmcif(bad.hierarchy.structure.document).text == before.text);
-    assert(bio::structural_set(h, [bio::StructuralCoordinate { 0,1.0,2.0,3.0 }, bio::StructuralCoordinate { 0,2.0,3.0,4.0 }]).error.len > 0);
+    assert(bio::structural_set(h, [bio::StructuralCoordinate { 0, 1.0, 2.0, 3.0 }, bio::StructuralCoordinate { 0, 2.0, 3.0, 4.0 }]).error.len > 0);
     let huge = 1.0e308;
-    assert(bio::structural_transform(h, 0, true, [huge,huge,huge,huge,huge,huge,huge,huge,huge], [0.0,0.0,0.0]).error.len > 0);
-    assert(bio::structural_set(h, [bio::StructuralCoordinate { 0,huge*huge,2.0,3.0 }]).error.len > 0);
-    assert(bio::structural_transform(h, 0, false, [1.0], [0.0,0.0,0.0]).error.len > 0);
-    let all = bio::structural_transform(h, 0, true, [1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0], [1.0,0.0,0.0]);
+    assert(bio::structural_transform(h, 0, true, [huge, huge, huge, huge, huge, huge, huge, huge, huge], [0.0, 0.0, 0.0]).error.len > 0);
+    assert(bio::structural_set(h, [bio::StructuralCoordinate { 0, huge * huge, 2.0, 3.0 }]).error.len > 0);
+    assert(bio::structural_transform(h, 0, false, [1.0], [0.0, 0.0, 0.0]).error.len > 0);
+    let all = bio::structural_transform(h, 0, true, [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], [1.0, 0.0, 0.0]);
     assert(all.error.len == 0);
     let written = bio::write_mmcif(all.hierarchy.structure.document);
     let again = bio::parse_mmcif_structure(written.text);
     assert(again.error.len == 0);
-    for a, i in again.structure.atoms { assert(a.x == 2.0 + i*3.0); }
+    for a, i in again.structure.atoms { assert(a.x == 2.0 + i * 3.0); }
     assert(bio::write_mmcif(h.structure.document).text == before.text);
     let missing = bio::parse_mmcif_structure(str(header, "ATOM L A 1 42 ALA CA A 1 2 3 ?\n"));
     assert(bio::structural_hierarchy(missing.structure, true, false, 0.0).error.len > 0);

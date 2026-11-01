@@ -15,7 +15,7 @@ struct GraphicPart { start: i64, end: i64 }
  * label. No automatic labels come from feature types/qualifiers. */
 struct GraphicFeature {
     parts: GraphicPart[], strand: i64, color: u8[], label: u8[],
-    sigil: u8[], exact: bool
+    sigil: u8[], exact: bool,
 }
 
 /* Levels are contiguous 1..N from bottom to top, with equal heights even when empty. Tracks have
@@ -28,8 +28,8 @@ struct GraphicTrack { features: GraphicFeature[] }
  * and exactly one linear fragment without cross-links. The single fragment starts at the origin and
  * fills the track area without track lines; landscape when width>=height, portrait otherwise. */
 struct GraphicPage {
-    start: i64, end: i64, width: f64, height: f64,
-    fragments: i64, circular: bool, cross_links: bool
+    start:     i64, end: i64, width: f64, height: f64,
+    fragments: i64, circular: bool, cross_links: bool,
 }
 
 /* Errors return empty SVG. Whole-document buffering needs memory proportional to emitted parts/labels.
@@ -122,21 +122,21 @@ fn genome_diagram_svg(page: const GraphicPage&, tracks: const GraphicTrack[:]) -
     let unit = page.height / tracks.len;
     for track, ti in tracks { for f in track.features {
         var low = f.parts[0].start; var high = f.parts[0].end;
-        for p in f.parts { low = graphic_min(low,p.start); high = graphic_max(high,p.end); }
+        for p in f.parts { low = graphic_min(low, p.start); high = graphic_max(high, p.end); }
         // Selects features by bounding endpoints.
         if !(low >= page.start && low <= page.end) &&
             !(high >= page.start && high <= page.end) { continue; }
-        let bottom = unit*ti; let top = unit*(ti+1);
-        let center = (bottom+top)/2;
+        let bottom = unit * ti; let top = unit * (ti + 1);
+        let center = (bottom + top) / 2;
         var y0 = bottom; var y1 = top;
         if f.strand == 1 { y0 = center; }
         if f.strand == -1 { y1 = center; }
         for p in f.parts {
             if p.end < page.start || p.start > page.end { continue; }
-            let x0 = page.width * (graphic_max(p.start,page.start)-page.start) / (page.end-page.start+1);
-            let x1 = page.width * (graphic_min(p.end,page.end)-page.start) / (page.end-page.start+1);
+            let x0 = page.width * (graphic_max(p.start, page.start) - page.start) / (page.end - page.start + 1);
+            let x1 = page.width * (graphic_min(p.end, page.end) - page.start) / (page.end - page.start + 1);
             out.append("<polygon points=\"");
-            for v, i in [x0,y0,x1,y0,x1,y1,x0,y1] {
+            for v, i in [x0, y0, x1, y0, x1, y1, x0, y1] {
                 if i > 0 { out.push(' '); } out.append(str(v));
             }
             out.append("\" fill=\""); out.append(f.color); out.append("\" stroke=\"none\"/>");

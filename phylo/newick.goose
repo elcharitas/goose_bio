@@ -19,7 +19,7 @@ recursive fn newick_node(text: const u8[:], cursor: NewickCursor&,
     if depth > 512 { cursor.failed = true; return -1; }
     newick_space(text, cursor);
     if cursor.position >= text.len { cursor.failed = true; return -1; }
-    var children: i64[1024];
+    var children:    i64[1024];
     var child_count: i64 = 0;
     if text[cursor.position] == '(' {
         cursor.position++;

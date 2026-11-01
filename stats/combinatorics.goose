@@ -13,28 +13,28 @@ struct CombinationsResult { value: f64, classification: u8[], error: u8[] }
  * accumulator growth prevents it after the first multiplication. */
 fn scaled_combinations(n: i64, k: i64, scale: f64) -> CombinationsResult {
     if n < 0 || k < 0 || n > 9007199254740991 || k > 9007199254740991 {
-        return CombinationsResult {0, "invalid", "counts outside 0..2^53-1"};
+        return CombinationsResult { 0, "invalid", "counts outside 0..2^53-1" };
     }
     if is_nan(scale) || is_inf(scale) {
-        return CombinationsResult {0, "invalid", "finite scale required"};
+        return CombinationsResult { 0, "invalid", "finite scale required" };
     }
-    if k > n { return CombinationsResult {0, "zero", ""}; }
-    let steps = if k < n-k { k } else { n-k };
+    if k > n { return CombinationsResult { 0, "zero", "" }; }
+    let steps = if k < n - k { k } else { n - k };
     if steps > 1000000 {
-        return CombinationsResult {0, "invalid", "iteration limit exceeded"};
+        return CombinationsResult { 0, "invalid", "iteration limit exceeded" };
     }
     var value = scale;
     for j in steps {
-        let divided = value / (j+1);
+        let divided = value / (j + 1);
         if value != 0 && divided == 0 {
-            return CombinationsResult {0, "underflow", "division underflow"};
+            return CombinationsResult { 0, "underflow", "division underflow" };
         }
-        value = divided * (n-j);
+        value = divided * (n - j);
         if is_inf(value) {
-            return CombinationsResult {0, "overflow", "multiplication overflow"};
+            return CombinationsResult { 0, "overflow", "multiplication overflow" };
         }
     }
-    return CombinationsResult {value, if value == 0 { "zero" } else { "finite" }, ""};
+    return CombinationsResult { value, if value == 0 { "zero" } else { "finite" }, "" };
 }
 
 /* Counts subsets without enumeration. Binary64 intermediates may lose subnormal units even for
@@ -51,14 +51,14 @@ fn combinations(n: i64, k: i64) -> CombinationsResult {
  * occurs. */
 fn combinations_with_repl(n: i64, k: i64) -> CombinationsResult {
     if n < 0 || k < 0 || n > 9007199254740991 || k > 9007199254740991 {
-        return CombinationsResult {0, "invalid", "counts outside 0..2^53-1"};
+        return CombinationsResult { 0, "invalid", "counts outside 0..2^53-1" };
     }
     if n == 0 {
-        return CombinationsResult {if k == 0 { 1.0 } else { 0.0 },
-            if k == 0 { "finite" } else { "zero" }, ""};
+        return CombinationsResult { if k == 0 { 1.0 } else { 0.0 },
+            if k == 0 { "finite" } else { "zero" }, "" };
     }
-    if k > 9007199254740991 - (n-1) {
-        return CombinationsResult {0, "invalid", "repetition count exceeds 2^53-1"};
+    if k > 9007199254740991 - (n - 1) {
+        return CombinationsResult { 0, "invalid", "repetition count exceeds 2^53-1" };
     }
-    return combinations(n-1+k, k);
+    return combinations(n - 1 + k, k);
 }

@@ -18,10 +18,10 @@ fn record(i: i64) -> u8[..] {
 fn main() {
     let header = "##fileformat=VCFv4.3\n##contig=<ID=c,length=100>\n##INFO=<ID=AC,Number=A,Type=Integer,Description=\"a\">\n##INFO=<ID=AN,Number=1,Type=Integer,Description=\"a\">\n##INFO=<ID=AF,Number=A,Type=Float,Description=\"a\">\n##INFO=<ID=X,Number=1,Type=String,Description=\"x\">\n##FORMAT=<ID=GT,Number=1,Type=String,Description=\"g\">\n##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"g\">\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\ta\tb\n";
     let destination = "##fileformat=VCFv4.3\n##contig=<ID=unused>\n##contig=<ID=c,length=100>\n##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"g\">\n##FORMAT=<ID=GT,Number=1,Type=String,Description=\"g\">\n##INFO=<ID=X,Number=1,Type=String,Description=\"x\">\n##INFO=<ID=AF,Number=A,Type=Float,Description=\"a\">\n##INFO=<ID=AN,Number=1,Type=Integer,Description=\"a\">\n##INFO=<ID=AC,Number=A,Type=Integer,Description=\"a\">\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tb\ta\n";
-    let keep: i32[..] = [0,2];
-    let duplicate: i32[..] = [0,2,2];
-    let refchange: i32[..] = [2,0];
-    for i in 0 .. 5 {
+    let keep:      i32[..] = [0, 2];
+    let duplicate: i32[..] = [0, 2, 2];
+    let refchange: i32[..] = [2, 0];
+    for i in 0..5 {
         let w = bio::hts_open(".tools/allele-focused-source.bcf", "wb", true, header, "");
         assert(bio::hts_write(w, record(i)) == 0 && bio::hts_close(w) == 0);
         let r = bio::hts_open(".tools/allele-focused-source.bcf", "r", true, "", "");

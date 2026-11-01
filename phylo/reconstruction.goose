@@ -22,7 +22,7 @@ fn distance_matrix_error(labels: const u8[][:], distances: const f64[:]) -> u8[]
         if is_nan(d) || is_inf(d) || d < 0 { return "invalid distance"; }
         let i = k / n; let j = k % n;
         if i == j && d != 0 { return "nonzero matrix diagonal"; }
-        if d != distances[j*n+i] { return "asymmetric distance matrix"; }
+        if d != distances[j * n + i] { return "asymmetric distance matrix"; }
     }
     ""
 }
@@ -33,11 +33,11 @@ fn reconstruct_tree(labels: const u8[][:], distances: const f64[:], nj: bool) ->
     let error = distance_matrix_error(labels, distances);
     if error.len > 0 { return TreeResult { [], -1, error }; }
     let n = labels.len;
-    var nodes: TreeNode[>..] = [];
-    var active: i64[>..] = [];
-    var sizes: f64[>..] = [];
-    var heights: f64[>..] = [];
-    var d: f64[>..] = [];
+    var nodes:   TreeNode[>..] = [];
+    var active:  i64[>..]      = [];
+    var sizes:   f64[>..]      = [];
+    var heights: f64[>..]      = [];
+    var d:       f64[>..]      = [];
     for label, i in labels {
         nodes.push(TreeNode { copy(label), [], 0, false });
         active.push(i); sizes.push(1); heights.push(0);
@@ -46,7 +46,7 @@ fn reconstruct_tree(labels: const u8[][:], distances: const f64[:], nj: bool) ->
     for value in distances { scale = max(scale, value); }
     if scale == 0 { scale = 1; }
     for value in distances {
-        let normalized = value/scale;
+        let normalized = value / scale;
         if value != 0 && normalized == 0 {
             return TreeResult { [], -1, "unsupported distance scale separation" };
         }
@@ -57,7 +57,7 @@ fn reconstruct_tree(labels: const u8[][:], distances: const f64[:], nj: bool) ->
         var sums: f64[>..] = [];
         for i in m {
             var sum = 0.0;
-            for j in m { sum += d[i*m+j]; }
+            for j in m { sum += d[i * m + j]; }
             sums.push(sum);
         }
         var a: i64 = 0; var b: i64 = 1;
@@ -65,18 +65,18 @@ fn reconstruct_tree(labels: const u8[][:], distances: const f64[:], nj: bool) ->
         for i in m {
             for j in m {
                 if j <= i { continue; }
-                var score = d[i*m+j];
-                if nj && m > 2 { score = (m-2)*score - sums[i] - sums[j]; }
+                var score = d[i * m + j];
+                if nj && m > 2 { score = (m - 2) * score - sums[i] - sums[j]; }
                 if (i == 0 && j == 1) || score < best { best = score; a = i; b = j; }
             }
         }
-        let distance = d[a*m+b];
+        let distance = d[a * m + b];
         let height = distance / 2;
         var left = height - heights[a]; var right = height - heights[b];
         if nj {
             left = distance / 2;
-            if m > 2 { left += (sums[a]-sums[b]) / (2*(m-2)); }
-            right = distance-left;
+            if m > 2 { left += (sums[a] - sums[b]) / (2 * (m - 2)); }
+            right = distance - left;
         }
         let parent = nodes.len;
         // Rebuild immutable nodes when adding their incoming edge.
@@ -89,26 +89,26 @@ fn reconstruct_tree(labels: const u8[][:], distances: const f64[:], nj: bool) ->
         }
         updated.push(TreeNode { "", [active[a], active[b]], 0, false });
         nodes = copy(updated);
-        var next: i64[>..] = [];
-        var next_sizes: f64[>..] = [];
+        var next:         i64[>..] = [];
+        var next_sizes:   f64[>..] = [];
         var next_heights: f64[>..] = [];
-        var keep: i64[>..] = [];
+        var keep:         i64[>..] = [];
         for id, i in active {
             if i == a || i == b { continue; }
             next.push(id); next_sizes.push(sizes[i]);
             next_heights.push(heights[i]); keep.push(i);
         }
-        next.push(parent); next_sizes.push(sizes[a]+sizes[b]); next_heights.push(height);
+        next.push(parent); next_sizes.push(sizes[a] + sizes[b]); next_heights.push(height);
         var matrix: f64[>..] = [];
         for i in next.len {
             for j in next.len {
                 var value = 0.0;
-                if i < keep.len && j < keep.len { value = d[keep[i]*m+keep[j]]; }
+                if i < keep.len && j < keep.len { value = d[keep[i] * m + keep[j]]; }
                 else if i != j {
                     var k = i; if j < keep.len { k = j; }
-                    let da = d[keep[k]*m+a]; let db = d[keep[k]*m+b];
-                    value = (da*sizes[a]+db*sizes[b])/(sizes[a]+sizes[b]);
-                    if nj { value = (da+db-distance)/2; }
+                    let da = d[keep[k] * m + a]; let db = d[keep[k] * m + b];
+                    value = (da * sizes[a] + db * sizes[b]) / (sizes[a] + sizes[b]);
+                    if nj { value = (da + db - distance) / 2; }
                 }
                 if is_nan(value) || is_inf(value) { return TreeResult { [], -1, "distance arithmetic overflow" }; }
                 matrix.push(value);
@@ -122,7 +122,7 @@ fn reconstruct_tree(labels: const u8[][:], distances: const f64[:], nj: bool) ->
     }
     var restored: TreeNode[>..] = [];
     for node in nodes {
-        let length = node.length*scale;
+        let length = node.length * scale;
         if is_inf(length) || is_nan(length) || (node.length != 0 && length == 0) {
             return TreeResult { [], -1, "branch scale out of range" };
         }
@@ -148,7 +148,7 @@ recursive fn write_newick_node(nodes: const TreeNode&[:], id: i64,
         output.push('(');
         for child, i in node.children {
             if i > 0 { output.push(','); }
-            if !write_newick_node(nodes, child, output, visited, depth+1) { return false; }
+            if !write_newick_node(nodes, child, output, visited, depth + 1) { return false; }
         }
         output.push(')');
     }

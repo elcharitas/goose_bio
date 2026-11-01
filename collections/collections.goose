@@ -52,7 +52,7 @@ recursive fn interval_tree_fill(ends: const i64[:], lo: i64, hi: i64, maxima: i6
     maxima[mid] = value; return value;
 }
 fn interval_tree(intervals: const Interval[:]) -> IntervalTree {
-    var ids: i64[>..] = []; var temp: i64[>..] = [];
+    var ids:    i64[>..] = []; var temp: i64[>..] = [];
     var starts: i64[>..] = []; var ends: i64[>..] = []; var maxima: i64[>..] = [];
     for a, i in intervals { assert(interval_valid(a)); ids.push(i); temp.push(0); }
     var raw_starts: i64[>..] = []; var raw_ends: i64[>..] = [];

@@ -17,10 +17,10 @@ fn sparse_chain(anchors: const SparseAnchor[:]) -> SparseChain {
     if anchors.len > 4096 { return bad; }
     var sorted: SparseAnchor[>..] = [];
     for a in anchors {
-        if a.a < 0 || a.b < 0 || a.length <= 0 || a.a > 1000000000-a.length || a.b > 1000000000-a.length { return bad; }
+        if a.a < 0 || a.b < 0 || a.length <= 0 || a.a > 1000000000 - a.length || a.b > 1000000000 - a.length { return bad; }
         sorted.push(a);
     }
-    for i in sorted.len { for j in i+1..sorted.len {
+    for i in sorted.len { for j in i + 1..sorted.len {
         if sorted[j].a < sorted[i].a || (sorted[j].a == sorted[i].a && sorted[j].b < sorted[i].b) {
             let t = sorted[i]; sorted[i] = sorted[j]; sorted[j] = t;
         }
@@ -29,14 +29,14 @@ fn sparse_chain(anchors: const SparseAnchor[:]) -> SparseChain {
     for a, i in sorted {
         d.push(a.length); prev.push(-1);
         for j in i { let p = sorted[j];
-            if p.a+p.length <= a.a && p.b+p.length <= a.b && d[j]+a.length > d[i] {
-                d[i] = d[j]+a.length; prev[i] = j;
+            if p.a + p.length <= a.a && p.b + p.length <= a.b && d[j] + a.length > d[i] {
+                d[i] = d[j] + a.length; prev[i] = j;
             }
         }
         if d[i] > best { best = d[i]; end = i; }
     }
-    var rev: SparseAnchor[>..] = []; while end >= 0 { rev.push(sorted[end]); end = prev[end]; }
-    var result: SparseAnchor[>..] = []; for k in rev.len { result.push(rev[rev.len-1-k]); }
+    var rev:    SparseAnchor[>..] = []; while end >= 0 { rev.push(sorted[end]); end = prev[end]; }
+    var result: SparseAnchor[>..] = []; for k in rev.len { result.push(rev[rev.len - 1 - k]); }
     return SparseChain { result, best, "" };
 }
 
@@ -51,10 +51,10 @@ fn sparse_kmer_chain(a: const u8[:], b: const u8[:], k: i64,
         || max_occurrences > 4096 || max_anchors <= 0 || max_anchors > 4096 { return bad; }
     var anchors: SparseAnchor[>..] = [];
     if k > a.len || k > b.len { return SparseChain { [], 0, "" }; }
-    for i in 0..a.len-k+1 {
+    for i in 0..a.len - k + 1 {
         var matches: i64[>..] = [];
-        for j in 0..b.len-k+1 {
-            var equal = true; for t in k { if a[i+t] != b[j+t] { equal = false; } }
+        for j in 0..b.len - k + 1 {
+            var equal = true; for t in k { if a[i + t] != b[j + t] { equal = false; } }
             if equal { matches.push(j); if matches.len > max_occurrences { return bad; } }
         }
         for j in matches {

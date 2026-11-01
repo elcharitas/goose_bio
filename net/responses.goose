@@ -13,12 +13,12 @@ struct JsonText { value: u8[], state: i64 }
 struct JsonCount { value: i64, state: i64 }
 struct EntrezSearchResult {
     count: JsonCount, retmax: JsonCount, retstart: JsonCount,
-    ids: u8[][], query_key: JsonCount, webenv: JsonText,
-    raw: u8[], error: u8[]
+    ids:   u8[][], query_key: JsonCount, webenv: JsonText,
+    raw:   u8[], error: u8[],
 }
 struct UniProtEntry {
     accession: JsonText, id: JsonText, entry_type: JsonText,
-    sequence: JsonText, length: JsonCount
+    sequence:  JsonText, length: JsonCount,
 }
 struct UniProtResult { entries: UniProtEntry[], raw: u8[], error: u8[] }
 
@@ -87,8 +87,8 @@ fn entrez_failure(raw: u8[:], error: u8[:]) -> EntrezSearchResult {
         json_bytes(raw), json_bytes(error) };
 }
 fn parse_entrez_search(text: u8[:]) -> EntrezSearchResult {
-    var nodes: json::Node[>..] = [];
-    var decoded: u8[>..] = [];
+    var nodes:   json::Node[>..] = [];
+    var decoded: u8[>..]         = [];
     let root, err = json::parse(text, nodes, decoded);
     if err.len > 0 { return entrez_failure(text, err); }
     if !json_object(root) || !unique_members(nodes) {
@@ -104,7 +104,7 @@ fn parse_entrez_search(text: u8[:]) -> EntrezSearchResult {
     let key = json_count(json::member(r, "querykey"));
     let env = json_text(json::member(r, "webenv"));
     let list = json::member(r, "idlist");
-    var ids: u8[][>..] = [];
+    var ids:   u8[][>..]   = [];
     var error: const u8[:] = "";
     if count.state != 2 || max.state != 2 || start.state != 2 {
         error = "missing, null, or invalid count/page field";
@@ -141,7 +141,7 @@ fn uniprot_entry(n: json::Node?) -> UniProtEntry {
         json_text(json::member(n, "uniProtkbId")),
         json_text(json::member(n, "entryType")),
         json_text(json::member(seq, "value")),
-        json_count(json::member(seq, "length"), false)
+        json_count(json::member(seq, "length"), false),
     };
 }
 fn uniprot_entry_error(n: json::Node?, e: UniProtEntry&) -> u8[] {
@@ -161,8 +161,8 @@ fn uniprot_entry_error(n: json::Node?, e: UniProtEntry&) -> u8[] {
     return "";
 }
 fn parse_uniprot(text: u8[:], search: bool) -> UniProtResult {
-    var nodes: json::Node[>..] = [];
-    var decoded: u8[>..] = [];
+    var nodes:   json::Node[>..] = [];
+    var decoded: u8[>..]         = [];
     let root, err = json::parse(text, nodes, decoded);
     if err.len > 0 { return UniProtResult { [], json_bytes(text), copy(err) }; }
     if !json_object(root) || !unique_members(nodes) {

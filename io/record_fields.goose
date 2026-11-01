@@ -52,7 +52,7 @@ fn parse_cigar(text: const u8[:]) -> CigarResult {
     if text == "*" { return CigarResult { [], "" }; }
     if text.len == 0 { return CigarResult { [], "empty CIGAR" }; }
     var operations: CigarOperation[>..] = [];
-    var length: i64 = 0;
+    var length:     i64                 = 0;
     var digits = false;
     for c in text {
         if c >= '0' && c <= '9' {
