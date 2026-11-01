@@ -1,7 +1,7 @@
 # Goose Bio
 
 Computational biology and `bioinformatics` for
-[Goose](https://aardappel.github.io/goose/), v2026.3.
+[Goose](https://aardappel.github.io/goose/).
 Goose Bio provides sequence analysis, file parsing, alignment, search, statistics,
 structure analysis, and tree operations.
 `Biopython`, Rust-Bio, and rust-htslib inspired this work.

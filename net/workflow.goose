@@ -68,9 +68,9 @@ fn workflow_link_value(value: u8[:]) -> u8[], bool {
 }
 
 
-extern "bio_workflow_now" fn workflow_now() -> i64;
-extern "bio_workflow_sleep" fn workflow_sleep(ms: i64);
-extern "bio_workflow_url" fn workflow_url(base: const u8[:], current: const u8[:], target: const u8[:], out: u8[>..]&) -> i32;
+extern fn workflow_now() -> i64 = "bio_workflow_now";
+extern fn workflow_sleep(ms: i64) = "bio_workflow_sleep";
+extern fn workflow_url(base: const u8[:], current: const u8[:], target: const u8[:], out: u8[>..]&) -> i32 = "bio_workflow_url";
 struct UniProtLimits {
     pages: i64, entries: i64, requests: i64, bytes: i64,
     deadline_ms: i64, interval_ms: i64, retries: i64
@@ -275,7 +275,7 @@ fn uniprot_workflow(query: u8[:], base: u8[:], limits: UniProtLimits) -> UniProt
     return w;
 }
 
-extern "bio_workflow_start" fn workflow_start(url: const u8[:], timeout: i64, cap: i64) -> i64;
+extern fn workflow_start(url: const u8[:], timeout: i64, cap: i64) -> i64 = "bio_workflow_start";
 fn workflow_transport(url: u8[:], timeout: i64, cap: i64) -> GooseHttpResult {
     let h = workflow_start(url, timeout, cap);
     if h == 0 { return GooseHttpResult { 0, "", "", "allocation failure", -1 }; }

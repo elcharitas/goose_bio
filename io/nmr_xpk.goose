@@ -145,7 +145,7 @@ fn xpk_mean(values: const f64[:]) -> f64, bool {
         }
         let sum = total+correction;
         if !finite || is_inf(sum) || is_nan(sum) { continue; }
-        let divided = sum/(values.len as f64);
+        let divided = sum/values.len;
         let mean = divided*scale;
         if is_inf(mean) || is_nan(mean) || (sum != 0.0 && (divided == 0.0 || mean == 0.0)) { return 0.0, false; }
         return mean, true;

@@ -1,9 +1,9 @@
 namespace bio_index;
-extern "bio_index_build" fn build(source: const u8[:], target: const u8[:]) -> i32;
-extern "bio_index_open" fn open(target: const u8[:]) -> i64;
-extern "bio_index_close" fn close(handle: i64) -> i32;
-extern "bio_index_count" fn count(handle: i64) -> i64;
-extern "bio_index_copy" fn native_copy(handle: i64, key: const u8[:], ordinal: i64, mode: i32, out: u8[>..]&) -> i32;
+extern fn build(source: const u8[:], target: const u8[:]) -> i32 = "bio_index_build";
+extern fn open(target: const u8[:]) -> i64 = "bio_index_open";
+extern fn close(handle: i64) -> i32 = "bio_index_close";
+extern fn count(handle: i64) -> i64 = "bio_index_count";
+extern fn native_copy(handle: i64, key: const u8[:], ordinal: i64, mode: i32, out: u8[>..]&) -> i32 = "bio_index_copy";
 struct BytesResult { value: u8[], error: u8[] }
 struct KeysResult { value: u8[][], error: u8[] }
 struct Record { id: u8[], description: u8[], sequence: u8[] }
